@@ -1,0 +1,14 @@
+// =====  Navigation Styles =====
+
+.footer {
+    color: $off-white;
+    background: $light-black;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 1vw;
+}
+
+.footer__item {
+ margin: 0 1vw;
+}

@@ -1,0 +1,26 @@
+// =====  Application SCSS  =====
+
+// All Scss Partial Files Combine in here.
+// All Styling Variables and Colors Must be imported First
+
+@import "./base-styles/partials/colors";
+@import "./base-styles/partials/fonts";
+@import "./base-styles/partials/keyframes";
+@import "./base-styles/partials/sizes";
+
+@import "./components/Navigation/Navigation";
+@import "./components/Footer/Footer";
+@import "./components/Homepage/Homepage";
+@import "./components/About/About";
+@import "./components/Portfolio/Portfolio";
+@import "./components/Blog/Blog";
+@import "./components/Contact/Contact";
+@import "./components/NotFound/NotFound";
+
+
+
+.App-logo {
+  animation: element-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}

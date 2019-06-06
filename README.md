@@ -1,68 +1,71 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Portfolio Template
 
-## Available Scripts
+> __**Do you Need Portfolio Template?**__  
 
-In the project directory, you can run:
+- [Go To Live Project](https://task-manager-st.netlify.com/)
 
-### `npm start`
+## Benefits
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Pre-built Template
+- Minimal and Fast and Built in React
+- Organised File Structure
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Description
 
-### `npm test`
+A Portfolio React Application Template to be built on. Organised file structure with minimal.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+## Build Desciption and Construction
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Javascript ES5/ES6](https://github.com/topics/javascript)
+- [React JS](https://github.com/facebook/react)
+- [Webpack with Babel Presets](https://github.com/webpack/webpack)
+- [NPM](https://www.npmjs.com/)
+- [SCSS](https://github.com/sass/node-sass)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+if you wish to clone this repository and run the application on your local server follow the instructions:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Open the Command Line(CMD) or Terminal in the folder you wish to insert the application into.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+2. Copy into the CMD/Terminal:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> git clone https://github.com/stefantrinh1/portfolio-template.git
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Once the repository has been cloned. change the directory to the application 'portfolio-template'. Once the terminal is open on the application folder, follow the next step. (Before doing the next step make sure you have node.js installed on your computer)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. In the Command Line type: 
 
-### Code Splitting
+> npm install
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- This will install all the dependancies needed to run the application.
 
-### Analyzing the Bundle Size
+5. In the Command Line type: 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+> npm run build
 
-### Making a Progressive Web App
+- This will start webpack and bundle all the files together into one file and convert all the ES6 code into ES5 code so the broswers can recognise the language.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+6. In the Command Line type: 
 
-### Advanced Configuration
+> npm start
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+ - Once you have run this. The application will run live server and babel in the background. The application will then start in a localhost and be running in your broswer from a local position.
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Contact Details
 
-### `npm run build` fails to minify
+If you have any questions or would like to get in touch, please contact me using the details below.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+__**Stefan Trinh**__  
+Web Developer  
+
+e: stefantrinh1.work@gmail.com  
+g: https://github.com/stefantrinh1  
+w: http://www.stefantrinh.co.uk  

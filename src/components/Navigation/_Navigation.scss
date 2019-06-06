@@ -1,0 +1,38 @@
+// =====  Navigation Styles =====
+
+.nav{
+    position: relative;
+}
+.nav__nav-menu{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgb(41, 41, 41);
+}
+
+.nav__nav-menu li{
+    // removes all bullet points in nav menus
+    list-style: none;
+}
+.nav__nav-menu a{
+    text-decoration: none;
+
+    &:visited{
+        color: unset;
+    }
+}
+
+.nav__nav-icon {
+    // takes up the rest of the empty space in the Div combines with the width:100% in nav-menu Class
+    flex-basis: 100%;
+}
+.nav__nav-icon svg {
+vertical-align: middle;
+}
+
+.nav__nav-item {
+    justify-content: flex-end;
+    padding: 0.5em;
+    color:rgb(238, 238, 238);
+}
