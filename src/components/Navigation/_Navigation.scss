@@ -22,8 +22,10 @@
 
 .nav__nav-icon svg {
   // Spin Animation for the Nav Logo
-  transform: rotate(360deg);
-  animation: element-spin infinite 30s;
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-animation: element-spin infinite 30s;
+          animation: element-spin infinite 30s;
 }
 
 .nav__nav-item {
@@ -54,11 +56,14 @@
     display: block;
   }
   .nav__nav-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     position: absolute;
     top: 5%;
     right: 5%;
-    transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
   }
 
   .nav__nav-icon {
@@ -68,7 +73,9 @@
   }
 
   .nav__nav-item {
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
