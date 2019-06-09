@@ -12,19 +12,18 @@ import NotFound from "../components/NotFound/NotFound"
 const AppRouter = () => {
     return (
         <div>
-        <Router>
+            <Router>
                 <Navigation />
-                <Switch>
-                    <Route exact={true} path="/" component={Homepage} />
-                    <Route path="/about" component={About} />
-                    <Route path="/portfolio" component={Portfolio} />
-                    <Route path="/blog" component={Blog} />
-                    <Route path="/contact" component={Contact} />
-                    <Route component={NotFound} />
-                </Switch>
-                <SocialLogos />
-               
-        </Router>
+                        <Switch>
+                            <Route exact={true} path="/" component={Homepage} />
+                            <Route path="/about" component={About} />
+                            <Route path="/portfolio" component={Portfolio} />
+                            <Route path="/blog" component={Blog} />
+                            <Route path="/contact" component={Contact} />
+                            <Route component={NotFound} />
+                        </Switch>
+                        <SocialLogos />
+            </Router>
         </div>
     )
 }

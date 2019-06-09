@@ -1,22 +1,76 @@
-.homepage{
-    text-align: center;
-    width: 100%;
-
+.homepage {
+  text-align: center;
+  width: 100%;
 }
 
-.homepage__background-img{
-    // width: 100vw;
-    // width: 100%;
-    height: 100vh;
-
+.homepage__background-img {
+  // width: 100vw;
+  // width: 100%;
+  height: 100vh;
+  transition: all ease-in-out 1s;
+  z-index: -1;
 }
 
-.homepage header {
-    padding: 2vw;
-    
+.homepage__header {
+  position: absolute;
+  text-align: left;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  font-size: 1rem;
+  color: $off-white;
+  width: 100%;
+  background: $dark-black;
+  opacity: 0.9;
+  padding: 1em 0;
 }
 
-.homepage h4{
-    padding: 1vw;
-    
+.homepage__headercontainer {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.homepage__headertitle {
+  font-size: calc(3.5em + 3vw);
+  font-weight: 200;
+  padding: 0 1vw;
+}
+
+.homepage__headertitle1 {
+  text-align: left;
+}
+
+.homepage__headertitle2 {
+  text-align: right;
+}
+
+.homepage__headersubtitle {
+  font-weight: 200;
+  font-size: calc(0.5em + 2vw);
+  text-align: center;
+  margin: 1em 0;
+}
+
+.homepage__main-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 480px) {
+}
+
+@media only screen and (min-width: 768px) {
+  .homepage__header{
+    width: 50%;
+    right: 5%;
+    background: none;
+  }
+  
+}
+
+@media only screen and (min-width: 991px) {
+}
+
+@media only screen and (min-width: 1200px) {
 }

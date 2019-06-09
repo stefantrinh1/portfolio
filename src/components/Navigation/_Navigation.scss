@@ -1,82 +1,76 @@
 // =====  Navigation Styles =====
 
-.nav__nav-menu li{
-    // removes all bullet points in nav menus
-    list-style: none;
-    font-size: 1.5rem;
+.nav__nav-menu li {
+  // removes all bullet points in nav menus
+  list-style: none;
+  font-size: 1.5rem;
+}
+.nav {
+  width: 80%;
+  height: 100vh;
+  background: $light-black;
+  display: none;
 }
 
-.nav{
-    width: 80%;
-    height: 100vh;
-    background: $light-black;
+.nav__nav-menu a {
+  text-decoration: none;
+  // removes visited color change.
+  &:visited {
+    color: unset;
+  }
 }
 
-.nav__nav-menu a{
-    text-decoration: none;
-// removes visited color change.
-    &:visited{
-        color: unset;
-    }
-}
-
-.nav__nav-icon svg{
-    // Spin Animation for the Nav Logo
-    transform: rotate(360deg);
-    animation: element-spin infinite 30s;
+.nav__nav-icon svg {
+  // Spin Animation for the Nav Logo
+  transform: rotate(360deg);
+  animation: element-spin infinite 30s;
 }
 
 .nav__nav-item {
-    padding: 0.6em;
-    color: $off-white;
+  padding: 0.6em;
+  color: $off-white;
 }
 
 .nav__currentNavPage {
-    border-bottom: solid 2px #2A7855;
+  border-bottom: solid 2px $brand-color;
 }
 
-.nav__nav-icon {
-padding: 0.6em;
+.nav__nav-icon svg {
+  width: 100px;
+  height: 100px;
+  padding: 0.6em;
 }
 
 @media only screen and (min-width: 480px) {
 
 
-
-
 }
 
-
 @media only screen and (min-width: 768px) {
+  .nav {
+    width: unset;
+    height: unset;
+    background: unset;
+    display: block;
+  }
+  .nav__nav-menu {
+    display: flex;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    transform: translate(0, -50%);
+  }
 
-    .nav__nav-menu{
-        display: flex;
-        position: absolute;
-        top: 5%;
-        right: 5%;
-        transform: translate(0, -50%);
-    
-    }
-
-
-.nav__nav-icon {
+  .nav__nav-icon {
     position: absolute;
     top: 2%;
     left: 2%;
-}
+  }
 
-.nav__nav-item {
+  .nav__nav-item {
     justify-content: flex-end;
+  }
 }
-
-
-}
-
 
 @media only screen and (min-width: 1200px) {
-
-
 }
-
-
-

@@ -1,0 +1,12 @@
+.main-btn {
+    background-color: $brand-color;
+    color:$off-white;
+    border:0;
+    padding: 0.75rem;
+    border-radius: 0.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main-btn:hover {
+    background-color: $lightbrand-color;
+}

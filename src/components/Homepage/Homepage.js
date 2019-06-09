@@ -1,5 +1,8 @@
 import React from "react";
-import Background from "../../media-files/hpbg1.jpg";
+import BackgroundDesktop from "../../media-files/hpbg-desktop.jpg";
+import BackgroundTablet from "../../media-files/hpbg-tablet.jpg";
+import BackgroundMobile from "../../media-files/hpbg-mobile.jpg";
+import { NavLink } from "react-router-dom";
 
 class Homepage extends React.Component {
 
@@ -7,12 +10,22 @@ class Homepage extends React.Component {
 
         return (
             <div className="homepage">
-                <img className="homepage__background-img" alt="background" src={Background} />
-                <header>
-                    
-                    <h4>Template By:</h4>
-                    <h1>Stefan <br /> Trinh </h1>
-                    <h4> <a href="http://www.stefantrinh.co.uk"> www.stefantrinh.co.uk</a></h4>
+                <img 
+                className="homepage__background-img" 
+                alt="background" 
+                srcSet={`
+                    ${BackgroundDesktop} 1200w,
+                    ${BackgroundTablet} 768w,
+                    ${BackgroundMobile} 480w
+                        
+                `} />
+                <header className="homepage__header">
+                    <div className="homepage__headercontainer">
+                    <h1 className="homepage__headertitle homepage__headertitle1">STEFAN</h1>
+                    <h1 className="homepage__headertitle homepage__headertitle2">TRINH</h1>
+                    <h2 className="homepage__headersubtitle">NOT JUST A WEB DEVELOPER</h2>
+                    <button className="homepage__main-btn main-btn"><NavLink to="/portfolio">Explore Projects</NavLink></button>
+                    </div>
                 </header>
             </div>
         )
