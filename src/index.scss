@@ -1,10 +1,16 @@
 @import "./base-styles/partials/fonts";
+@import "./base-styles/partials/colors";
+@import "./base-styles/partials/keyframes";
+@import "./base-styles/partials/sizes";
 
 body {
   margin: 0;
   font-family: $primaryFont;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%; 
+  overflow: hidden;
+  background: $dark-black;
 }
 
 * {

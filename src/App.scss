@@ -3,11 +3,14 @@
 // All Scss Partial Files Combine in here.
 // All Styling Variables and Colors Must be imported First
 
+// Styling Variables
 @import "./base-styles/partials/colors";
 @import "./base-styles/partials/fonts";
 @import "./base-styles/partials/keyframes";
 @import "./base-styles/partials/sizes";
 
+
+// Pages
 @import "./components/Navigation/Navigation";
 @import "./components/Footer/Footer";
 @import "./components/Homepage/Homepage";
@@ -17,6 +20,9 @@
 @import "./components/Contact/Contact";
 @import "./components/NotFound/NotFound";
 
+
+// Components
+@import "./components/SocialLogos/SocialLogos";
 
 
 .App-logo {

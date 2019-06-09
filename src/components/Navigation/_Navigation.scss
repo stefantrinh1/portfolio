@@ -1,38 +1,82 @@
 // =====  Navigation Styles =====
 
-.nav{
-    position: relative;
-}
-.nav__nav-menu{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: flex-end;
-    background: rgb(41, 41, 41);
-}
-
 .nav__nav-menu li{
     // removes all bullet points in nav menus
     list-style: none;
+    font-size: 1.5rem;
 }
+
+.nav{
+    width: 80%;
+    height: 100vh;
+    background: $light-black;
+}
+
 .nav__nav-menu a{
     text-decoration: none;
-
+// removes visited color change.
     &:visited{
         color: unset;
     }
 }
 
-.nav__nav-icon {
-    // takes up the rest of the empty space in the Div combines with the width:100% in nav-menu Class
-    flex-basis: 100%;
+.nav__nav-icon svg{
+    // Spin Animation for the Nav Logo
+    transform: rotate(360deg);
+    animation: element-spin infinite 30s;
 }
-.nav__nav-icon svg {
-vertical-align: middle;
+
+.nav__nav-item {
+    padding: 0.6em;
+    color: $off-white;
+}
+
+.nav__currentNavPage {
+    border-bottom: solid 2px #2A7855;
+}
+
+.nav__nav-icon {
+padding: 0.6em;
+}
+
+@media only screen and (min-width: 480px) {
+
+
+
+
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .nav__nav-menu{
+        display: flex;
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        transform: translate(0, -50%);
+    
+    }
+
+
+.nav__nav-icon {
+    position: absolute;
+    top: 2%;
+    left: 2%;
 }
 
 .nav__nav-item {
     justify-content: flex-end;
-    padding: 0.5em;
-    color:rgb(238, 238, 238);
 }
+
+
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+
+}
+
+
+

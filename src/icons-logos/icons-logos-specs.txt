@@ -1,0 +1,11 @@
+ICONS AND LOGOS SPECS
+
+Icons = General Icons I.e Hamburgers, Arrows, scrollbars etc.
+- Folder can be Reused
+- Square icons will be 100px by 100px
+
+Logos = Brand Logos
+- Individual to every project.
+- Square format 1 by 1 ratio
+- 200px by 200px
+
