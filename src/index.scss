@@ -22,3 +22,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+a:-webkit-any-link {
+  color: unset;
+  text-decoration: none;
+}
