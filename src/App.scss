@@ -25,6 +25,9 @@
 // Components
 @import "./components/SocialLogos/SocialLogos";
 
+.App {
+  overflow: hidden;
+}
 
 .App-logo {
   animation: element-spin infinite 20s linear;
