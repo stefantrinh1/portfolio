@@ -4,33 +4,60 @@ import BrandLogo from "../SocialLogos/BrandLogo"
 import Hamburger from "./Hamburger"
 
 
+
 class Navigation extends React.Component {
-
-        state = {
-            navigationOpen:false,
+    constructor() {
+        super();
+        
+        this.state = {
+            navigationOpen: false,
         }
- 
-
-    OpenNav() {
+    }
+    // move the navigation off screen
+    CloseNav() {
         const navElement = document.querySelector(".nav");
-        const style = getComputedStyle(navElement)
+        const style = getComputedStyle(navElement);
         const navWidth = style.getPropertyValue('width');
-        // grabs the width of the nav set by the scss in pixels
-        if (this.state.navigationOpen) {
-            // move the navigation off screen
+
+
+        // this if statement makes sure that only the nav on mobile closes and does not do the same on desktop.
+        if (window.innerWidth < 768) {
+            // grabs the width of the nav from the dom in Pixels
             navElement.style.left = `-${navWidth}`
             this.setState({
-                navigationOpen:false
+                navigationOpen: false
             })
+
         }
 
-        else {
-            // moves the nav into view
-            navElement.style.left = "0%";
-            this.setState({
-                navigationOpen:true
-            })
+    }
+
+    // brings Nav Onto Screen
+    OpenNav() {
+        const navElement = document.querySelector(".nav");
+        navElement.style.left = "0%";
+        this.setState({
+            navigationOpen: true
+        })
+    }
+
+
+    // Handles whether to open or close depending on if nav is open in state
+    HandleNav() {
+        return (!this.state.navigationOpen ? this.OpenNav() : this.CloseNav())
+    }
+
+    hideOnClickOutside(element) {
+        const outsideClickListener = event => {
+            if (!element.contains(event.target) && this.state.navigationOpen) { // or use: event.target.closest(selector) === null
+                element.style.left = `70%`
+                removeClickListener()
+            }
         }
+        const removeClickListener = () => {
+            document.removeEventListener('click', outsideClickListener)
+        }
+        document.addEventListener('click', outsideClickListener)
     }
 
 
@@ -48,7 +75,7 @@ class Navigation extends React.Component {
         // creates the JSX for the nav items by looping through the nav links declared.
         let navItems = links.map((link, index) => {
             return (
-                <li className="nav__nav-item" key={link.label}>
+                <li className="nav__nav-item" key={link.label} onClick={() => { this.CloseNav() }}>
 
                     <NavLink to={link.link} exact={true} activeClassName="nav__currentNavPage">
                         {link.label}
@@ -57,10 +84,11 @@ class Navigation extends React.Component {
             );
         });
 
+
         return (
 
             <div>
-                <div className="nav__hamburger" onClick={() => {this.OpenNav()}}>
+                <div className="nav__hamburger" onClick={() => { this.HandleNav() }}>
                     <Hamburger />
                 </div>
 
