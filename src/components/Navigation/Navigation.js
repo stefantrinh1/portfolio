@@ -8,17 +8,52 @@ import Hamburger from "./Hamburger"
 class Navigation extends React.Component {
     constructor() {
         super();
-        
+        this.navElement = document.querySelector(".nav");
         this.state = {
             navigationOpen: false,
         }
     }
-    // move the navigation off screen
-    CloseNav() {
+
+    componentDidMount() {
+        // console.log(this.navElement());
+        
+    }
+    // returns Nav Width
+    NavWidth() {
+        
         const navElement = document.querySelector(".nav");
         const style = getComputedStyle(navElement);
         const navWidth = style.getPropertyValue('width');
+        return navWidth
+    }
+    
+    // Handles whether to open or close depending on if nav is open in state
+    ShowOrHideNav() {
+        return (!this.state.navigationOpen ? this.OpenNav() : this.CloseNav())
+    }
 
+
+    // brings Nav Onto Screen
+    OpenNav() {
+        console.log("Navigation Menu Opened");
+        const navElement = document.querySelector(".nav");
+        navElement.style.left = "0%";
+        this.setState({
+            navigationOpen: true
+        })
+       
+        // when the nav opens event listener is added so the menu 
+        // can be closed when clicking a nav or outside of nav menu
+        this.HandleNavAction(navElement)
+     
+    }
+
+
+    // move the navigation off screen
+    CloseNav() {
+        console.log("Navigation Menu Closed");
+        const navElement = document.querySelector(".nav");
+        const navWidth = this.NavWidth(); 
 
         // this if statement makes sure that only the nav on mobile closes and does not do the same on desktop.
         if (window.innerWidth < 768) {
@@ -32,33 +67,41 @@ class Navigation extends React.Component {
 
     }
 
-    // brings Nav Onto Screen
-    OpenNav() {
+    // Handles the Clicks
+    HandleNavAction(event) {
+
         const navElement = document.querySelector(".nav");
-        navElement.style.left = "0%";
-        this.setState({
-            navigationOpen: true
-        })
-    }
-
-
-    // Handles whether to open or close depending on if nav is open in state
-    HandleNav() {
-        return (!this.state.navigationOpen ? this.OpenNav() : this.CloseNav())
-    }
-
-    hideOnClickOutside(element) {
-        const outsideClickListener = event => {
-            if (!element.contains(event.target) && this.state.navigationOpen) { // or use: event.target.closest(selector) === null
-                element.style.left = `70%`
-                removeClickListener()
-            }
+        const navLink = document.querySelectorAll(".nav__nav-item-link");
+    
+        const outsideClickListener = (event) => {
+            if(!navElement.contains(event.target) || event.target === navLink ) {
+                this.CloseNav();
+                removeClickListener();
+              }
         }
+
         const removeClickListener = () => {
             document.removeEventListener('click', outsideClickListener)
+            document.removeEventListener("click", navClickListener)
         }
+
+
+        const navClickListener = (event) => {
+            
+            navLink.forEach(element => {
+                if (element.contains(event.target)) {
+                    // console.log("navclicked")
+                    this.CloseNav();
+                    removeClickListener();
+                }
+            });
+        }
+
         document.addEventListener('click', outsideClickListener)
+        document.addEventListener("click", navClickListener)
+
     }
+    
 
 
     render() {
@@ -75,9 +118,8 @@ class Navigation extends React.Component {
         // creates the JSX for the nav items by looping through the nav links declared.
         let navItems = links.map((link, index) => {
             return (
-                <li className="nav__nav-item" key={link.label} onClick={() => { this.CloseNav() }}>
-
-                    <NavLink to={link.link} exact={true} activeClassName="nav__currentNavPage">
+                <li className="nav__nav-item" key={link.label} onClick={() => { }}>
+                    <NavLink className="nav__nav-item-link" to={link.link} exact={true} activeClassName="nav__currentNavPage">
                         {link.label}
                     </NavLink>
                 </li>
@@ -88,7 +130,7 @@ class Navigation extends React.Component {
         return (
 
             <div>
-                <div className="nav__hamburger" onClick={() => { this.HandleNav() }}>
+                <div className="nav__hamburger" onClick={() => { this.ShowOrHideNav() }}>
                     <Hamburger />
                 </div>
 
