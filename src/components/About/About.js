@@ -1,59 +1,82 @@
 import React from "react";
 import * as contentful from "contentful";
-import TechStack from "../StackLogos/TechStack"
-import AboutIntro from "./AboutIntro"
+import TechStack from "../StackLogos/TechStack";
+import AboutIntro from "./AboutIntro";
+import CareerList from "./CareerList";
+
 
 class About extends React.Component {
 
     state = {
-        isLoading: true,
-        "aboutJson": []
+        isAboutLoading: true,
+        isCareerLoading: true,
+        "aboutJSON": [],
+        "careerJSON":[]
     }
+
+    // Contentful's Client 
     client = contentful.createClient({
         space: '6uk9nhmjdkre',
         accessToken: 'vRPrbrCwApcb4AXyT2yS3mXp2JNvSMdzTZ1k2jhmEAA'
     })
 
+
+    // ====  Queries  ====
+    CareerQuery = {
+        content_type: "careerHistory",
+        order: "fields.dateFinished"
+    }
+    AboutQuery = {
+        content_type: "about",
+    }
+    // ===================
+
+    
     componentDidMount() {
 
-        // client.getEntries().then(entries => {
-        //     entries.items.forEach(entry => {
-        //       if(entry.fields) {
-        //         console.log(entry.fields)
-        //       }
-        //     })
-        this.FetchAbout().then(this.setAboutContent)
+        // Functions to Fetch Data from Contentful
+        this.FetchByContentType(this.AboutQuery).then(this.SetAboutContent).catch(console.error)
+        this.FetchByContentType(this.CareerQuery).then(this.SetCareerHistory).catch(console.error)
+    }
 
+
+    // This is a Generic Fetch By ContentType Function for Contentful. It takes a query 
+    FetchByContentType = (query) => this.client.getEntries(query)
+    
+
+
+    // Sets the response once it has come back into state for About Intro
+    SetAboutContent = response => {
+        this.setState({
+            isAboutLoading: false,
+            "aboutJSON": response.items[0].fields
+        })
+    }
+    // Sets the response once it has come back into state for career history
+    SetCareerHistory = response => {
+        this.setState({
+            isCareerLoading: false,
+            // the array is brought in ascending order
+            "careerJSON": response.items.reverse()
+        })
     }
 
     componentDidUpdate() {
-        console.log("updated");
-
-
-        console.log(this.state.aboutJson)
+        console.log("updated component");
     }
-
-
-    FetchAbout = () => this.client.getEntries()
-
-    setAboutContent = response => {
-        // console.log(response)
-        this.setState({
-            isLoading: false,
-            "aboutJson": response.items[37]
-        })
-        // console.log(this.state.aboutJson)
-    }
-
-
-
 
     render() {
-        if (!this.state.isLoading) {
+        if (!this.state.isAboutLoading && !this.state.isCareerLoading ) {
             return (
 
-                <div>
-                    <AboutIntro aboutTitle={this.state.aboutJson.fields.aboutTitle} aboutCopy={this.state.aboutJson.fields.aboutCopy} />
+                <div className="about">
+                    <div className="about__container">
+                    <AboutIntro aboutTitle={this.state.aboutJSON.aboutTitle} aboutCopy={this.state.aboutJSON.aboutCopy} />
+                    <TechStack />
+                    <div className="about__careerHistory">
+                    <CareerList careerJSON={this.state.careerJSON} />
+                    </div>
+                    </div>
                 </div>
             )
         }

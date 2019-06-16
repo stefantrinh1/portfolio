@@ -2,12 +2,14 @@ import React from "react";
 
 const AboutIntro = (props) => {
     return (
-        <div>
-            <h2>{props.aboutTitle}</h2>
+       
+            <div className="about__intro-container">
+            <h2 className="about__intro-title">{props.aboutTitle}</h2>
 
             <p>{props.aboutCopy}</p>
             <p>About intro loaded</p>
-        </div>
+            </div>
+       
 
     )
 }
