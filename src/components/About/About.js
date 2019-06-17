@@ -11,7 +11,7 @@ class About extends React.Component {
         isAboutLoading: true,
         isCareerLoading: true,
         "aboutJSON": [],
-        "careerJSON":[]
+        "careerJSON": []
     }
 
     // Contentful's Client 
@@ -31,7 +31,7 @@ class About extends React.Component {
     }
     // ===================
 
-    
+
     componentDidMount() {
 
         // Functions to Fetch Data from Contentful
@@ -42,7 +42,7 @@ class About extends React.Component {
 
     // This is a Generic Fetch By ContentType Function for Contentful. It takes a query 
     FetchByContentType = (query) => this.client.getEntries(query)
-    
+
 
 
     // Sets the response once it has come back into state for About Intro
@@ -66,16 +66,19 @@ class About extends React.Component {
     }
 
     render() {
-        if (!this.state.isAboutLoading && !this.state.isCareerLoading ) {
+        if (!this.state.isAboutLoading && !this.state.isCareerLoading) {
             return (
 
                 <div className="about">
                     <div className="about__container">
-                    <AboutIntro aboutTitle={this.state.aboutJSON.aboutTitle} aboutCopy={this.state.aboutJSON.aboutCopy} />
-                    <TechStack />
-                    <div className="about__careerHistory">
-                    <CareerList careerJSON={this.state.careerJSON} />
-                    </div>
+                        <AboutIntro aboutTitle={this.state.aboutJSON.aboutTitle} aboutCopy={this.state.aboutJSON.aboutCopy} />
+                        <div className="about__techstack-container">
+                            <h3>Tech Stack</h3>
+                            <TechStack />
+                        </div>
+                        <div className="about__careerHistory">
+                            <CareerList careerJSON={this.state.careerJSON} />
+                        </div>
                     </div>
                 </div>
             )
