@@ -71,16 +71,26 @@ class About extends React.Component {
 
                 <div className="about">
                     <div className="about__container">
-                        <AboutIntro aboutTitle={this.state.aboutJSON.aboutTitle} aboutCopy={this.state.aboutJSON.aboutCopy} />
-                        <div className="about__techstack-container">
-                            <h3>Tech Stack</h3>
-                            <TechStack />
+
+                        <div className="about__block1">
+                            <div className="about__intro-container">
+                                <AboutIntro aboutTitle={this.state.aboutJSON.aboutTitle} aboutCopy={this.state.aboutJSON.aboutCopy} />
+                                <div className="about__techstack-container">
+                                    <h3>Tech Stack</h3>
+                                    <TechStack />
+                                </div>
+                            </div>
                         </div>
-                        <div className="about__careerHistory">
-                            <CareerList careerJSON={this.state.careerJSON} />
+
+                        <div className="about__block2">
+                            <div className="about__careerHistory">
+                                <CareerList careerJSON={this.state.careerJSON} />
+                            </div>
                         </div>
+
                     </div>
                 </div>
+
             )
         }
 

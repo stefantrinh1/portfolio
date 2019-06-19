@@ -30,7 +30,6 @@ const TechStack = () => {
             <MacOsLogo />
             <PhotoshopLogo />
             <SketchLogo />
-
         </div>
     )
 }

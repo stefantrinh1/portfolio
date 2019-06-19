@@ -108,11 +108,11 @@ class Navigation extends React.Component {
         // List of the Nav items and their paths
         // this will be loaded dynamically in the future
         let links = [
-            { label: 'Home', link: "/" },
-            { label: 'About', link: "/about" },
-            { label: 'Portfolio', link: "/portfolio" },
-            { label: 'Blog', link: "/blog" },
-            { label: 'Contact', link: "/contact" }
+            { label: 'HOME', link: "/" },
+            { label: 'ABOUT', link: "/about" },
+            { label: 'PORTFOLIO', link: "/portfolio" },
+            { label: 'BLOG', link: "/blog" },
+            { label: 'CONTACT', link: "/contact" }
         ];
 
         // creates the JSX for the nav items by looping through the nav links declared.

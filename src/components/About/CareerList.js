@@ -19,7 +19,7 @@ const CareerList = (props) => {
     return (
         <div>
             <h2 className="about__careerHistoryTitle">Career History</h2>
-
+    
             {CareerList}
 
         </div>
