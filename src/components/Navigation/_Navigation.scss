@@ -11,17 +11,16 @@
   background: $light-black;
   position: absolute;
   z-index: 150;
-  left: -80%;
+  // left: -80%;
   transition: all ease-in-out 0.5s;
 }
 
 .nav__opaque-block{
   background: black;
   opacity: 0.7;
-  width: 100%;
-  display: block;
+  width: 100vw;
+  display: none;
   height: 100vh;
-  position: absolute;
   z-index: 104;
 }
 

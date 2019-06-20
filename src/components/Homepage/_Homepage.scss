@@ -3,8 +3,7 @@
 }
 
 .homepage__background-img {
-  // width: 100vw;
-  // width: 100%;
+  position: absolute;
   height: 100%;
   -webkit-transition: all ease-in-out 1s;
   transition: all ease-in-out 1s;
@@ -12,23 +11,23 @@
 }
 
 .homepage__header {
-  position: absolute;
+  // position: absolute;
   text-align: left;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  // top: 50%;
+  // -webkit-transform: translateY(-50%);
+  //         transform: translateY(-50%);
   z-index: 100;
   font-size: 1rem;
   color: $off-white;
   width: 100%;
   background: $dark-black;
   opacity: 0.9;
-  padding: 1em 0;
+  // padding: 1em 0;
 }
 
 .homepage__headercontainer {
     position: relative;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
 }
 
