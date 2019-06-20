@@ -144,6 +144,13 @@ class Navigation extends React.Component {
                         {navItems}
                     </ul>
                 </div>
+
+                {this.state.navigationOpen ? 
+                <div className="nav__opaque-block">
+
+                </div>: null
+
+}
             </div>
         )
     }
