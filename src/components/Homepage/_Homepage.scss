@@ -1,5 +1,5 @@
 .homepage {
-  height:100vh; //keep the background at 100% height
+  height: 100vh; //keep the background at 100% height
 }
 
 .homepage__background-img {
@@ -11,24 +11,23 @@
 }
 
 .homepage__header {
-  // position: absolute;
   text-align: left;
-  // top: 50%;
-  // -webkit-transform: translateY(-50%);
-  //         transform: translateY(-50%);
   z-index: 100;
   font-size: 1rem;
   color: $off-white;
   width: 100%;
   background: $dark-black;
   opacity: 0.9;
-  // padding: 1em 0;
+  position: relative;
+  top: 50%;
+  transform: translatey(-50%);
+  padding: 1em 0;
 }
 
 .homepage__headercontainer {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
+  position: relative;
+  width: 72%;
+  margin: 0 auto;
 }
 
 .homepage__headertitle {
@@ -62,12 +61,12 @@
 }
 
 @media only screen and (min-width: 767px) {
-  .homepage__header{
-    width: 50%;
+  .homepage__header {
+    width: 55%;
     right: 5%;
+    position: absolute;
     background: none;
   }
-  
 }
 
 @media only screen and (min-width: 991px) {

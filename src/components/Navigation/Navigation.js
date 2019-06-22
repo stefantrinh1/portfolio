@@ -114,7 +114,7 @@ class Navigation extends React.Component {
 
         return (
 
-            <div>
+            <div className="nav__container">
                 <div className="nav__hamburger" onClick={() => { this.ShowOrHideNav() }}>
                     <Hamburger />
                 </div>

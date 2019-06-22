@@ -3,6 +3,7 @@ import * as contentful from "contentful";
 import TechStack from "../StackLogos/TechStack";
 import AboutIntro from "./AboutIntro";
 import CareerList from "./CareerList";
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 
 class About extends React.Component {
@@ -93,8 +94,8 @@ class About extends React.Component {
 
             )
         }
-
-        else { return ("loading....") }
+    // if page is loading return loading page
+        else { return (<LoadingPage />) }
     }
 
 }
