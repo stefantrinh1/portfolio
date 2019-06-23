@@ -21,7 +21,6 @@ class About extends React.Component {
         accessToken: 'vRPrbrCwApcb4AXyT2yS3mXp2JNvSMdzTZ1k2jhmEAA'
     })
 
-
     // ====  Queries  ====
     CareerQuery = {
         content_type: "careerHistory",
@@ -34,7 +33,6 @@ class About extends React.Component {
 
 
     componentDidMount() {
-
         // Functions to Fetch Data from Contentful
         this.FetchByContentType(this.AboutQuery).then(this.SetAboutContent).catch(console.error)
         this.FetchByContentType(this.CareerQuery).then(this.SetCareerHistory).catch(console.error)
@@ -43,8 +41,6 @@ class About extends React.Component {
 
     // This is a Generic Fetch By ContentType Function for Contentful. It takes a query 
     FetchByContentType = (query) => this.client.getEntries(query)
-
-
 
     // Sets the response once it has come back into state for About Intro
     SetAboutContent = response => {
@@ -60,6 +56,7 @@ class About extends React.Component {
             // the array is brought in ascending order
             "careerJSON": response.items.reverse()
         })
+        console.log(response)
     }
 
     componentDidUpdate() {

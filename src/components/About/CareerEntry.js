@@ -1,32 +1,58 @@
 import React from "react";
-
+import DateFormat from "dateformat";
 
 class CareerEntry extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            "descriptionShowing" : false,
+            "descriptionShowing": false,
+            
         }
     }
 
-
-    ShowHideDescription = () => this.state.descriptionShowing ? this.setState({ "descriptionShowing": false}) : this.setState({ "descriptionShowing": true}) 
+    ShowHideDescription = () => this.state.descriptionShowing ? this.setState({ "descriptionShowing": false }) : this.setState({ "descriptionShowing": true })
 
     render() {
-    return (
-        <div className="about__careerEntry">
-            <img className="about__company-logo"src={this.props.entry.fields.logo.fields.file.url} alt="" />
-            <h4 className="about__careerCompany">{this.props.entry.fields.company}</h4>
-            <div className="box-separator"></div>
-            <h6 className="about__jobTitle">{this.props.entry.fields.jobTitle}</h6>
-            <h6 className="about__careerLocation">{this.props.entry.fields.location}</h6>
-            <h6 className="about__careerDates">{this.props.entry.fields.dateStarted} - {this.props.entry.fields.dateFinished}</h6>
-            <button onClick={this.ShowHideDescription} className="about__careerEntry-btn main-btn">{this.state.descriptionShowing ? 'Read Less' : 'Read More' }</button>
-            {this.state.descriptionShowing ? <p className="about__careerDescription">{this.props.entry.fields.description}</p> : null }
-            <hr />
-        </div>
+        var now = new Date();
+        return (
 
-    )
-}
+            <div className="about__careerEntry">
+
+                <div className="about__careerEntry-node node-top"></div>
+
+                <img className="about__company-logo" src={this.props.entry.fields.logo.fields.file.url} alt="" />
+
+                <h4 className="about__careerCompany">
+                    {this.props.entry.fields.company}
+                </h4>
+
+                <div className="box-separator"></div>
+
+                <h6 className="about__jobTitle">
+                    {this.props.entry.fields.jobTitle}
+                </h6>
+
+                <h6 className="about__careerLocation">
+                    {this.props.entry.fields.location}
+                </h6>
+
+                <h6 className="about__careerDates">
+                    {DateFormat(this.props.entry.fields.dateStarted,"mmm yyyy")} - {this.props.entry.fields.presentlyEmployed ? "Present" : DateFormat(this.props.entry.fields.dateFinished, "mmm yyyy")}
+                </h6>
+
+                <button onClick={this.ShowHideDescription} className="about__careerEntry-btn main-btn">
+                    {this.state.descriptionShowing ? 'Read Less' : 'Read More'}
+                </button>
+
+                {this.state.descriptionShowing ?
+                    <p className="about__careerDescription">{this.props.entry.fields.description}</p>
+                    :
+                    null}
+
+                <hr />
+            </div>
+
+        )
+    }
 }
 export default CareerEntry;

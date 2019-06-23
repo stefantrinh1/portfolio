@@ -1,11 +1,19 @@
 import React from "react";
+// import ReactMarkdown from "react-markdown";
+const ReactMarkdown = require('react-markdown/with-html');
 
 const AboutIntro = (props) => {
     return (
         <div>
-            <h2 className="about__intro-title">{props.aboutTitle}</h2>
+
+            <h2 className="about__intro-title">
+                {props.aboutTitle}
+            </h2>
        
-            <p className="about__intro-copy">{props.aboutCopy}</p>
+            <ReactMarkdown className="about__intro-copy" escapeHtml={false}>
+                {props.aboutCopy}
+            </ReactMarkdown>
+
         </div>
     )
 }
