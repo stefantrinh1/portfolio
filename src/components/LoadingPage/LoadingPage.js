@@ -3,7 +3,11 @@ import React from "react";
 
 const LoadingPage = () => {
     return(
-        <div className="LoadingPage">loading....</div>
+        <div className="LoadingPage">
+            <div className="LoadingPage__container">
+            loading....
+            </div>
+        </div>
     )
 }
 
