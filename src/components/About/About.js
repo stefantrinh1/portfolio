@@ -59,6 +59,8 @@ class About extends React.Component {
         console.log(response)
     }
 
+
+    
     componentDidUpdate() {
         console.log("updated component");
     }
