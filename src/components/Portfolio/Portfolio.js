@@ -1,6 +1,7 @@
 import React from "react";
 import * as contentful from "contentful";
 import LoadingPage from "../LoadingPage/LoadingPage"
+import Project from "./Project"
 
 class Portfolio extends React.Component {
 
@@ -30,7 +31,7 @@ class Portfolio extends React.Component {
                 // the array is brought in ascending order
                 "portfolioJSON": response.items
             })
-            console.log(response)
+            // console.log(response)
         }
 
         componentDidMount() {
@@ -44,47 +45,29 @@ class Portfolio extends React.Component {
 
 
     render() {
-        
+        // this.state.portfolioJSON[0].fields
+
         
     
         if(!this.state.isPortfolioLoading) {
+            const projectList = this.state.portfolioJSON.map(element => {
+                console.log(element)
+                return(
+                <Project portfolioJSON={element}/>
+                )
+            });
             return(
             <div className="portfolio">
-                <div className="portfolio__block1">
-                    <header>
-                        <h2>
-                            {this.state.portfolioJSON[0].fields.projectName}
-                        </h2>
-                        <h3>
-                            {this.state.portfolioJSON[0].fields.projectUrl}
-                        </h3>
-                    </header>
 
-                    <div className="portfolio__projectImg">
-                        <img src={this.state.portfolioJSON[0].fields.projectImage.fields.file.url} alt="project image" />
-                    </div>
 
-                    <div>
-                        <h5>
-                            Tech Stack
-                        </h5>
-                        <div className="portfolio__stacklogo">
-                            <img src="" alt />
-                        </div>
-                    </div>
-                </div>
+                {projectList}
 
-                <div className="portfolio__block2">
-                        <div className="portfolio__projectDescription">
-                            
-                        </div>
-                </div>
 
                 <div className="portfolio__block3">
                         <div className="portfolio__banners">
 
                             <div className="portfolio__banner">
-                                <img src="" alt="" />
+                                <img src="" alt="Banner" />
                             </div>
                             
                         </div>
