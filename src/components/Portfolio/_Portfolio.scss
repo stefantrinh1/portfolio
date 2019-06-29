@@ -1,129 +1,178 @@
+// =================================
+// ===== Mobile Styling ============
+// =================================
+
+// =============================
+// ===== Overall Container =====
+// =============================
+
 .portfolio {
-    overflow: hidden;
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0vh;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0vh;
 }
 
-.portfolio ~ .sociallogos{
-display: none;
+// Hides Logos on Portfolio Page
+.portfolio ~ .sociallogos {
+  display: none;
 }
 
-.portfolio_block-container{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1em;
-    box-sizing: border-box;
-    height: 80%;
-    overflow: auto;
-    justify-content: space-evenly;
+// this is the block that contains the project that is displayed
+// scrolling is activated by overflow auto;
+.portfolio_block-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1em;
+  box-sizing: border-box;
+  height: 90vh;
+  overflow: auto;
 }
 
-.portfolio__block1 header h2 {
-    font-size: 2.0em;
-    color: $brand-color;
-    font-weight: 200;
-    margin: 0.25em 0;
+// ==========================
+// ===== Project Header =====
+// ==========================
+
+.portfolio_block-container header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+//   align items vertically centers buttons on mobile.
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
-.portfolio__block1 header h3 {
-    font-size: 1.5em;
-    font-weight: 200;
-    margin: 0.25em 0;
+.portfolio_block-container header h2 {
+  font-size: 2em;
+  color: $brand-color;
+  font-weight: 200;
+  margin: 0.25em 0;
 }
 
-.portfolio__block1,
-.portfolio__block2{
-    width: 100%;
-}
-
-.portfolio__block3 {
-    height: 20%;
-    overflow: hidden;
-}
-
-.portfolio__projectImg img {
-    width: 100%;
-}
-
-
-.portfolio__projectDescription {
-    overflow: auto;
-    height: 100%;
-}
-
-.portfolio__banners {
-    height: 20vh;
-    display: flex;
-    overflow: auto;
-}
-
-.portfolio__banners {
-}
-.portfolio__banners img{
-    height: 100%;
-}
-
-.portfolio__stacklogo-container {
-    overflow: hidden;
-}
-
-.portfolio__stacklogo-scroll {
-    overflow: auto;
-    display: inline-flex;
-}
-
-.portfolio__stacklogo-container img {
-    height: 40px;
+.portfolio_block-container header h3 {
+  font-size: 1.5em;
+  font-weight: 200;
+  margin: 0.25em 0;
 }
 
 .portfolio__project-buttons {
-    display: flex;
-    justify-content: space-evenly;
+  width: 100%;
+  margin: 1em 0;
+  text-align: center;
 }
 
 .portfolio__project-buttons .main-btn {
-    font-size: 1.1em;
-    margin: 0.5em 0;
-    width: 40%;
+  font-size: 1.1em;
+  margin: 0 0.5em;
+  width: 40%;
 }
 
+// =============================
+// === Project Content Block ===
+// =============================
+
+.portfolio__projectImg img {
+  width: 100%;
+}
+
+// Stack logos hides the overflow
+.portfolio__stacklogo-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 0.75em 0;
+}
+
+.portfolio__stacklogo-scroll {
+  overflow: auto;
+  display: flex;
+}
+
+.portfolio__stacklogo-container img {
+  height: 35px;
+}
+
+.portfolio__projectCopy {
+  width: 100%;
+}
+
+.portfolio__projectCopy h1,h2,h3,h4,h5,h6,p,ul {
+    margin: 0 0 1.25em;
+  }
+
+// if any lists are included it keys the bullets 
+// on the inside rather than out.
+.portfolio__projectCopy ul {
+  list-style: inside;
+}
+// =============================
+// ===== Portfolio Banners =====
+// =============================
+
+.portfolio__banners {
+  height: 10vh;
+  display: flex;
+  overflow: auto;
+  border-top: 3px $brand-color solid;
+  padding: 0.25em 0;
+  box-sizing: border-box;
+}
+
+.portfolio__banner {
+    height: 100%;
+}
+
+.portfolio__banners img {
+  height: 100%;
+}
+
+// ===== Desktop Styling =====
+
 @media only screen and (min-width: 767px) {
+  .portfolio {
+    top: 7.5vh;
+    height: 92.5vh;
+  }
 
-    .portfolio{
-        top: 10vh;
-        height: 90vh;
-    }
-    .portfolio__block1,
-    .portfolio__block2 {
-        height: 100%;
-        overflow: auto;
-    }
+  // === Project Header ===
 
-    .portfolio__block1 {
-        width: 55%;
-    }
+  .portfolio_block-container {
+    height: 80vh;
+  }
+  .portfolio_block-container header {
+    text-align: unset;
+  }
 
-    .portfolio__block2 {
-        width: 35%;
-        overflow: hidden;
-    }
+  .portfolio__project-buttons {
+    width: 45%;
+    margin: 0 0 0 auto;
+    text-align: right;
+  }
 
-    .portfolio_block-container{
-        overflow: unset;
-    }
+  .portfolio__project-buttons .main-btn {
+    font-size: 1.1em;
+  }
 
-    .portfolio__projectDescription{
-        height: 90%;
-    }
+  // === Project Content Block ===
 
-    .portfolio__project-buttons .main-btn {
-        font-size: 1.1em;
-        margin: 0 0 0.5em;
-        height: 10%;
-    }
+  .portfolio__projects {
+    height: 12.5vh;
+  }
 
-    
+  .portfolio__projectImg {
+    width: 100%;
+  }
 
+  .portfolio_block-container {
+  }
+
+  .portfolio__projectCopy {
+  }
+
+  //   Portfolio Banners
+
+  .portfolio__banners {
+    height: 12.5vh;
+  }
 }

@@ -88,7 +88,7 @@ class Portfolio extends React.Component {
                     {/* Project Component taking in project to display prop */}
                     <Project portfolioJSON={this.state.displayedProject} />
 
-                    <div className="portfolio__block3">
+                    <div className="portfolio__projects">
                         <div className="portfolio__banners">
 
                             {/* gets list of Clickable Project Banners */}

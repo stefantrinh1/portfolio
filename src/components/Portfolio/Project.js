@@ -23,43 +23,56 @@ class Project extends React.Component {
         return (
 
             <div className="portfolio_block-container">
-                <div className="portfolio__block1">
-                    <header>
+
+                <header>
+                    <div className="portfolio__Headercopy">
                         <h2>
                             {this.props.portfolioJSON.fields.projectName}
                         </h2>
                         <h3>
-                            {this.props.portfolioJSON.fields.projectUrl}
+                            <a href={this.props.portfolioJSON.fields.projectUrl}>
+                                {this.props.portfolioJSON.fields.projectUrl}
+                            </a>
                         </h3>
-                    </header>
-
-                    <div className="portfolio__projectImg">
-                        <img className="portfolio__project-desktop" src={this.props.portfolioJSON.fields.projectImage.fields.file.url} alt="project image" />
+                    </div>
+                    <div className="portfolio__project-buttons">
+                        <a href={this.props.portfolioJSON.fields.projectUrl}>
+                            <button className="main-btn">Visit Project</button>
+                        </a>
+                        <a href={this.props.portfolioJSON.fields.githubRepoUrl}>
+                        <button className="main-btn">Github Repo</button>
+                        </a>
                     </div>
 
+                </header>
+
+                <div className="portfolio__projectImg">
+                    <img className=""
+                        srcSet={`
+                                ${this.props.portfolioJSON.fields.projectImageSmall.fields.file.url} 767w,
+                                ${this.props.portfolioJSON.fields.projectImageLarge.fields.file.url} 2560w,
+                                `}
+                        alt="project image" />
                 </div>
 
-                <div className="portfolio__block2">
-                    
-                    <div className="portfolio__project-buttons">
-                        <button className="main-btn">Visit Project</button>
-                        <button className="main-btn">Github Repo</button>
-                    </div>
+                <div className="portfolio__projectCopy">
 
-                    <div className="portfolio__projectDescription">
-                        <ReactMarkdown className="" escapeHtml={false}>
-                            {this.props.portfolioJSON.fields.projectDescription}
-                        </ReactMarkdown>
-                        <h5>
-                            Tech Stack
-                        </h5>
-                        <div className="portfolio__stacklogo-container">
-                            {/* runs the method that grabs all the logos from contentful and returns a list of JSX */}
-                            <div className="portfolio__stacklogo-scroll">
+                    <h4>
+                        Tech Stack
+                    </h4>
+
+                    {/* runs the method that grabs all the logos from contentful and returns a list of JSX */}
+                    <div className="portfolio__stacklogo-container">
+
+                        <div className="portfolio__stacklogo-scroll">
                             {this.stackLogoImgs()}
-                            </div>
                         </div>
                     </div>
+
+                    <ReactMarkdown className="" escapeHtml={false}>
+                        {this.props.portfolioJSON.fields.projectDescription}
+                    </ReactMarkdown>
+
                 </div>
 
             </div>
