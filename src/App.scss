@@ -33,6 +33,8 @@
   position: relative; 
   width: 100%;
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  //   iphone viewpoints uses whole phone rather than window
+// the calc height is a fix. to take the window size not screen size
   height: calc(var(--vh, 1vh) * 100);
   min-height: 500px;
   color: white;

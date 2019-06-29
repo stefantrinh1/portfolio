@@ -24,12 +24,21 @@
 // this is the block that contains the project that is displayed
 // scrolling is activated by overflow auto;
 .portfolio_block-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 1em;
-  box-sizing: border-box;
+  height:90vh; 
   height: calc(var(--vh, 1vh) * 90);
+//   iphone viewpoints uses whole phone rather than window
+// the calc height is a fix. to take the window size not screen size
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
 }
 
 // ==========================
@@ -38,12 +47,19 @@
 
 .portfolio_block-container header {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 //   align items vertically centers buttons on mobile.
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .portfolio_block-container header h2 {
@@ -90,7 +106,10 @@
 
 .portfolio__stacklogo-scroll {
   overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-overflow-scrolling: touch;
 }
 
 .portfolio__stacklogo-container img {
@@ -127,11 +146,15 @@
 
 .portfolio__banners {
   height: calc(var(--vh, 1vh) * 10);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   border-top: 2px $brand-color solid;
   padding: 0.1em 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .portfolio__banner {
