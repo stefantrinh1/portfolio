@@ -9,8 +9,10 @@
 .portfolio {
   overflow: hidden;
   width: 100vw;
+  max-width: 1600px;
+  margin: 0 auto;
   height: 100vh;
-  position: absolute;
+  position: relative;
   top: 0vh;
 }
 
@@ -46,15 +48,16 @@
 
 .portfolio_block-container header h2 {
   font-size: 2em;
-  color: $brand-color;
+  color: $lightbrand-color;
   font-weight: 200;
   margin: 0.25em 0;
 }
 
 .portfolio_block-container header h3 {
-  font-size: 1.5em;
+  font-size: 1.1em;
   font-weight: 200;
   margin: 0.25em 0;
+  color: $off-white;
 }
 
 .portfolio__project-buttons {
@@ -75,13 +78,14 @@
 
 .portfolio__projectImg img {
   width: 100%;
+  margin: 1em 0;
 }
 
 // Stack logos hides the overflow
 .portfolio__stacklogo-container {
   overflow: hidden;
   width: 100%;
-  margin: 0.75em 0;
+  margin: 0 0 0.5em;
 }
 
 .portfolio__stacklogo-scroll {
@@ -91,15 +95,26 @@
 
 .portfolio__stacklogo-container img {
   height: 35px;
+  padding: 0 0.5em 1em;
 }
 
 .portfolio__projectCopy {
   width: 100%;
 }
 
-.portfolio__projectCopy h1,h2,h3,h4,h5,h6,p,ul {
+.portfolio__projectCopy h1,
+.portfolio__projectCopy h2, 
+.portfolio__projectCopy h3,
+.portfolio__projectCopy h4,
+.portfolio__projectCopy h5,
+.portfolio__projectCopy h6 {
+    color: $lightbrand-color;
     margin: 0 0 1.25em;
   }
+
+.portfolio__projectCopy p, ul {
+    margin: 0 0 1.25em;
+}
 
 // if any lists are included it keys the bullets 
 // on the inside rather than out.

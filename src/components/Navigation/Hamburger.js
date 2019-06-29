@@ -8,7 +8,7 @@ const Hamburger = () => {
 
 
 
-<svg width="3em" height="3em" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+<svg width="2em" height="2em" viewBox="0 0 82 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <defs>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
             <stop stopColor="#668B87" offset="0%"></stop>

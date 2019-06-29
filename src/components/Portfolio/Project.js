@@ -30,9 +30,7 @@ class Project extends React.Component {
                             {this.props.portfolioJSON.fields.projectName}
                         </h2>
                         <h3>
-                            <a href={this.props.portfolioJSON.fields.projectUrl}>
-                                {this.props.portfolioJSON.fields.projectUrl}
-                            </a>
+                            {this.props.portfolioJSON.fields.projectSubtitle ? this.props.portfolioJSON.fields.projectSubtitle : null}
                         </h3>
                     </div>
                     <div className="portfolio__project-buttons">
@@ -40,7 +38,7 @@ class Project extends React.Component {
                             <button className="main-btn">Visit Project</button>
                         </a>
                         <a href={this.props.portfolioJSON.fields.githubRepoUrl}>
-                        <button className="main-btn">Github Repo</button>
+                            <button className="main-btn">Github Repo</button>
                         </a>
                     </div>
 
@@ -57,9 +55,9 @@ class Project extends React.Component {
 
                 <div className="portfolio__projectCopy">
 
-                    <h4>
+                    <h3>
                         Tech Stack
-                    </h4>
+                    </h3>
 
                     {/* runs the method that grabs all the logos from contentful and returns a list of JSX */}
                     <div className="portfolio__stacklogo-container">
