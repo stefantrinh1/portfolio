@@ -28,7 +28,7 @@
   flex-wrap: wrap;
   padding: 1em;
   box-sizing: border-box;
-  height: 90vh;
+  height: calc(var(--vh, 1vh) * 90);
   overflow: auto;
 }
 
@@ -126,11 +126,11 @@
 // =============================
 
 .portfolio__banners {
-  height: 10vh;
+  height: calc(var(--vh, 1vh) * 10);
   display: flex;
   overflow: auto;
-  border-top: 3px $brand-color solid;
-  padding: 0.25em 0;
+  border-top: 2px $brand-color solid;
+  padding: 0.1em 0;
   box-sizing: border-box;
 }
 
