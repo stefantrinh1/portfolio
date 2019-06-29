@@ -84,7 +84,7 @@ class Portfolio extends React.Component {
 
             return (
                 <div className="portfolio">
-
+                    
                     {/* Project Component taking in project to display prop */}
                     <Project portfolioJSON={this.state.displayedProject} />
 

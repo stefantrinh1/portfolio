@@ -34,25 +34,31 @@ class Project extends React.Component {
                     </header>
 
                     <div className="portfolio__projectImg">
-                        <img src={this.props.portfolioJSON.fields.projectImage.fields.file.url} alt="project image" />
+                        <img className="portfolio__project-desktop" src={this.props.portfolioJSON.fields.projectImage.fields.file.url} alt="project image" />
                     </div>
 
-                    <div>
-                        <h5>
-                            Tech Stack
-                        </h5>
-                        <div className="portfolio__stacklogo">
-                            {/* runs the method that grabs all the logos from contentful and returns a list of JSX */}
-                            {this.stackLogoImgs()}
-                        </div>
-                    </div>
                 </div>
 
                 <div className="portfolio__block2">
+                    
+                    <div className="portfolio__project-buttons">
+                        <button className="main-btn">Visit Project</button>
+                        <button className="main-btn">Github Repo</button>
+                    </div>
+
                     <div className="portfolio__projectDescription">
                         <ReactMarkdown className="" escapeHtml={false}>
                             {this.props.portfolioJSON.fields.projectDescription}
                         </ReactMarkdown>
+                        <h5>
+                            Tech Stack
+                        </h5>
+                        <div className="portfolio__stacklogo-container">
+                            {/* runs the method that grabs all the logos from contentful and returns a list of JSX */}
+                            <div className="portfolio__stacklogo-scroll">
+                            {this.stackLogoImgs()}
+                            </div>
+                        </div>
                     </div>
                 </div>
 

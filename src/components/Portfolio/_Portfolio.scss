@@ -1,26 +1,52 @@
 .portfolio {
     overflow: hidden;
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    top: 0vh;
+}
+
+.portfolio ~ .sociallogos{
+display: none;
 }
 
 .portfolio_block-container{
     display: flex;
     flex-wrap: wrap;
-    height: 100%;
+    padding: 1em;
+    box-sizing: border-box;
+    height: 80%;
+    overflow: auto;
+    justify-content: space-evenly;
+}
+
+.portfolio__block1 header h2 {
+    font-size: 2.0em;
+    color: $brand-color;
+    font-weight: 200;
+    margin: 0.25em 0;
+}
+
+.portfolio__block1 header h3 {
+    font-size: 1.5em;
+    font-weight: 200;
+    margin: 0.25em 0;
 }
 
 .portfolio__block1,
-.portfolio__block2 {
-    height: 100%;
+.portfolio__block2{
+    width: 100%;
+}
+
+.portfolio__block3 {
+    height: 20%;
+    overflow: hidden;
 }
 
 .portfolio__projectImg img {
     width: 100%;
 }
+
 
 .portfolio__projectDescription {
     overflow: auto;
@@ -28,16 +54,76 @@
 }
 
 .portfolio__banners {
+    height: 20vh;
     display: flex;
+    overflow: auto;
 }
 
+.portfolio__banners {
+}
+.portfolio__banners img{
+    height: 100%;
+}
+
+.portfolio__stacklogo-container {
+    overflow: hidden;
+}
+
+.portfolio__stacklogo-scroll {
+    overflow: auto;
+    display: inline-flex;
+}
+
+.portfolio__stacklogo-container img {
+    height: 40px;
+}
+
+.portfolio__project-buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.portfolio__project-buttons .main-btn {
+    font-size: 1.1em;
+    margin: 0.5em 0;
+    width: 40%;
+}
 
 @media only screen and (min-width: 767px) {
 
+    .portfolio{
+        top: 10vh;
+        height: 90vh;
+    }
     .portfolio__block1,
     .portfolio__block2 {
-        width: 50%;
+        height: 100%;
+        overflow: auto;
     }
+
+    .portfolio__block1 {
+        width: 55%;
+    }
+
+    .portfolio__block2 {
+        width: 35%;
+        overflow: hidden;
+    }
+
+    .portfolio_block-container{
+        overflow: unset;
+    }
+
+    .portfolio__projectDescription{
+        height: 90%;
+    }
+
+    .portfolio__project-buttons .main-btn {
+        font-size: 1.1em;
+        margin: 0 0 0.5em;
+        height: 10%;
+    }
+
     
 
 }
