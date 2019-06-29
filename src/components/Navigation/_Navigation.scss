@@ -8,6 +8,7 @@
 .nav {
   width: 60%;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   background: $light-black;
   position: absolute;
   z-index: 150;
@@ -22,6 +23,7 @@
   width: 100vw;
   display: none;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   z-index: 104;
 }
 

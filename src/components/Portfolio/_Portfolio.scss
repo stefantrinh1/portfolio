@@ -12,6 +12,7 @@
   max-width: 1600px;
   margin: 0 auto;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
   top: 0vh;
 }
@@ -145,6 +146,7 @@
 // =============================
 
 .portfolio__banners {
+  height: 10vh;
   height: calc(var(--vh, 1vh) * 10);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -170,7 +172,9 @@
 @media only screen and (min-width: 767px) {
   .portfolio {
     top: 7.5vh;
+    top: calc(var(--vh, 1vh) * 7.5);
     height: 92.5vh;
+    height: calc(var(--vh, 1vh) * 92.5);
   }
 
   // === Project Header ===
@@ -196,21 +200,18 @@
 
   .portfolio__projects {
     height: 12.5vh;
+    height: calc(var(--vh, 1vh) * 12.5);
   }
 
   .portfolio__projectImg {
     width: 100%;
   }
 
-  .portfolio_block-container {
-  }
-
-  .portfolio__projectCopy {
-  }
 
   //   Portfolio Banners
 
   .portfolio__banners {
     height: 12.5vh;
+    height: calc(var(--vh, 1vh) * 12.5);
   }
 }

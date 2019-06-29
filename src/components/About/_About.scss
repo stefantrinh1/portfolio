@@ -2,8 +2,10 @@
   overflow: auto;
   width: 100%;
   height: 90vh;
+  height: calc(var(--vh, 1vh) * 90);
   position: relative;
   top: 0vh;
+  top: calc(var(--vh, 1vh) * 0);
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -65,9 +67,8 @@
 // ==========  Career History   ===============
 // ============================================
 
-
 .about__careerHistory {
-    padding: 0 0.75em;
+  padding: 0 0.75em;
 }
 
 .about__careerHistoryTitle {
@@ -84,16 +85,16 @@
 }
 
 .about__careerEntry-node {
-    height: 20px;
-    width: 20px;
-    background-color: $brand-color;
-    border-radius: 30px;
-    position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: $brand-color;
+  border-radius: 30px;
+  position: absolute;
 }
 
 .node-top {
-    top: -10px;
-    left: -10px;
+  top: -10px;
+  left: -10px;
 }
 
 .about__careerCompany {
@@ -135,16 +136,20 @@
 // ============================================
 
 @media only screen and (min-width: 767px) {
-
   .about {
     overflow: unset;
     top: 12.5vh;
-    height: 70vh
+    height: 70vh;
   }
 
   .about__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
   }
 
@@ -167,5 +172,4 @@
     overflow: auto;
     height: 75vh;
   }
-
 }
