@@ -14,7 +14,10 @@ import SketchLogo from "./SketchLogo";
 import PythonLogo from "./PythonLogo";
 
 
-const TechStack = () => {
+const TechStack = (props) => {
+
+
+    console.log(props)
     return (
         <div className="stacklogos">
             <HtmlLogo />

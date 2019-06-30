@@ -29,17 +29,16 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   padding: 1em;
-  height:90vh; 
+  height: 90vh;
   height: calc(var(--vh, 1vh) * 90);
-//   iphone viewpoints uses whole phone rather than window
-// the calc height is a fix. to take the window size not screen size
+  //   iphone viewpoints uses whole phone rather than window
+  // the calc height is a fix. to take the window size not screen size
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-
 }
 
 // ==========================
@@ -52,15 +51,15 @@
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-//   align items vertically centers buttons on mobile.
+  flex-wrap: wrap;
+  //   align items vertically centers buttons on mobile.
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .portfolio_block-container header h2 {
@@ -113,33 +112,46 @@
   -webkit-overflow-scrolling: touch;
 }
 
-.portfolio__stacklogo-container img {
+.portfolio__stacklogo-container .portfolio__stacklogo-scroll img {
   height: 35px;
+  width: unset;
   padding: 0 0.5em 1em;
 }
+.portfolio__stacklogo-container img:hover {
+  transform: translate(0, 5%);
+}
 
-.portfolio__projectCopy {
+// This styles the markdown copy that comes through from user.
+.portfolio__projectCopy,
+.portfolio__projectCopy img {
   width: 100%;
 }
 
 .portfolio__projectCopy h1,
-.portfolio__projectCopy h2, 
+.portfolio__projectCopy h2,
 .portfolio__projectCopy h3,
 .portfolio__projectCopy h4,
 .portfolio__projectCopy h5,
 .portfolio__projectCopy h6 {
-    color: $lightbrand-color;
-    margin: 0 0 1.25em;
-  }
-
-.portfolio__projectCopy p, ul {
-    margin: 0 0 1.25em;
+  color: $lightbrand-color;
+  margin: 0 0 1.25em;
 }
 
-// if any lists are included it keys the bullets 
+.portfolio__projectCopy a {
+  font-weight: bold;
+  color: $brand-color;
+}
+
+.portfolio__projectCopy p,
+ul {
+  margin: 0 0 1.25em;
+}
+
+// if any lists are included it keys the bullets
 // on the inside rather than out.
-.portfolio__projectCopy ul {
-    margin-left: 2em;
+.portfolio__projectCopy ul,
+.portfolio__projectCopy ol {
+  margin-left: 2em;
 }
 // =============================
 // ===== Portfolio Banners =====
@@ -157,15 +169,26 @@
   border-top: 2px $brand-color solid;
   padding: 0.1em 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .portfolio__banner {
-    height: 100%;
+  height: 100%;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.portfolio__banner:hover {
+  transform: translate(0, -2.5%);
+  transition: all ease-in-out 0.2s;
+  opacity: 1;
+  filter: brightness(120%);
 }
 
 .portfolio__banners img {
   height: 100%;
+  border-radius: 2px;
+  margin: 0 0.1em;
 }
 
 // ===== Desktop Styling =====
@@ -185,6 +208,9 @@
   }
   .portfolio_block-container header {
     text-align: unset;
+  }
+  .portfolio__Headercopy {
+    width: 55%;
   }
 
   .portfolio__project-buttons {
@@ -207,7 +233,6 @@
   .portfolio__projectImg {
     width: 100%;
   }
-
 
   //   Portfolio Banners
 

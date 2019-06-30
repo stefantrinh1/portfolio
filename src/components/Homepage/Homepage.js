@@ -3,31 +3,8 @@ import BackgroundDesktop from "../../media-files/hpbg-desktop.jpg";
 import BackgroundTablet from "../../media-files/hpbg-tablet.jpg";
 import BackgroundMobile from "../../media-files/hpbg-mobile.jpg";
 import { NavLink } from "react-router-dom";
-import LoadingPage from "../LoadingPage/LoadingPage";
 
 class Homepage extends React.Component {
-
-    state = {
-        isLoading: true
-    }
-
-    componentWillMount() {
-        this.load()
-    }
-
-    load() {
-        setTimeout(this.testtimeout(), 3000)
-    }
-
-    componentDidMount() {
-        console.log("component mounted");
-        
-    }
-
-    testtimeout() {
-        console.log("timeout inciated")
-        this.setState({ isLoading: false })
-    }
 
     render() {
 
@@ -54,8 +31,7 @@ class Homepage extends React.Component {
         )
 
 
-        { return (this.state.isLoading ? <LoadingPage /> : Homepage) }
-
+       return (Homepage)
 
     }
 }

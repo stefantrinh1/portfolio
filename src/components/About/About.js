@@ -1,6 +1,5 @@
 import React from "react";
 import * as contentful from "contentful";
-import TechStack from "../StackLogos/TechStack";
 import AboutIntro from "./AboutIntro";
 import CareerList from "./CareerList";
 import LoadingPage from "../LoadingPage/LoadingPage";
@@ -12,7 +11,7 @@ class About extends React.Component {
         isAboutLoading: true,
         isCareerLoading: true,
         "aboutJSON": [],
-        "careerJSON": []
+        "careerJSON": [],
     }
 
     // Contentful's Client 
@@ -56,14 +55,18 @@ class About extends React.Component {
             // the array is brought in ascending order
             "careerJSON": response.items.reverse()
         })
-        console.log(response)
+       
+    }
+
+    // return a list of logos pulling from contentful.
+    LogoList() {
+        const List = this.state.aboutJSON.techStack.map(logo => {
+            return <img src={logo.fields.file.url} alt="stacklogo" key={logo.sys.id} />
+        })
+        return List
     }
 
 
-    
-    componentDidUpdate() {
-        console.log("updated component");
-    }
 
     render() {
         if (!this.state.isAboutLoading && !this.state.isCareerLoading) {
@@ -77,7 +80,9 @@ class About extends React.Component {
                                 <AboutIntro aboutTitle={this.state.aboutJSON.aboutTitle} aboutCopy={this.state.aboutJSON.aboutCopy} />
                                 <div className="about__techstack-container">
                                     <h3>Tech Stack</h3>
-                                    <TechStack />
+                                    <div className="stacklogos">
+                                        {this.LogoList()}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +98,7 @@ class About extends React.Component {
 
             )
         }
-    // if page is loading return loading page
+        // if page is loading return loading page
         else { return (<LoadingPage />) }
     }
 

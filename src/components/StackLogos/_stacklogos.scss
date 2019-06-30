@@ -1,7 +1,10 @@
 .stacklogos {
     display: flex;
 }
-.stacklogos svg {
+
+.stacklogos svg,
+.stacklogos img {
     height: 60px;
+    margin: 0.5em;
 
 }

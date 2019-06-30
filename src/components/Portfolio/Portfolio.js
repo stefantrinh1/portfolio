@@ -40,11 +40,6 @@ class Portfolio extends React.Component {
         this.FetchByContentType(this.PortfolioQuery).then(this.SetPortfolioContent).catch(console.error)
     }
 
-    componentDidUpdate() {
-        console.log("component updated");
-
-    }
-
     // all the banners once json has loaded
     getProjectBanners() {
         // loops through the PrtfolioJSON to generate all the banners.
@@ -67,10 +62,13 @@ class Portfolio extends React.Component {
 
     // gets the project by key
     getProject(key) {
+        
+        //scrolls to top of the project container when new project showing
+        const projectContainer = document.querySelector(".portfolio_block-container")
+        projectContainer.scrollTop = 0;
 
         // loops through the JSON checking the key and if the key matches and returns the one object
         const element = this.state.portfolioJSON.filter(element => element.sys.id === key)
-
         // then sets the only object in the array which is the project to the displayProject State
         // ready to render new clicked once component is updated
         this.setState({

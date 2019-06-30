@@ -13,7 +13,6 @@ class CareerEntry extends React.Component {
     ShowHideDescription = () => this.state.descriptionShowing ? this.setState({ "descriptionShowing": false }) : this.setState({ "descriptionShowing": true })
 
     render() {
-        var now = new Date();
         return (
 
             <div className="about__careerEntry">

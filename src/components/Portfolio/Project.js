@@ -2,23 +2,19 @@ import React from "react";
 const ReactMarkdown = require('react-markdown/with-html');
 
 class Project extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+
     // props should pass through a single object project
 
     stackLogoImgs() {
-        const stackLogos = this.props.portfolioJSON.fields.techStackLogos.map(element => {
+        const stackLogos = this.props.portfolioJSON.fields.techStackLogos.map(logo => {
             return (
-                <img src={element.fields.file.url} alt="stackLogo" />
+                <img src={logo.fields.file.url} alt="stackLogo" key={logo.sys.id} />
             )
         });
         return stackLogos
     }
 
     render() {
-
-
 
         return (
 
@@ -50,7 +46,7 @@ class Project extends React.Component {
                                 ${this.props.portfolioJSON.fields.projectImageSmall.fields.file.url} 767w,
                                 ${this.props.portfolioJSON.fields.projectImageLarge.fields.file.url} 2560w,
                                 `}
-                        alt="project image" />
+                        alt="projectscreenshot" />
                 </div>
 
                 <div className="portfolio__projectCopy">
