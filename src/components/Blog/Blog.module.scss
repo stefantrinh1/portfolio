@@ -1,0 +1,96 @@
+@import "../../base-styles/partials/colors";
+@import "../../base-styles/partials/fonts";
+
+.blogPost {
+    max-width: 768px;
+    margin: 10% auto;
+    padding: 0.5em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 80vh;
+}
+
+.blogTitle {
+    margin: 0 0 0.5em;
+    color: $lightbrand-color;
+    font-family: $primaryFont;
+}
+
+.blogDescription {
+    margin: 1em 0;
+    color: $lightgrey;
+    font-family: $tertiary;
+}
+
+.blogWidget {
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+}
+
+.authorImage {
+    height: 65px;
+    width: 65px;
+    border-radius: 50px;
+    border: 3px solid $brand-color;
+    padding: 3px;
+}
+
+.widgetCopy {
+    padding: 0 1em;
+}
+
+.website:hover {
+    text-decoration: underline;
+
+}
+
+.categoryLabels {
+    display: flex;
+    margin: 1em 0;
+}
+
+.CategoryLabel {
+    background: $brand-color;
+    padding: 0.5em 1em;
+    margin: 0 1em 0 0;
+    font-size: 0.75em;
+}
+
+.mainImage {
+    width: 100%;
+}
+
+.blogContent h1,
+.blogContent h2,
+.blogContent h3,
+.blogContent h4,
+.blogContent h5,
+.blogContent h6,
+.blogContent li,
+.blogContent ul,
+.blogContent p,
+.blogContent img {
+    margin: 1em 0;
+}
+
+.blogContent img,
+.blogContent table {
+    width: 100%;
+}
+
+.blogContent th,
+.blogContent td {
+    font-size: calc(0.2em + 1.4vw);
+    text-align: center;
+    border: solid 1px;
+    padding: 0.5em 0.1em;
+}
+
+@media only screen and (min-width:767px) {
+    .blogContent th,
+    .blogContent td {
+        font-size: 1em;
+    }
+
+}

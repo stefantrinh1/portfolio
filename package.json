@@ -12,7 +12,9 @@
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "react-transition-group": "^4.1.0",
-    "source-map-explorer": "^2.0.1"
+    "reading-time": "^1.2.0",
+    "source-map-explorer": "^2.0.1",
+    "timeago.js": "^4.0.0-beta.2"
   },
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
