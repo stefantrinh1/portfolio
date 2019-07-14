@@ -81,7 +81,6 @@ class AppRouter extends React.Component {
                             }
                             <Route component={NotFound} />
                         </Switch>
-                        <SocialLogos />
                     </Router>
                 </div>
             )

@@ -11,16 +11,8 @@
   width: 100vw;
   max-width: 1600px;
   margin: 0 auto;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  position: relative;
-  top: 0vh;
 }
 
-// Hides Logos on Portfolio Page
-.portfolio ~ .sociallogos {
-  display: none;
-}
 
 // this is the block that contains the project that is displayed
 // scrolling is activated by overflow auto;
@@ -28,11 +20,11 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 87.5vh;
+  height: calc(var(--vh, 1vh) * 87.5);
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  padding: 1em;
-  height: 90vh;
-  height: calc(var(--vh, 1vh) * 90);
+  padding: 0 1em;
   //   iphone viewpoints uses whole phone rather than window
   // the calc height is a fix. to take the window size not screen size
   overflow: auto;
@@ -86,6 +78,10 @@
   font-size: 1.1em;
   margin: 0 0.5em;
   width: 40%;
+}
+
+.portfolio__projectImg{
+  width: 100%
 }
 
 // =============================
@@ -143,8 +139,9 @@
 }
 
 .portfolio__projectCopy p,
-.portfolio__projectCopy ul {
-  margin: 0 0 1.25em;
+.portfolio__projectCopy ul,
+.portfolio__projectCopy li{
+  margin: 0 0 1em;
 }
 
 // if any lists are included it keys the bullets
@@ -158,8 +155,8 @@
 // =============================
 
 .portfolio__banners {
-  height: 10vh;
-  height: calc(var(--vh, 1vh) * 10);
+  height: 12.5vh;
+  height: calc(var(--vh, 1vh) * 12.5);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,8 +192,6 @@
 
 @media only screen and (min-width: 767px) {
   .portfolio {
-    top: 7.5vh;
-    top: calc(var(--vh, 1vh) * 7.5);
     height: 92.5vh;
     height: calc(var(--vh, 1vh) * 92.5);
   }
@@ -226,8 +221,8 @@
   // === Project Content Block ===
 
   .portfolio__projects {
-    height: 12.5vh;
-    height: calc(var(--vh, 1vh) * 12.5);
+    height: 10vh;
+    height: calc(var(--vh, 1vh) * 10);
   }
 
   .portfolio__projectImg {
@@ -237,7 +232,7 @@
   //   Portfolio Banners
 
   .portfolio__banners {
-    height: 12.5vh;
-    height: calc(var(--vh, 1vh) * 12.5);
+    height: 10vh;
+    height: calc(var(--vh, 1vh) * 10);
   }
 }

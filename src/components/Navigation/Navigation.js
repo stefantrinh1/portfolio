@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import BrandLogo from "../SocialLogos/BrandLogo"
 import Hamburger from "./Hamburger"
-
+import Styles from "./Navigation.module.scss"
 
 
 class Navigation extends React.Component {
@@ -89,8 +89,8 @@ class Navigation extends React.Component {
         // creates the JSX for the nav items by looping through the nav links declared.
         let navItems = links.map((link, index) => {
             return (
-                <li className="nav__nav-item" key={link.label} onClick={() => { }}>
-                    <NavLink className="nav__nav-item-link" to={link.link} exact={true} activeClassName="nav__currentNavPage">
+                <li className={Styles.navItem} key={link.label} onClick={() => { }}>
+                    <NavLink className={Styles.navItemLink} to={link.link} exact={true} activeClassName={Styles.currentNavPage} >
                         {link.label}
                     </NavLink>
                 </li>
@@ -98,24 +98,24 @@ class Navigation extends React.Component {
         });
 
         let navMenu = (
-            <div className="nav">
-                <div className="nav__nav-icon">
+            <div className={Styles.nav} >
+                <div className={Styles.navIcon}>
                     <NavLink to="/">
                         <BrandLogo />
                     </NavLink>
                 </div>
-                <ul className="nav__nav-menu">
+                <ul className={Styles.navMenu} >
                     {navItems}
                 </ul>
-                <div className="nav__opaque-block" />
+                <div className={Styles.opaqueBlock} />
             </div>
         )
 
 
         return (
 
-            <div className="nav__container">
-                <div className="nav__hamburger" onClick={() => { this.ShowOrHideNav() }}>
+            <div className={Styles.navContainer} >
+                <div className={Styles.hamburger} onClick={() => { this.ShowOrHideNav() }}>
                     <Hamburger />
                 </div>
 

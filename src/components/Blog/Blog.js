@@ -19,6 +19,7 @@ class Blog extends React.Component {
     // ====  Queries  ====
     BlogsQuery = {
         content_type: "blogPosts",
+        order: "fields.publishedDate"
     }
     // ===================
 
@@ -35,12 +36,12 @@ class Blog extends React.Component {
     SetBlogContent = response => {
         this.setState({
             isBlogsLoading: false,
-            "blogsJSON": response.items
+            "blogsJSON": response.items.reverse()
         })
     }
 
     componentDidUpdate(){
-        // console.log(this.state.blogsJSON)
+        console.log(this.state.blogsJSON)
     }
 
  

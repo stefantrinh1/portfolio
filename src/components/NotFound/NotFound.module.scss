@@ -1,0 +1,37 @@
+@import "../../base-styles/partials/colors";
+
+.notFound {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.flexItems {
+    width: 100%;
+    margin: 0.5em 0;
+    text-align: center;
+    a{
+        color: $lightbrand-color;
+    };
+    a:hover {
+        text-decoration: underline;
+    };
+}
+
+.icon{
+    font-size: 25px;
+    color: white;
+    background: rgb(53, 97, 60);
+    width: unset;
+    padding: 1em;
+    border-radius: 100px;
+    h1:hover{
+        transform: scale(1.1);
+        transition: all ease-in-out 1s;
+    }
+}

@@ -2,10 +2,11 @@ import React from "react";
 import LinkedinLogo from "./LinkedinLogo";
 import GithubLogo from "./GithubLogo";
 import InstagramLogo from "./InstagramLogo";
+import Styles from "./SocialLogos.module.scss"
 
 const SocialLogos = () => {
     return (
-        <div className="sociallogos">
+        <div className={Styles.socialLogos}>
 
             <a href="https://github.com/stefantrinh1" target="_blank" aria-label="See Github Repository and Portfolio" rel="noopener noreferrer">
                 <GithubLogo />
@@ -22,5 +23,6 @@ const SocialLogos = () => {
         </div>
     )
 }
+
 
 export default SocialLogos;

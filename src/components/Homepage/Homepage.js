@@ -3,6 +3,7 @@ import BackgroundDesktop from "../../media-files/hpbg-desktop.jpg";
 import BackgroundTablet from "../../media-files/hpbg-tablet.jpg";
 import BackgroundMobile from "../../media-files/hpbg-mobile.jpg";
 import { NavLink } from "react-router-dom";
+import SocialLogos from "../SocialLogos/SocialLogos";
 
 class Homepage extends React.Component {
 
@@ -27,6 +28,7 @@ class Homepage extends React.Component {
                         <button className="homepage__main-btn main-btn"><NavLink to="/portfolio">Explore Projects</NavLink></button>
                     </div>
                 </header>
+                <SocialLogos />
             </div>
         )
 

@@ -1,9 +1,13 @@
+@import '../../base-styles/partials/colors';
+
 .LoadingPage{
     background: $brand-color;
     color: $off-white;
     height: 100vh;
     width: 100%;
     font-size: 2em;
+    position: absolute;
+    top:0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +16,6 @@
   }
 
 .LoadingPage__container {
-  // margin: 3vw;
   display: flex;
   align-items: center;
   justify-content: center;
