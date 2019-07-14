@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "./Blog.module.scss";
+import Styles from "./BlogTemplate.module.scss";
 import { format } from 'timeago.js';
 const ReactMarkdown = require('react-markdown/with-html');
 const readingTime = require('reading-time');

@@ -3,14 +3,15 @@
 
 .blogPost {
     max-width: 768px;
-    margin: 10% auto;
+    margin: 0 auto;
     padding: 0.5em;
     overflow-y: auto;
     overflow-x: hidden;
-    height: 80vh;
+    height: 100vh;
 }
 
 .blogTitle {
+    width: 85%;
     margin: 0 0 0.5em;
     color: $lightbrand-color;
     font-family: $primaryFont;
@@ -20,6 +21,7 @@
     margin: 1em 0;
     color: $lightgrey;
     font-family: $tertiary;
+    font-weight: 100;
 }
 
 .blogWidget {
@@ -29,15 +31,15 @@
 }
 
 .authorImage {
-    height: 65px;
-    width: 65px;
+    height: 60px;
+    width: 60px;
     border-radius: 50px;
     border: 3px solid $brand-color;
     padding: 3px;
 }
 
 .widgetCopy {
-    padding: 0 1em;
+    padding: 0 0 0 0.5em;
 }
 
 .website:hover {
@@ -88,6 +90,10 @@
 }
 
 @media only screen and (min-width:767px) {
+    .blogPost {
+        height: 89vh;
+    }
+
     .blogContent th,
     .blogContent td {
         font-size: 1em;

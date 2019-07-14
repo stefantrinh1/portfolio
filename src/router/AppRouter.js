@@ -5,7 +5,6 @@ import About from "../components/About/About"
 import Portfolio from "../components/Portfolio/Portfolio";
 import Contact from "../components/Contact/Contact"
 import Navigation from "../components/Navigation/Navigation"
-import SocialLogos from "../components/SocialLogos/SocialLogos"
 import BlogTemplate from "../components/Blog/BlogTemplate";
 import Blog from "../components/Blog/Blog"
 import NotFound from "../components/NotFound/NotFound"
