@@ -121,6 +121,8 @@
 .portfolio__projectCopy,
 .portfolio__projectCopy img {
   width: 100%;
+  max-width: 767px;
+  margin: 0 auto;
 }
 
 .portfolio__projectCopy h1,

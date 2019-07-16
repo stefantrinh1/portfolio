@@ -76,6 +76,16 @@
     margin: 1em 0;
 }
 
+.blogContent p {
+    line-height: 1.5;
+    font-size: 1.1em;
+}
+
+.blogContent a {
+    color:$lightbrand-color;
+    font-weight: 700;
+}
+
 .blogContent img,
 .blogContent table {
     width: 100%;

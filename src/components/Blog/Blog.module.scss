@@ -1,0 +1,125 @@
+@import "../../base-styles/partials/colors";
+
+.blogMenu {
+    padding: 1em;
+    overflow: auto;
+    height: 95vh;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pageTitle {
+    text-align: center;
+    margin: 1em;
+}
+
+.blogCard {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em 0;
+}
+
+.cardImage {
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.cardImage img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all ease-in-out 0.75s;
+
+    &:hover {
+        transform: rotate(3deg) scale(1.1);
+
+    }
+
+}
+
+.cardCopy {
+    width: 100%;
+    background: #d1d1d1;
+    color: $light-black;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 5%;
+
+}
+
+.dateAuthor {
+    // color: #a0a0a0;
+    font-weight: 700;
+    color: $brand-color;
+
+}
+
+.blogTitle {
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+.underline {
+    width: 25%;
+    height: 5px;
+    background: $lightbrand-color;
+    margin: 1em auto;
+
+}
+
+.blogDescription {
+    margin: 0.5em auto;
+    line-height: 1.5;
+}
+
+.readBtn {
+    margin: 1em 0;
+    // border: none;
+    padding: 0.75em 1.25em;
+    letter-spacing: 1px;
+    font-weight: 800;
+    background: none;
+    border: 1px solid $light-black;
+    transition: all ease-in-out 0.5s;
+
+    &:hover {
+        background: $lightbrand-color;
+        color: white;
+        border: 1px solid $lightbrand-color;
+        padding: 0.75em 2.5em;
+
+    }
+
+}
+
+button:hover ~ div {
+    position: absolute;
+    top:10%;
+    background: red;
+
+}
+
+@media only screen and (min-width:767px) {
+
+    .blogCard:nth-child(even) .cardImage {
+        order: 2;
+    }
+    
+    .blogCard:nth-child(even) .cardCopy {
+        order: 1;
+    }
+    .blogMenu {
+        height: 87vh;
+    }
+
+    .cardImage {
+        width: 50%;
+
+    }
+
+    .cardCopy {
+        width: 50%;
+
+    }
+}

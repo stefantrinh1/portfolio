@@ -1,6 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import * as contentful from "contentful";
 import LoadingPage from "../LoadingPage/LoadingPage"
+import Styles from "./Blog.module.scss";
+import DateFormat from "dateformat";
 
 class Blog extends React.Component {
 
@@ -40,21 +43,50 @@ class Blog extends React.Component {
         })
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         console.log(this.state.blogsJSON)
     }
 
- 
+
 
     render() {
+        // removes the need for declaring this.state before every JSON call
+        // const blogsJSON = this.state.blogsJSON
 
-        const BlogMenu = (
-            <div>
-                test
-            </div>
-        )
+        const BlogMenu = () => {
+            return (
+                <div className={Styles.blogMenu}>
+                    <h1 className={Styles.pageTitle}>The Blog</h1>
+                    {
+                        this.state.blogsJSON.map(element => {
+                            return (
+                                
+                                    <div className={Styles.blogCard} key={element.sys.id}>
+                                        <div className={Styles.cardImage}>
+                                            <Link to={`/blog/${element.fields.url}`}>
+                                                <img src={element.fields.blogMainImage.fields.file.url} alt="" />
+                                            </Link>
+                                        </div>
+                                        <div className={Styles.cardCopy}>
+                                            <span className={Styles.dateAuthor}>{DateFormat(element.fields.publishedDate, "dd mmmm yyyy")} | {element.fields.author.fields.authorName}</span>
+                                            <h2 className={Styles.blogTitle}>{element.fields.blogTitle}</h2>
+                                            <div className={Styles.underline}></div>
+                                            <p className={Styles.blogDescription}>{element.fields.blogDescription}</p>
+                                            <button className={Styles.readBtn}><Link to={`/blog/${element.fields.url}`}>READ THE POST</Link></button>
+                                        </div>
+                                    </div>
+                               
+                            )
+                        })
+                    }
 
-        return !this.state.blogsJSON ? <LoadingPage />: (BlogMenu)
+                </div>
+            )
+
+        }
+
+
+        return !this.state.blogsJSON ? <LoadingPage /> : (BlogMenu())
     }
 }
 
