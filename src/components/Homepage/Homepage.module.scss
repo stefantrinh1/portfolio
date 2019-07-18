@@ -1,17 +1,19 @@
+@import "../../base-styles/partials/colors";
+@import "../../base-styles/partials/buttons";
+
 .homepage {
-  height: 100vh; //keep the background at 100% height
+
 }
 
-.homepage__background-img {
+.backgroundImg {
   position: absolute;
   height: 100%;
   top: 0;
-  -webkit-transition: all ease-in-out 1s;
-  transition: all ease-in-out 1s;
-  z-index: -1;
+  left: 0;
+  z-index: -100;
 }
 
-.homepage__header {
+.header {
   text-align: left;
   z-index: 100;
   font-size: 1rem;
@@ -19,43 +21,53 @@
   width: 100%;
   background: $dark-black;
   opacity: 0.9;
-  position: relative;
+  position: absolute;
   top: 50%;
   transform: translatey(-50%);
   padding: 1em 0;
 }
 
-.homepage__headercontainer {
+.headerCopy {
   position: relative;
   width: 72%;
   margin: 0 auto;
 }
 
-.homepage__headertitle {
+.headerTitle {
   font-size: calc(3.5em + 3vw);
   font-weight: 200;
   padding: 0 1vw;
 }
 
-.homepage__headertitle1 {
+.headerTitle1 {
   text-align: left;
 }
 
-.homepage__headertitle2 {
+.headerTitle2 {
   text-align: right;
 }
 
-.homepage__headersubtitle {
+.headerSubtitle {
   font-weight: 200;
   font-size: calc(0.5em + 2vw);
   text-align: center;
   margin: 1em 0;
 }
 
-.homepage__main-btn {
+.mainBtn {
   display: block;
   font-size: 1.4em;
   margin: 0 auto;
+  background-color: $brand-color;
+  color:$off-white;
+  border:0;
+  padding: 0.75rem;
+  border-radius: 0.5em;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mainBtn:hover {
+    background-color: $lightbrand-color;
 }
 
 @media only screen and (min-width: 480px) {
@@ -63,7 +75,7 @@
 }
 
 @media only screen and (min-width: 767px) {
-  .homepage__header {
+  .header {
     width: 55%;
     right: 5%;
     position: absolute;

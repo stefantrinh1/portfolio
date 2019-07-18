@@ -4,34 +4,33 @@
 @import "./base-styles/partials/sizes";
 
 body {
-  margin: 0;
-  font-family: $primaryFont;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  height: 100%; 
-  overflow-x: hidden;
-  position: relative; 
-  overflow-y: hidden;
-  background: $dark-black;
-
+    margin: 0;
+    font-family: $primaryFont;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: $dark-black;
 }
 
+// hard css reset 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 
-a {
-  color: unset;
-  text-decoration: none;
-}
-
+a,
 a:-webkit-any-link {
-  color: unset;
-  text-decoration: none;
+  // removes hyperlink blue color and underline;
+    color: unset;
+    text-decoration: none;
+}
+
+button{
+    border: none;
+    background: $brand-color;
+    color: white;
 }

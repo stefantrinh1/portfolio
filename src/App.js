@@ -1,6 +1,6 @@
 import React from 'react';
-import './App.scss';
 import AppRouter from "./router/AppRouter";
+import './App.scss';
 
 // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 let vh = window.innerHeight * 0.01;
