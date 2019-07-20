@@ -15,9 +15,11 @@ const BlogTemplate = (props) => {
 
     return (
         <div className={Styles.blogPost}>
-            <h1 className={Styles.blogTitle}>{blogJSON.fields.blogTitle}</h1>
 
-            <h3 className={Styles.blogDescription}>{blogJSON.fields.blogDescription}</h3>
+            <h1 className={Styles.blogTitle}>{blogJSON.fields.blogTitle}</h1>
+            <ReactMarkdown className={Styles.blogDescription} escapeHtml={false}>
+                {blogJSON.fields.blogDescription}
+            </ReactMarkdown>
 
             <div className={Styles.blogWidget}>
 
