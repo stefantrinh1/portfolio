@@ -8,7 +8,7 @@ class CareerEntry extends React.Component {
         super(props)
         this.state = {
             "descriptionShowing": false,
-            
+
         }
     }
 
@@ -38,7 +38,7 @@ class CareerEntry extends React.Component {
                 </h6>
 
                 <h6 className={Styles.careerDates}>
-                    {DateFormat(this.props.entry.fields.dateStarted,"mmm yyyy")} - {this.props.entry.fields.presentlyEmployed ? "Present" : DateFormat(this.props.entry.fields.dateFinished, "mmm yyyy")}
+                    {DateFormat(this.props.entry.fields.dateStarted, "mmm yyyy")} - {this.props.entry.fields.presentlyEmployed ? "Present" : DateFormat(this.props.entry.fields.dateFinished, "mmm yyyy")}
                 </h6>
 
                 <button onClick={this.ShowHideDescription} className={[Styles.careerEntryBtn, Styles.mainBtn].join(" ")}>

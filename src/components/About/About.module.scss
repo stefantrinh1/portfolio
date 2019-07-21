@@ -1,30 +1,44 @@
 @import "../../base-styles/partials/colors";
 @import "../../base-styles/partials/buttons";
-.about {
 
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1em;
-  box-sizing: border-box;
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.aboutContainer {
+    margin: 1em auto;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+    max-width: 1200px;
+    position: relative;
 }
 
 .aboutCard {
-  width: 100%;
-  text-align: center;
-  padding: 2em;
-  box-sizing: border-box
-  
+    width: 100%;
+    text-align: center;
+    padding: 2em;
+    box-sizing: border-box
 }
 
 .aboutCard svg {
-  width: 100%;
-  height: 100px;
+    width: 100%;
+    height: 100px;
 }
 
 .aboutCard image {
-  height: 100%;
-  width: 100%;
-    
+    height: 100%;
+    width: 100%;
+
+}
+
+.backArrow{
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  width: 30px;
 }
 
 
@@ -32,104 +46,137 @@
 // =============  About Intro  ================
 // ============================================
 .introContainer {
-  width: 100%;
+    width: 100%;
 }
 
 .introTitle {
-  font-weight: 200;
-  text-align: left;
-  margin: 1em 0;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    margin: 0 0 0.75em;
+    
+    color: $lightbrand-color;
 }
 
 .introCopy {
-  font-size: 1.2em;
+    font-size: 1.2em;
 }
 
 // ============================================
 // =============  Tech Stack  =================
 // ============================================
 
+.techStack {
+    overflow: hidden;
+    width: 100%;
+}
+
+.techStackTitle {
+    font-weight: 600;
+    text-align: center;
+    margin: 1em 0;
+    color: $lightbrand-color;
+}
+
 .techStackContainer {
-  margin: 1em 0;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+    margin: 1em 0;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
 }
 
 .techStackContainer .stackLogos {
-  width: 150%;
+    height: 40px;
+    margin: 0.5em;
 }
 
 .techStackContainer .stackLogos svg {
-  margin: 0 0.3em;
+    margin: 0 0.3em;
 }
+
 
 // ============================================
 // ==========  Career History   ===============
 // ============================================
 
 .careerHistory {
-  padding: 0 0.75em;
+    padding: 0 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .careerHistoryTitle {
-  text-align: left;
-  font-weight: 200;
-  margin: 1em 0;
+    text-align: center;
+    font-weight: 200;
+    margin: 1em 0;
+
 }
 
 .careerEntry {
-  font-size: 1.5rem;
-  position: relative;
-  border-left: 1px solid $brand-color;
-  padding-left: 10px;
+    font-size: 1.5rem;
+    position: relative;
+    border-left: 1px solid $brand-color;
+    padding-left: 10px;
 }
 
 .careerEntryNode {
-  height: 20px;
-  width: 20px;
-  background-color: $brand-color;
-  border-radius: 30px;
-  position: absolute;
+    height: 20px;
+    width: 20px;
+    background-color: $brand-color;
+    border-radius: 30px;
+    position: absolute;
 }
 
 .nodeTop {
-  top: -10px;
-  left: -10px;
+    top: -10px;
+    left: -10px;
 }
 
 .careerCompany {
-  color: #3eff9f;
-  font-weight: 200;
-  font-size: 1.1em;
-  padding-top: 10px;
+    color: #3eff9f;
+    font-weight: 200;
+    font-size: 1.1em;
+    padding-top: 10px;
 }
 
 .careerEntry h6 {
-  margin: 0.2em 0;
+    margin: 0.2em 0;
 }
 
 .companyLogo {
-  float: right;
-  max-width: 100px;
-  margin: 5px;
+    float: right;
+    max-width: 100px;
+    margin: 5px;
 }
 
 .careerDescription {
-  margin: 0.5em 0;
-  overflow: hidden;
-  font-size: 0.8em;
+    margin: 0.5em 0;
+    overflow: hidden;
+    font-size: 0.8em;
 }
 
 .careerEntryBtn {
-  padding: 0.75em 1.5em;
-  margin: 1.25em 0;
-  font-size: 0.6em;
+    padding: 0.75em 1.5em;
+    margin: 1.25em 0;
+    font-size: 0.6em;
 }
 
 .careerEntry hr {
-  border-width: 0.5px;
-  margin: 0;
+    border-width: 0.5px;
+    margin: 0;
 }
+
+
+// ============================================
+// ===========   About Social    ==============
+// ============================================
+
+.aboutSocial {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 
 // ============================================
 // ===========   Media Queries   ==============
@@ -137,41 +184,41 @@
 
 @media only screen and (min-width: 767px) {
 
-  .aboutCard {
-    width: 33.33333%;
-    
-  }
+    .aboutCard {
+        width: 33.33333%;
 
-  .aboutContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-  }
+    }
 
-  .introTitle {
-    margin: 0 0 0.75em;
-  }
+    .aboutContainer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
 
-  .careerHistoryTitle {
-    margin: 0 0 0.75em;
-  }
+    .introTitle {
+        margin: 0 0 0.75em;
+    }
 
-  .introContainer {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    height: 100%;
-  }
+    .careerHistoryTitle {
+        margin: 0 0 0.75em;
+    }
 
-  .block1,
-  .block2 {
-    width: 49%;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    height: 85vh;
-  }
+    .introContainer {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        height: 100%;
+    }
+
+    .block1,
+    .block2 {
+        width: 49%;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        height: 85vh;
+    }
 }

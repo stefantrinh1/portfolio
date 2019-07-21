@@ -11,9 +11,6 @@ const BlogRouter = (props) => {
     const [isBlogsLoading, FinishLoading] = useState(true);
     const [blogsJSON, SetBlogContent] = useState(null);
 
-
-
-
     useEffect(() => {
         // Contentful's Client 
         const client = contentful.createClient({
@@ -30,7 +27,7 @@ const BlogRouter = (props) => {
 
         // Functions to Fetch Data from Contentful
         FetchByContentType(BlogsQuery).then(HandleContentfulFetch).catch(console.error)
-        
+
     }, []) //Empty array at the end means the use effect only runs once
 
 
@@ -38,8 +35,6 @@ const BlogRouter = (props) => {
         SetBlogContent(response.items)
         FinishLoading(false)
     }
-
-
 
     if (!isBlogsLoading) {
         return (

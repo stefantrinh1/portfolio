@@ -22,6 +22,7 @@
   top: 0;
   left: 0;
   z-index: -100;
+  filter: brightness(150%);
 }
 
 .header {
@@ -69,7 +70,7 @@
   display: block;
   font-size: 1.4em;
   margin: 0 auto;
-  background-color: $brand-color;
+  background-color: $lightbrand-color;
   color:$off-white;
   border:0;
   padding: 0.75rem;
@@ -78,7 +79,7 @@
 }
 
 .mainBtn:hover {
-    background-color: $lightbrand-color;
+    background-color: $brand-color;
 }
 
 @media only screen and (min-width: 480px) {

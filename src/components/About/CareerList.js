@@ -1,6 +1,8 @@
 import React from "react";
 import CareerEntry from "./CareerEntry";
 import Styles from "./About.module.scss";
+import { Link } from "react-router-dom";
+import BackArrow from "../../icons-logos/icons/backarrow.png";
 
 const CareerList = (props) => {
 
@@ -12,14 +14,16 @@ const CareerList = (props) => {
             </div>
         )
     })
+    console.log(props)
 
 
     return (
-        <div>
-            <h2 className={Styles.careerHistoryTitle}>Career History</h2>
-    
+        <div className={Styles.careerHistory}>
+            <Link to="/about">
+                <img className={Styles.backArrow} src={BackArrow} alt="BackArrow" />
+            </Link>
+            <h1 className={Styles.careerHistoryTitle}>Career History</h1>
             {CareerList}
-
         </div>
 
     )

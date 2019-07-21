@@ -4,6 +4,7 @@ import About from "./About";
 import AboutMe from "./AboutMe";
 import AboutCareer from "./AboutCareer";
 import AboutSocial from "./AboutSocial";
+import LoadingPage from "../LoadingPage/LoadingPage"
 import * as contentful from "contentful";
 
 const AboutRouter = (props) => {
@@ -59,7 +60,7 @@ const AboutRouter = (props) => {
     //     })
     //     return List
     // }
-
+    if(!isAboutLoading && !isCareerLoading){
     return (
         <div>
             <Route exact path={`${props.match.path}`} component={About} />
@@ -67,7 +68,10 @@ const AboutRouter = (props) => {
             <Route path={`${props.match.path}/career`} render={(props) => (<AboutCareer {...props} CareerJSON={careerJSON} />)} />
             <Route path={`${props.match.path}/social`} render={(props) => (<AboutSocial {...props}  />)} />
         </div>
-    )
+    )}
+    else{
+        return <LoadingPage />
+    }
 }
 
 export default AboutRouter;
