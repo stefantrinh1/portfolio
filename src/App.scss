@@ -13,7 +13,6 @@
 
 
 // Pages
-@import "./components/About/About";
 @import "./components/Portfolio/Portfolio";
 @import "./components/Contact/Contact";
 
@@ -34,9 +33,3 @@
   color: white;
 }
 
-.App-logo {
-  -webkit-animation: element-spin infinite 20s linear;
-          animation: element-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}

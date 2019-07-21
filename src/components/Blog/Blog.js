@@ -72,7 +72,7 @@ class Blog extends React.Component {
                                             <h2 className={Styles.blogTitle}>{element.fields.blogTitle}</h2>
                                             <div className={Styles.underline}></div>
                                             <p className={Styles.blogDescription}>{element.fields.blogDescription}</p>
-                                            <button className={Styles.readBtn}><Link to={`/blog/${element.fields.url}`}>READ THE POST</Link></button>
+                                            <Link to={`/blog/${element.fields.url}`}><button className={Styles.readBtn}>READ THE POST</button></Link>
                                         </div>
                                     </div>
                                

@@ -1,5 +1,6 @@
 import React from "react";
 import CareerEntry from "./CareerEntry";
+import Styles from "./About.module.scss";
 
 const CareerList = (props) => {
 
@@ -15,7 +16,7 @@ const CareerList = (props) => {
 
     return (
         <div>
-            <h2 className="about__careerHistoryTitle">Career History</h2>
+            <h2 className={Styles.careerHistoryTitle}>Career History</h2>
     
             {CareerList}
 

@@ -5,9 +5,7 @@
     max-width: 768px;
     margin: 0 auto;
     padding: 0.5em;
-    overflow-y: auto;
     overflow-x: hidden;
-    height: 100vh;
 }
 
 .blogTitle {
@@ -21,7 +19,7 @@
     margin: 1em 0;
     color: $lightgrey;
     font-family: $tertiary;
-    font-weight: 100;
+    font-weight: 800;
 }
 
 .blogWidget {
@@ -69,16 +67,33 @@
 .blogContent h4,
 .blogContent h5,
 .blogContent h6,
-.blogContent li,
-.blogContent ul,
-.blogContent p,
 .blogContent img {
     margin: 1em 0;
+}
+
+.blogContent h2 {
+    color: $lightbrand-color;
+    text-decoration: underline;
+    // text-transform: uppercase;
 }
 
 .blogContent p {
     line-height: 1.5;
     font-size: 1.1em;
+    margin: 0.75em 0;
+}
+
+.blogContent li,
+.blogContent ul {
+    line-height: 1.5;
+    font-size: 1.1em;
+    list-style: inside;
+    margin: 0.75em 0;
+    padding-left: 0.5em;
+}
+
+.blogContent li > p {
+    display: inline;
 }
 
 .blogContent a {
@@ -101,7 +116,6 @@
 
 @media only screen and (min-width:767px) {
     .blogPost {
-        height: 89vh;
     }
 
     .blogContent th,

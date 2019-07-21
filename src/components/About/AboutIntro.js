@@ -6,11 +6,11 @@ const AboutIntro = (props) => {
     return (
         <div>
 
-            <h2 className="about__intro-title">
+            <h2 className="introTitle">
                 {props.aboutTitle}
             </h2>
        
-            <ReactMarkdown className="about__intro-copy" escapeHtml={false}>
+            <ReactMarkdown className="introCopy" escapeHtml={false}>
                 {props.aboutCopy}
             </ReactMarkdown>
 
