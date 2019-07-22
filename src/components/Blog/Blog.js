@@ -68,11 +68,13 @@ class Blog extends React.Component {
                                             </Link>
                                         </div>
                                         <div className={Styles.cardCopy}>
+                                            <div className={Styles.cardCopyInner}>
                                             <span className={Styles.dateAuthor}>{DateFormat(element.fields.publishedDate, "dd mmmm yyyy")} | {element.fields.author.fields.authorName}</span>
                                             <h2 className={Styles.blogTitle}>{element.fields.blogTitle}</h2>
                                             <div className={Styles.underline}></div>
                                             <p className={Styles.blogDescription}>{element.fields.blogDescription}</p>
                                             <Link to={`/blog/${element.fields.url}`}><button className={Styles.readBtn}>READ THE POST</button></Link>
+                                            </div>
                                         </div>
                                     </div>
                                

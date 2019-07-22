@@ -43,7 +43,13 @@
     color: $light-black;
     text-align: center;
     box-sizing: border-box;
+    // padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 5%;
+}
+.cardCopyInner {
 
 }
 
