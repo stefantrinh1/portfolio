@@ -42,14 +42,6 @@
   }
 }
 
-.navIcon svg {
-  // Spin Animation for the Nav Logo
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-  -webkit-animation: element-spin infinite 30s;
-          animation: element-spin infinite 30s;
-}
-
 .navItem {
   padding: 0.6em;
   color: $off-white;

@@ -10,9 +10,11 @@ const AboutMe = (props) => {
     
     return (
         <div className={Styles.aboutContainer}>
+
             <Link to="/about">
             <img className={Styles.backArrow} src={BackArrow} alt="BackArrow" />
             </Link>
+
             <h2 className={Styles.introTitle}>
                 {AboutJSON.aboutTitle}
             </h2>
@@ -20,6 +22,7 @@ const AboutMe = (props) => {
             <ReactMarkdown className={Styles.introCopy} escapeHtml={false}>
                 {AboutJSON.aboutCopy}
             </ReactMarkdown>
+            
             <div className={Styles.techStack}>
                 <h2 className={Styles.techStackTitle}>Tech Stack </h2>
                 <div className={Styles.techStackContainer}>

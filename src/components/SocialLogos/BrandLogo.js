@@ -1,10 +1,10 @@
 import React from "react";
-
+import Styles from "./SocialLogos.module.scss";
 const BrandLogo = () => {
     return (
 
 
-<svg width="65px" height="65px" viewBox="0 0 252 247" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+<svg className={Styles.brandLogo} width="65px" height="65px" viewBox="0 0 252 247" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     <defs>
         <polygon id="path-1" points="159.763774 8 225 174.165362 76.2362255 230 11 63.8346385"></polygon>
         <filter x="-4.9%" y="-4.7%" width="109.8%" height="109.4%" filterUnits="objectBoundingBox" id="filter-2">
@@ -170,13 +170,12 @@ const BrandLogo = () => {
     </defs>
     <g id="Home-Page" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g id="Desktop" transform="translate(-30.000000, -23.000000)">
-            <g id="Logo" transform="translate(36.000000, 31.000000)">
+            <g className={Styles.Logo} id="Logo" transform="translate(36.000000, 31.000000)">
                 <g id="Rectangle">
                     <use fill="black" fillOpacity="1" filter="url(#filter-2)" xlinkHref="#path-1"></use>
                     <path stroke="#D46565" strokeWidth="2" d="M159.192924,9.28236831 L12.3018205,64.4141481 L76.807076,228.717632 L223.69818,173.585852 L159.192924,9.28236831 Z" strokeLinejoin="square" fill="#3B3B3B" fillRule="evenodd"></path>
                 </g>
                 <g id="Rectangle">
-                    <use fill="black" fillOpacity="1" filter="url(#filter-4)" xlinkHref="#path-3"></use>
                     <path stroke="#D46565" strokeWidth="2" d="M208.853436,43.3071039 L54.1741813,19.1417196 L26.1465643,193.692896 L180.825819,217.85828 L208.853436,43.3071039 Z" strokeLinejoin="square" fill="#3B3B3B" fillRule="evenodd"></path>
                 </g>
                 <g id="Rectangle">
@@ -207,15 +206,15 @@ const BrandLogo = () => {
                     <use fill="black" fillOpacity="1" filter="url(#filter-18)" xlinkHref="#path-17"></use>
                     <path stroke="#D46565" strokeWidth="2" d="M134.48977,81.2837345 L84.300376,100.182348 L102.51023,146.716266 L152.699624,127.817652 L134.48977,81.2837345 Z" strokeLinejoin="square" fill="#3B3B3B" fillRule="evenodd"></path>
                 </g>
-                <g id="Rectangle">
+                <g id="Rectangle" style={{animation: "unset"}}>
                     <use fill="black" fillOpacity="1" filter="url(#filter-20)" xlinkHref="#path-19"></use>
                     <path stroke="#D46565" strokeWidth="2" d="M152.710735,99.4705524 L101.803135,81.274339 L84.2892652,128.529448 L135.196865,146.725661 L152.710735,99.4705524 Z" strokeLinejoin="square" fill="#3B3B3B" fillRule="evenodd"></path>
                 </g>
-                <g id="Rectangle">
+                <g id="Rectangle" style={{animation: "unset"}}>
                     <use fill="black" fillOpacity="1" filter="url(#filter-22)" xlinkHref="#path-21"></use>
                     <path stroke="#D46565" strokeWidth="2" d="M155.567746,117.022804 L120.063804,77.3902277 L81.4322542,109.977196 L116.936196,149.609772 L155.567746,117.022804 Z" strokeLinejoin="square" fill="#3B3B3B" fillRule="evenodd"></path>
                 </g>
-                <g id="S" transform="translate(119.472222, 115.280468) rotate(1.000000) translate(-119.472222, -115.280468) " fill="#D73E3E">
+                <g className={Styles.LogoLetter} id="S" transform="translate(119.472222, 115.280468) translate(-119.472222, -115.280468) " fill="#D73E3E">
                     <use fillOpacity="1" filter="url(#filter-24)" xlinkHref="#text-23"></use>
                     <use fillRule="evenodd" xlinkHref="#text-23"></use>
                     <use fillOpacity="1" xlinkHref="#text-23"></use>

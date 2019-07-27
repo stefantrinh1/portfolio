@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="159px" height="159px" viewBox="0 0 159 159" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.2 (81672) - https://sketch.com -->
+    <title>Information Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-22.000000, -20.000000)">
+            <g id="Information-Icon" transform="translate(22.000000, 20.000000)">
+                <circle id="Oval" fill="#4175DC" cx="79.5" cy="79.5" r="79.5"></circle>
+                <text id="i" font-family="Roboto-Bold, Roboto" font-size="100" font-weight="bold" letter-spacing="3.57142857" fill="#FFFFFF">
+                    <tspan x="66" y="114">i</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

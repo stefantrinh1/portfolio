@@ -52,14 +52,6 @@ const AboutRouter = (props) => {
         finishCareerLoading(false)
     }
 
-
-    // return a list of logos pulling from contentful.
-    // LogoList() {
-    //     const List = this.state.aboutJSON.techStack.map(logo => {
-    //         return <img src={logo.fields.file.url} alt="stacklogo" key={logo.sys.id} />
-    //     })
-    //     return List
-    // }
     if(!isAboutLoading && !isCareerLoading){
     return (
         <div>

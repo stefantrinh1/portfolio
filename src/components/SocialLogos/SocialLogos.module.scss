@@ -1,17 +1,42 @@
 .socialLogos {
-    position: absolute;
-    bottom: 0;
-    z-index: 150;
+  position: absolute;
+  bottom: 0;
+  z-index: 150;
 }
 
 .socialLogos svg {
-    width: 2rem;
-    height: 2rem;
-    padding: 0.5em;
-    margin: 0 0.25em;
-    border-radius: 0.5em;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5em;
+  margin: 0 0.25em;
+  border-radius: 0.5em;
 
-    &:hover {
-        background: #2a7855;
-    }
+  &:hover {
+    background: #2a7855;
+  }
+}
+
+.brandLogo .Logo g {
+  transform-origin: 47% 47%;
+  transform: rotate(360deg);
+}
+.brandLogo .Logo g:nth-child(even) {
+  animation: rotation 60s infinite;
+}
+.brandLogo .Logo g:nth-child(odd) {
+  animation: rotation 40s infinite;
+}
+
+.brandLogo .Logo g.LogoLetter {
+    transform: rotate(0deg);
+    animation: unset;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
