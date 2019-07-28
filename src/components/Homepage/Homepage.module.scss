@@ -2,15 +2,17 @@
 @import "../../base-styles/partials/buttons";
 
 .homepage {
+  position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
-  width: 100%;
-  // height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  width: 100vw;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
 //     iphone viewpoints uses whole phone rather than window
 // the calc height is a fix. to take the window size not screen size
-  // height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100);
   z-index: -500;
   min-height: 600px;
+  
 }
 
 .backgroundImg {

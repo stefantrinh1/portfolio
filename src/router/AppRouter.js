@@ -15,7 +15,7 @@ class AppRouter extends React.Component {
     render() {
        
             return (
-                <div>
+                
                     <Router>
                         <Navigation />
                         <Switch>
@@ -27,7 +27,7 @@ class AppRouter extends React.Component {
                             <Route component={NotFound} />
                         </Switch>
                     </Router>
-                </div>
+                
             )
         }
 
