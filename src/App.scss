@@ -29,7 +29,6 @@
   //   iphone viewpoints uses whole phone rather than window
 // the calc height is a fix. to take the window size not screen size
   // height: calc(var(--vh, 1vh) * 100);
-  min-height: 500px;
   color: white;
   min-width: 320px;
 }
