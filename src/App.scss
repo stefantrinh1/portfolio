@@ -31,5 +31,7 @@
   // height: calc(var(--vh, 1vh) * 100);
   color: white;
   min-width: 320px;
+  height: 0px;
+  // stops the app container overlapping the homepage
 }
 
