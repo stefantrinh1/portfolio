@@ -6,11 +6,7 @@ import TravelledMap from "../TravelledMap/TravelledMap"
 const AboutSocial = (props) => {
     return (
         <div className={Styles.aboutSocial}>
-
             <InstagramFeed />
-
-
- 
         </div>
     )
 

@@ -13,7 +13,7 @@
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   background: $light-black;
-  position: absolute;
+  position: relative;
   z-index: 150;
   // left: -80%;
   -webkit-transition: all ease-in-out 0.5s;
@@ -84,6 +84,7 @@ padding: 5px;
     position: unset;
     display: flex;
     left: unset;
+    position: absolute;
   }
 
   .navMenu {

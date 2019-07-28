@@ -3,12 +3,7 @@ import CareerList from "./CareerList";
 
 
 const AboutCareer = (props) => {
-    console.log(props)
-    return (
-        <div>
-            <CareerList careerJSON={props.CareerJSON} />
-        </div>
-    )
+    return (<CareerList careerJSON={props.CareerJSON} />)
 }
 
 export default AboutCareer;
