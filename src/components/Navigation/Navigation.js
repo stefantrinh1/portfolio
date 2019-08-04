@@ -9,7 +9,7 @@ class Navigation extends React.Component {
         super();
         this.navElement = document.querySelector(".nav");
         this.state = {
-            navigationOpen: null,
+            navigationOpen: false,
         }
     }
 
@@ -30,21 +30,13 @@ class Navigation extends React.Component {
     }
 
     // Handles whether to open or close depending on if nav is open in state
-    ShowOrHideNav() {
-        return (!this.state.navigationOpen ? this.OpenNav() : this.CloseNav())
-    }
+    ShowOrHideNav() {(!this.state.navigationOpen ? this.OpenNav() : this.CloseNav())}
 
-    // brings Nav Onto Screen
-    OpenNav() {
-        disableScroll.on();
-        this.setState({ navigationOpen: true })
-    }
+    // brings Nav Onto Screen and disabled scrolling
+    OpenNav() {disableScroll.on(); this.setState({ navigationOpen: true })}
 
-    // move the navigation off screen
-    CloseNav() {
-        disableScroll.off();
-        this.setState({ navigationOpen: false })
-    }
+    // move the navigation off screen and enabled scrolling
+    CloseNav() {disableScroll.off(); this.setState({ navigationOpen: false })}
 
     // Handles the Clicks
     HandleNavAction(event) {
@@ -53,31 +45,34 @@ class Navigation extends React.Component {
         const navLink = document.querySelectorAll(`.${Styles.navItem}`);
 
         const outsideClickListener = (event) => {
-            if (!navElement.contains(event.target) || event.target === navLink) {
-                console.log("if hit")
+            if (!navElement.contains(event.target)) {
+                removeEventListener()
                 this.CloseNav();
-                removeClickListener();
             }
         }
 
-        const removeClickListener = () => {
+        const removeEventListener = () => {
+            if(window.innerWidth < 768){
             document.removeEventListener('click', outsideClickListener)
             document.removeEventListener("click", navClickListener)
+            }
         }
 
+        // if the Nav-Links are clicked the follow function runs
         const navClickListener = (event) => {
-
             navLink.forEach(element => {
                 if (element.contains(event.target)) {
-                    console.log("navclicked")
-                    this.CloseNav();
-                    removeClickListener();
+                    // if(window.innerWidth < 768) {}
+                    removeEventListener()
+                    this.CloseNav()
                 }
             });
         }
-        
+
+        if(window.innerWidth < 768){
         document.addEventListener('click', outsideClickListener)
         document.addEventListener("click", navClickListener)
+        }
 
     }
 
