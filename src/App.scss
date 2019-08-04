@@ -3,20 +3,6 @@
 // All Scss Partial Files Combine in here.
 // All Styling Variables and Colors Must be imported First
 
-// Styling Variables
-@import "./base-styles/partials/colors";
-@import "./base-styles/partials/fonts";
-@import "./base-styles/partials/keyframes";
-@import "./base-styles/partials/sizes";
-@import "./base-styles/partials/buttons";
-@import "./base-styles/partials/singleuse";
-
-
-// Pages
-@import "./components/Portfolio/Portfolio";
-@import "./components/Contact/Contact";
-
-
 // Components
 @import "./components/StackLogos/stacklogos";
 
@@ -31,8 +17,11 @@
   // height: calc(var(--vh, 1vh) * 100);
   color: white;
   min-width: 320px;
+  max-width: 3000px;
+  margin: 0 auto;
   height: 0px;
   width: 100%;
+  position: relative;
   // stops the app container overlapping the homepage
 }
 

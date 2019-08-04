@@ -6,10 +6,6 @@
     flex-wrap: wrap;
     padding: 1em;
     box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 100%;
     justify-content: center;
     color: #404040;
@@ -41,9 +37,13 @@
 
 .backArrow{
   position: absolute;
-  top: 5px;
+  top: 0px;
   left: 10px;
   width: 30px;
+}
+
+#artBoard {
+    fill: $darkbrand-color;
 }
 
 
@@ -57,10 +57,9 @@
 .introTitle {
     font-weight: 600;
     text-align: center;
-    width: 100%;
-    margin: 0 0 0.75em;
-    
-    color: $lightbrand-color;
+    width: 90%;
+    margin: 0 auto 0.75em;
+    color: $brand-color;
 }
 
 .introCopy {
@@ -79,8 +78,9 @@
 .techStackTitle {
     font-weight: 600;
     text-align: center;
-    margin: 1em 0;
-    color: $lightbrand-color;
+    margin: 1em auto;
+    width: 90%;
+    color: $brand-color;
 }
 
 .techStackContainer {
@@ -139,8 +139,8 @@
 }
 
 .careerCompany {
-    color: #3eff9f;
-    font-weight: 200;
+    color: $lightbrand-color;
+    font-weight: 400;
     font-size: 1.1em;
     padding-top: 10px;
 }
@@ -162,9 +162,12 @@
 }
 
 .careerEntryBtn {
-    padding: 0.75em 1.5em;
+    padding: 0.5em 1.5em;
     margin: 1.25em 0;
     font-size: 0.6em;
+    background-color: $brand-color;
+    color:$light-black;
+    opacity: 0.8;
 }
 
 .careerEntry hr {
@@ -206,11 +209,11 @@
     }
 
     .introTitle {
-        margin: 0 0 0.75em;
+        margin: 0 auto 0.75em;
     }
 
     .careerHistoryTitle {
-        margin: 0 0 0.75em;
+        margin: 0 auto 0.75em;
     }
 
     .introContainer {

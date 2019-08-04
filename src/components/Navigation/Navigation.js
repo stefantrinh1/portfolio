@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import BrandLogo from "../SocialLogos/BrandLogo"
 import Hamburger from "./Hamburger"
 import Styles from "./Navigation.module.scss"
-
+import disableScroll from 'disable-scroll';
 
 class Navigation extends React.Component {
     constructor() {
@@ -16,7 +16,6 @@ class Navigation extends React.Component {
 
     componentDidMount() {
         this.DetermineNavState()
-
         // event listener for when screen changes size
         window.addEventListener('resize', () => { this.DetermineNavState() });
     }
@@ -32,46 +31,53 @@ class Navigation extends React.Component {
     }
 
     // brings Nav Onto Screen
-    OpenNav() { this.setState({ navigationOpen: true }) }
+    OpenNav() {
+        disableScroll.on();
+        this.setState({ navigationOpen: true })
+    }
 
 
     // move the navigation off screen
-    CloseNav() { this.setState({ navigationOpen: false }) }
+    CloseNav() {
+        disableScroll.off();
+        this.setState({ navigationOpen: false })
+    }
 
-    // // Handles the Clicks
-    // HandleNavAction(event) {
+    // Handles the Clicks
+    HandleNavAction(event) {
 
-    //     const navElement = document.querySelector(".nav");
-    //     // const navLink = document.querySelectorAll(".nav__nav-item-link");
+        const navElement = document.querySelector(".nav");
+        const navLink = document.querySelectorAll(`.${Styles.navItemLink}`);
 
-    //     const outsideClickListener = (event) => {
-    //         if (!navElement.contains(event.target) || event.target === navLink) {
-    //             this.CloseNav();
-    //             removeClickListener();
-    //         }
-    //     }
+        const outsideClickListener = (event) => {
+            if (!navElement.contains(event.target) || event.target === navLink) {
+                console.log("if hit")
+                this.CloseNav();
+                removeClickListener();
+            }
+        }
 
-    //     const removeClickListener = () => {
-    //         document.removeEventListener('click', outsideClickListener)
-    //         document.removeEventListener("click", navClickListener)
-    //     }
+        const removeClickListener = () => {
+            document.removeEventListener('click', outsideClickListener)
+            document.removeEventListener("click", navClickListener)
+        }
 
 
-    //     const navClickListener = (event) => {
+        const navClickListener = (event) => {
 
-    //         navLink.forEach(element => {
-    //             if (element.contains(event.target)) {
-    //                 // console.log("navclicked")
-    //                 this.CloseNav();
-    //                 removeClickListener();
-    //             }
-    //         });
-    //     }
+            navLink.forEach(element => {
+                if (element.contains(event.target)) {
+                    // console.log("navclicked")
+                    this.CloseNav();
+                    removeClickListener();
+                }
+            });
+        }
 
-    //     document.addEventListener('click', outsideClickListener)
-    //     document.addEventListener("click", navClickListener)
+        document.addEventListener('click', outsideClickListener)
+        document.addEventListener("click", navClickListener)
 
-    // }
+    }
 
 
 
@@ -89,11 +95,13 @@ class Navigation extends React.Component {
         // creates the JSX for the nav items by looping through the nav links declared.
         let navItems = links.map((link, index) => {
             return (
-                <li className={Styles.navItem} key={link.label} onClick={() => { }}>
-                    <NavLink className={Styles.navItemLink} to={link.link} exact={true} activeClassName={Styles.currentNavPage} >
+                <NavLink className={Styles.navItemLink} key={link.label} to={link.link} exact={true} activeClassName={Styles.currentNavPage} onClick={() => { console.log("test")}} >
+                <li className={Styles.navItem}>
+
                         {link.label}
-                    </NavLink>
+                    
                 </li>
+                </NavLink>
             );
         });
 
@@ -107,7 +115,6 @@ class Navigation extends React.Component {
                 <ul className={Styles.navMenu} >
                     {navItems}
                 </ul>
-                <div className={Styles.opaqueBlock} />
             </div>
         )
 
@@ -115,12 +122,16 @@ class Navigation extends React.Component {
         return (
 
             <div className={Styles.navContainer} >
-                <div className={Styles.hamburger} onClick={() => { this.ShowOrHideNav() }}>
-                    <Hamburger />
+                <div className={Styles.hamburgerContainer} >
+                    <div className={Styles.hamburger} onClick={() => { this.ShowOrHideNav() }}>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
                 </div>
 
                 {this.state.navigationOpen ? navMenu : null}
-
+                {this.state.navigationOpen ? <div className={Styles.opaqueBlock} /> : null}
             </div>
         )
     }

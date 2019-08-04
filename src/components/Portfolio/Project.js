@@ -1,5 +1,7 @@
 import React from "react";
+import Styles from "./Project.module.scss";
 const ReactMarkdown = require('react-markdown/with-html');
+
 
 class Project extends React.Component {
 

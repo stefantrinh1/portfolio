@@ -13,9 +13,9 @@
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
   background: $light-black;
-  position: relative;
-  z-index: 150;
-  // left: -80%;
+  position: absolute;
+  z-index: 100;
+  top: 0;
   -webkit-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s;
 }
@@ -23,11 +23,13 @@
 .opaqueBlock{
   background: black;
   opacity: 0.7;
-  width: 100vw;
-  display: none;
+  width: 40%;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
   height: 100vh;
   height: calc(var(--vh, 1vh) * 100);
-  z-index: 104;
 }
 
 .navMenu {
@@ -47,8 +49,16 @@
   color: $off-white;
 }
 
-.currentNavPage {
-  border-bottom: solid 2px $lightbrand-color;
+.currentNavPage li{
+  // border-bottom: solid 3px $brand-color;
+  text-decoration: underline;
+  text-decoration-color: $brand-color;
+}
+
+.navConatainer{
+  display: block;
+  width: 100%;
+  height: 20px;
 }
 
 .navIcon svg {
@@ -58,17 +68,38 @@
 }
 
 .hamburger {
-position: absolute;
-right: 1%;
-top: 1%;
-z-index: 150;
+  height: 50px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 200;
 }
 
-.hamburger svg {
-background: #345B57;
-border-radius: 67px;
-padding: 5px;
+.hamburger div{
+  height: 3px;
+  width: 30px;
+  background: $brand-color;
+  margin: 5px auto;
+  box-shadow: 4px 3px black;
 }
+
+.hamburger div:nth-child(2){
+  width: 35px;
+}
+
+.hamburgerContainer {
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-color: $light-black;
+  box-shadow:6px 4px 4px black;
+}
+
+// .hamburger svg {
+// background: $brand-color;
+// border-radius: 67px;
+// padding: 5px;
+// }
 
 
 @media only screen and (min-width: 480px) {
@@ -84,7 +115,6 @@ padding: 5px;
     position: unset;
     display: flex;
     left: unset;
-    position: absolute;
   }
 
   .navMenu {
@@ -93,6 +123,9 @@ padding: 5px;
     display: flex;
     align-items: center;
     margin: 0 0 0 auto;
+  }
+  .opaqueBlock{
+    display: none;
   }
 
   .navIcon {
@@ -104,9 +137,9 @@ padding: 5px;
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  .hamburger {
+  .hamburger,
+  .hamburgerContainer {
       display: none;
-
   }
 
 }

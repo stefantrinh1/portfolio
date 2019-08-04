@@ -46,13 +46,10 @@
   align-items: center;
   padding: 5%;
 }
-.cardCopyInner {
-}
 
 .dateAuthor {
-  // color: #a0a0a0;
   font-weight: 700;
-  color: $brand-color;
+  color: $grey;
 }
 
 .blogTitle {
@@ -63,7 +60,7 @@
 .underline {
   width: 25%;
   height: 5px;
-  background: $lightbrand-color;
+  background: $brand-color;
   margin: 1em auto;
 }
 
@@ -83,9 +80,9 @@
   transition: all ease-in-out 0.5s;
 
   &:hover {
-    background: $lightbrand-color;
-    color: white;
-    border: 1px solid $lightbrand-color;
+    background: $brand-color;
+    color: $dark-black;
+    border: 1px solid $brand-color;
     padding: 0.75em 2.5em;
   }
 }

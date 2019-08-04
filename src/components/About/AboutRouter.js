@@ -38,6 +38,7 @@ const AboutRouter = (props) => {
         // Functions to Fetch Data from Contentful
         FetchByContentType(AboutQuery).then(handleContentfulAboutFetch).catch(console.error)
         FetchByContentType(CareerQuery).then(handleContentfulCareerFetch).catch(console.error)
+        
     }, [])
 
     // Sets the response once it has come back into state for About Intro

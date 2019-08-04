@@ -1,7 +1,9 @@
 import React from "react";
+import Styles from "./Portfolio.module.scss";
 import * as contentful from "contentful";
 import LoadingPage from "../LoadingPage/LoadingPage"
-import Project from "./Project"
+import Project from "./Project";
+
 
 
 class Portfolio extends React.Component {
@@ -45,15 +47,16 @@ class Portfolio extends React.Component {
         // loops through the PrtfolioJSON to generate all the banners.
         const projectList = this.state.portfolioJSON.map(element => {
             return (
-                <div
-                    className="portfolio__banner"
+                <img
+                    src={element.fields.projectBanner.fields.file.url}
+                    className={Styles.projectBanner}
                     key={element.sys.id}
                     onClick={() => {
                         // runs get project function to get project clicked by  passing id in.
                         this.getProject(element.sys.id)
                     }}>
-                    <img src={element.fields.projectBanner.fields.file.url} alt="Banner" />
-                </div>
+                    {/* <img src={element.fields.projectBanner.fields.file.url} alt="Banner" /> */}
+                </img>
             )
         });
         return projectList
@@ -62,7 +65,7 @@ class Portfolio extends React.Component {
 
     // gets the project by key
     getProject(key) {
-        
+
         //scrolls to top of the project container when new project showing
         const projectContainer = document.querySelector(".portfolio_block-container")
         projectContainer.scrollTop = 0;
@@ -82,19 +85,15 @@ class Portfolio extends React.Component {
         if (!this.state.isPortfolioLoading) {
 
             return (
-                <div className="portfolio">
-                    
+                <div className={Styles.portfolio} >
+                    <div className={Styles.projectBanners} >
+                        {/* gets list of Clickable Project Banners */}
+                        {this.getProjectBanners()}
+                    </div>
+
                     {/* Project Component taking in project to display prop */}
                     <Project portfolioJSON={this.state.displayedProject} />
 
-                    {/* <div className="portfolio__projects"> */}
-                        <div className="portfolio__banners">
-
-                            {/* gets list of Clickable Project Banners */}
-                            {this.getProjectBanners()}
-
-                        </div>
-                    
                 </div>
             )
         }

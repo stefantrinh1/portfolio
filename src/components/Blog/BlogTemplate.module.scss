@@ -11,7 +11,7 @@
 .blogTitle {
     width: 85%;
     margin: 0 0 0.5em;
-    color: $lightbrand-color;
+    color: $brand-color;
     font-family: $primaryFont;
 }
 
@@ -53,6 +53,7 @@
 .CategoryLabel {
     background: $brand-color;
     padding: 0.5em 1em;
+    color: $dark-black;
     margin: 0 1em 0 0;
     font-size: 0.75em;
 }
@@ -72,7 +73,7 @@
 }
 
 .blogContent h2 {
-    color: $lightbrand-color;
+    color: $brand-color;
     text-decoration: underline;
     // text-transform: uppercase;
 }
@@ -115,8 +116,6 @@
 }
 
 @media only screen and (min-width:767px) {
-    .blogPost {
-    }
 
     .blogContent th,
     .blogContent td {

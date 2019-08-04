@@ -2,7 +2,7 @@
 
 .LoadingPage{
     background: $brand-color;
-    color: $off-white;
+    color: $dark-black;
     height: 100vh;
     width: 100%;
     font-size: 2em;
@@ -13,6 +13,7 @@
     align-items: center;
     text-align: center;
     vertical-align: middle;
+    z-index: 9999;
   }
 
 .LoadingPage__container {
