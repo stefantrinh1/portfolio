@@ -25,7 +25,7 @@ const Homepage = () => {
             anime({
                 targets: `.${Styles.headerTitle}`,
                 rotate: '2turn',
-                duration:1000,
+                duration:250,
                 keyframes: [
                     {translateX: -1000},
                     {translateX: 1000},
@@ -38,7 +38,7 @@ const Homepage = () => {
                 targets: `.${Styles.headerSubtitle}`,
                 rotate: '3turn',
                 
-                duration:2000,
+                duration:750,
                 keyframes: [
                     {translateX: 1000},
                     {translateX: -1000},
@@ -48,7 +48,7 @@ const Homepage = () => {
 
             
               const backgroundBlocks = anime.timeline({
-                duration:1000,
+                duration:750,
                 easing: 'easeInOutExpo',
               });
 
@@ -61,19 +61,18 @@ const Homepage = () => {
                         {translateX: -1000}, 
                         {translateX: 0},
                       ],
-                  }, 500
+                  }, 0
               )
             //   animation targeting overall background block
               backgroundBlocks.add(
                 {
                   targets: `.${Styles.animationBlocks}`,
-                  delay: anime.stagger(100),
                   keyframes: [
                     {rotate: '338deg'},
                     {bottom: "-75%"},
                     {right: "-35%"},      
                     ],
-                }, 2000
+                }, 1500
             )
 
               
