@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import BrandLogo from "../SocialLogos/BrandLogo"
-import Hamburger from "./Hamburger"
 import Styles from "./Navigation.module.scss"
 import disableScroll from 'disable-scroll';
 
@@ -20,6 +19,11 @@ class Navigation extends React.Component {
         window.addEventListener('resize', () => { this.DetermineNavState() });
     }
 
+    componentDidUpdate() {
+        // if nav is in the dom run add the event listeners
+        if(this.state.navigationOpen) {this.HandleNavAction()}
+    }
+
     // function to determine whether to show nav based on desktop show nav or hide on mobile.
     DetermineNavState() {
         window.innerWidth < 768 ? this.setState({ navigationOpen: false }) : this.setState({ navigationOpen: true })
@@ -36,7 +40,6 @@ class Navigation extends React.Component {
         this.setState({ navigationOpen: true })
     }
 
-
     // move the navigation off screen
     CloseNav() {
         disableScroll.off();
@@ -46,8 +49,8 @@ class Navigation extends React.Component {
     // Handles the Clicks
     HandleNavAction(event) {
 
-        const navElement = document.querySelector(".nav");
-        const navLink = document.querySelectorAll(`.${Styles.navItemLink}`);
+        const navElement = document.querySelector(`.${Styles.nav}`);
+        const navLink = document.querySelectorAll(`.${Styles.navItem}`);
 
         const outsideClickListener = (event) => {
             if (!navElement.contains(event.target) || event.target === navLink) {
@@ -62,24 +65,21 @@ class Navigation extends React.Component {
             document.removeEventListener("click", navClickListener)
         }
 
-
         const navClickListener = (event) => {
 
             navLink.forEach(element => {
                 if (element.contains(event.target)) {
-                    // console.log("navclicked")
+                    console.log("navclicked")
                     this.CloseNav();
                     removeClickListener();
                 }
             });
         }
-
+        
         document.addEventListener('click', outsideClickListener)
         document.addEventListener("click", navClickListener)
 
     }
-
-
 
     render() {
         // List of the Nav items and their paths
@@ -92,33 +92,6 @@ class Navigation extends React.Component {
             { label: 'CONTACT', link: "/contact" }
         ];
 
-        // creates the JSX for the nav items by looping through the nav links declared.
-        let navItems = links.map((link, index) => {
-            return (
-                <NavLink className={Styles.navItemLink} key={link.label} to={link.link} exact={true} activeClassName={Styles.currentNavPage} onClick={() => { console.log("test")}} >
-                <li className={Styles.navItem}>
-
-                        {link.label}
-                    
-                </li>
-                </NavLink>
-            );
-        });
-
-        let navMenu = (
-            <div className={Styles.nav} >
-                <div className={Styles.navIcon}>
-                    <NavLink to="/">
-                        <BrandLogo />
-                    </NavLink>
-                </div>
-                <ul className={Styles.navMenu} >
-                    {navItems}
-                </ul>
-            </div>
-        )
-
-
         return (
 
             <div className={Styles.navContainer} >
@@ -130,8 +103,32 @@ class Navigation extends React.Component {
                     </div>
                 </div>
 
-                {this.state.navigationOpen ? navMenu : null}
+                {this.state.navigationOpen ?
+                    <div className={Styles.nav} >
+
+                        <div className={Styles.navIcon}>
+                            <NavLink to="/">
+                                <BrandLogo />
+                            </NavLink>
+                        </div>
+
+                        <ul className={Styles.navMenu} >
+                            {links.map((link, index) => {
+                                return (
+                                    <NavLink className={Styles.navItemLink} key={link.label} to={link.link} exact={true} activeClassName={Styles.currentNavPage} >
+                                        <li className={Styles.navItem}>
+                                            {link.label}
+                                        </li>
+                                    </NavLink>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                    :
+                    null}
+
                 {this.state.navigationOpen ? <div className={Styles.opaqueBlock} /> : null}
+
             </div>
         )
     }

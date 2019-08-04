@@ -1,7 +1,4 @@
-import React, { useState, useEffect } from 'react'
-// import BackgroundDesktop from "../../media-files/hpbg-desktop.jpg";
-// import BackgroundTablet from "../../media-files/hpbg-tablet.jpg";
-// import BackgroundMobile from "../../media-files/hpbg-mobile.jpg";
+import React, { useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import SocialLogos from "../SocialLogos/SocialLogos";
 import Styles from "./Homepage.module.scss";
@@ -74,23 +71,11 @@ const Homepage = () => {
                     ],
                 }, 1500
             )
-
-              
-    
-
         }, [])
 
 
         let Homepage = (
             <div className={Styles.homepage}>
-                {/* <img
-                    className={Styles.backgroundImg}
-                    alt="background"
-                    srcSet={`
-                            ${BackgroundDesktop} 1200w,
-                            ${BackgroundTablet} 768w,
-                            ${BackgroundMobile} 480w
-                `} /> */}
 
                 <header className={Styles.header} >
                     <div className={Styles.headerCopy} >
@@ -116,10 +101,7 @@ const Homepage = () => {
                 <SocialLogos />
             </div>
         )
-
-
         return (Homepage)
-
     }
 
 export default Homepage;
