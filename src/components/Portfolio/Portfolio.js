@@ -86,6 +86,15 @@ class Portfolio extends React.Component {
 
             return (
                 <div className={Styles.portfolio} >
+
+                    <div className={Styles.portfolioHeader}>
+                        <img src="https://media.istockphoto.com/photos/christmas-lights-defocused-background-bokeh-gold-blue-picture-id613518332?k=6&m=613518332&s=612x612&w=0&h=Own5MdgJXjNhFd0YUyED1UP3mQsHeNhfML9F-DQYdYw=" />
+                        <div className={Styles.headerCopy}>
+                        <h1>Portfolio</h1>
+                        <h4>A Collection of Client and Personal Digital Web Projects</h4>
+                        </div>
+                    </div>
+
                     <div className={Styles.projectBanners} >
                         {/* gets list of Clickable Project Banners */}
                         {this.getProjectBanners()}

@@ -21,22 +21,29 @@ class Navigation extends React.Component {
 
     componentDidUpdate() {
         // if nav is in the dom run add the event listeners
-        if(this.state.navigationOpen) {this.HandleNavAction()}
+        if (this.state.navigationOpen) { this.HandleNavAction() }
     }
 
     // function to determine whether to show nav based on desktop show nav or hide on mobile.
     DetermineNavState() {
-        window.innerWidth < 768 ? this.setState({ navigationOpen: false }) : this.setState({ navigationOpen: true })
+        // this.setState({ navigationOpen: false })
+        if (window.innerWidth < 768) {
+            this.setState({ navigationOpen: false })
+        }
+        else {
+            console.log()
+            this.setState({ navigationOpen: true })
+        }
     }
 
     // Handles whether to open or close depending on if nav is open in state
-    ShowOrHideNav() {(!this.state.navigationOpen ? this.OpenNav() : this.CloseNav())}
+    ShowOrHideNav() { (!this.state.navigationOpen ? this.OpenNav() : this.CloseNav()) }
 
     // brings Nav Onto Screen and disabled scrolling
-    OpenNav() {disableScroll.on(); this.setState({ navigationOpen: true })}
+    OpenNav() { disableScroll.on(); this.setState({ navigationOpen: true }) }
 
     // move the navigation off screen and enabled scrolling
-    CloseNav() {disableScroll.off(); this.setState({ navigationOpen: false })}
+    CloseNav() { disableScroll.off(); this.setState({ navigationOpen: false }) }
 
     // Handles the Clicks
     HandleNavAction(event) {
@@ -51,13 +58,6 @@ class Navigation extends React.Component {
             }
         }
 
-        const removeEventListener = () => {
-            if(window.innerWidth < 768){
-            document.removeEventListener('click', outsideClickListener)
-            document.removeEventListener("click", navClickListener)
-            }
-        }
-
         // if the Nav-Links are clicked the follow function runs
         const navClickListener = (event) => {
             navLink.forEach(element => {
@@ -69,8 +69,15 @@ class Navigation extends React.Component {
             });
         }
 
-        if(window.innerWidth < 768){
-        document.addEventListener('click', outsideClickListener)
+        const removeEventListener = () => {
+            if (window.innerWidth < 768) {
+                // document.removeEventListener('click', outsideClickListener)
+                document.removeEventListener("click", navClickListener)
+            }
+        }
+
+        if(window.innerWidth < 768 && this.state.navigationOpen){
+        // document.addEventListener('click', outsideClickListener)
         document.addEventListener("click", navClickListener)
         }
 
