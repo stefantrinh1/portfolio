@@ -78,11 +78,9 @@ height: calc(var(--vh, 1vh)*100);
 }
 
 .animationBlocks div {
-// height: 100vh;
 display: inline-block;
 width: 10%;
-margin: 1.5%;
-// background-color: #345B57,
+margin: 0 1.5%;
 background-color: $darkbrand-color;
 }
 
@@ -91,7 +89,6 @@ background-color: $darkbrand-color;
     top: -93px;
   }
   .header {
-
     position: absolute;
     background: none;
   }

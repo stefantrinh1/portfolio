@@ -3,7 +3,7 @@ import Styles from "./Portfolio.module.scss";
 import * as contentful from "contentful";
 import LoadingPage from "../LoadingPage/LoadingPage"
 import Project from "./Project";
-
+import PortfolioBanner from "../../media-files/portfolio/portfolfioBanner.jpg"
 
 
 class Portfolio extends React.Component {
@@ -65,10 +65,9 @@ class Portfolio extends React.Component {
 
     // gets the project by key
     getProject(key) {
-
-        //scrolls to top of the project container when new project showing
-        const projectContainer = document.querySelector(".portfolio_block-container")
-        projectContainer.scrollTop = 0;
+        const projectContainer = document.getElementById("project")
+        // Because projects is in another componenet it accesses the other components elemenet through id and non css module.
+        projectContainer.scrollIntoView({behavior: "smooth", block:"start", inline: "start"})
 
         // loops through the JSON checking the key and if the key matches and returns the one object
         const element = this.state.portfolioJSON.filter(element => element.sys.id === key)
@@ -85,17 +84,17 @@ class Portfolio extends React.Component {
         if (!this.state.isPortfolioLoading) {
 
             return (
-                <div className={Styles.portfolio} >
+                <div className={Styles.portfolio}>
 
                     <div className={Styles.portfolioHeader}>
-                        <img src="https://media.istockphoto.com/photos/christmas-lights-defocused-background-bokeh-gold-blue-picture-id613518332?k=6&m=613518332&s=612x612&w=0&h=Own5MdgJXjNhFd0YUyED1UP3mQsHeNhfML9F-DQYdYw=" />
+                        <img src={PortfolioBanner} />
                         <div className={Styles.headerCopy}>
                         <h1>Portfolio</h1>
                         <h4>A Collection of Client and Personal Digital Web Projects</h4>
                         </div>
                     </div>
 
-                    <div className={Styles.projectBanners} >
+                    <div className={Styles.projectBanners} id={Styles.projectBanners}  >
                         {/* gets list of Clickable Project Banners */}
                         {this.getProjectBanners()}
                     </div>
