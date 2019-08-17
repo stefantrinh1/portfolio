@@ -10,9 +10,18 @@ const About = (props) => {
 
         <div className={Styles.about}>
 
+            <p>
+                I am a Web developer based in the West London and specialise in creating clean and simple user interfaces and use modern web technologies that produce fast, reliable and easily maintainable websites. 
+                Taking pride in the work I do, I will not stop until a client is fully satified with their platform. I believe in pixel perfection and will not be satified until this is achieved. 
+                Minimising running costs for clients is very important to me. Web hosting and Content Management is generally painful monthly expense for new businesses and most worry about paying out money for their small business that may not work out. 
+                Most of my websites and applictions are built with a FREE! content management system(CMS) and FREE! web hosting. None of that monthly charges you get with companies like Go Daddy and Wordpress. Your main cost is the yearly Domain fee. Usually between £9 to £14 per year. 
+                IMAGINE THAT. YOU CAN HAVE A WEBSITE THAT ONLY COSTS YOU FROM £9 A YEAR!!! 
+                if you have any questions or would like to chat about more about what you need. please contact me on stefantrinh1.work@gmail.com
+            </p>
 
-            <div className={Styles.aboutCard}>
-                <Link to={`${props.match.url}/aboutme`}>
+            <div className={Styles.aboutCards}>
+
+                <div className={Styles.aboutCard}>
 
                     <svg width="159px" height="159px" viewBox="0 0 159 159" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -27,14 +36,19 @@ const About = (props) => {
                         </g>
                     </svg>
 
-                    <h2>About Me</h2>
+                    <h2>Tech Stack</h2>
 
-                    <p>More about my services and technology background</p>
+                    <p>Find out more about my technology stack and what I use to create beautiful and innovative projects.</p>
+                    <div className={Styles.aboutCardBtn} >
+                        <Link to={`${props.match.url}/aboutme`}>
+                            Read More >
                 </ Link>
-            </div>
+                    </div>
 
-            <div className={Styles.aboutCard}>
-                <Link to={`${props.match.url}/career`}>
+                </div>
+
+                <div className={Styles.aboutCard}>
+
 
                     <svg width="145px" height="144px" viewBox="0 0 145 144" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -50,12 +64,15 @@ const About = (props) => {
                     </svg>
 
                     <h2>Career History</h2>
-                    <p>Find out about my career history here</p>
-                </ Link>
-            </div>
+                    <p>Are you an employer or recruiter? Find out more about my past career history and work experience</p>
+                    <div className={Styles.aboutCardBtn}>
+                        <Link to={`${props.match.url}/career`}>
+                            See History >
+                    </ Link>
+                    </div>
+                </div>
 
-            <div className={Styles.aboutCard}>
-                <Link to={`${props.match.url}/social`} >
+                <div className={Styles.aboutCard}>
 
                     <svg width="162px" height="120px" viewBox="0 0 162 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                         <g id="Icons" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
@@ -74,13 +91,18 @@ const About = (props) => {
                     </svg>
 
                     <h2>Social</h2>
-                    <p>Find out more about travel, food and coding</p>
+                    <p>Want to know the personal side of me. well here you can see the traveller, foodie and coder side of me</p>
+                    <div className={Styles.aboutCardBtn}>
+                        <Link to={`${props.match.url}/social`} >
+                            See Social >
                 </ Link>
+                    </div>
+                </div >
+
             </div>
 
 
-
-        </div >
+        </div>
     )
 }
 

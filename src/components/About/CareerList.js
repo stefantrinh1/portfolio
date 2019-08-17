@@ -2,7 +2,7 @@ import React from "react";
 import CareerEntry from "./CareerEntry";
 import Styles from "./About.module.scss";
 import { Link } from "react-router-dom";
-import BackArrow from "../../icons-logos/icons/backarrow.png";
+import BackArrow from "../../icons-logos/icons/BackArrow"
 
 const CareerList = (props) => {
 
@@ -20,8 +20,11 @@ const CareerList = (props) => {
     return (
         <div className={Styles.careerHistory}>
             <Link to="/about">
-                <img className={Styles.backArrow} src={BackArrow} alt="BackArrow" />
+                <div className={Styles.backArrow}>
+                    <BackArrow />
+                </div>
             </Link>
+            
             <h1 className={Styles.careerHistoryTitle}>Career History</h1>
             {CareerList}
         </div>
