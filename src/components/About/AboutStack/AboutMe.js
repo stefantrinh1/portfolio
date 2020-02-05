@@ -24,26 +24,6 @@ const AboutMe = props => {
       <div className={Styles.techStack}>
         <h2 className={Styles.techStackTitle}>Stack Logos</h2>
         <TechStack LogosJSON={AboutJSON.techStack} />
-        {/* <div className={Styles.techStackContainer}>
-          // return a list of logos pulling from contentful.
-          {AboutJSON.techStack.map(logo => {
-            console.log(logo);
-            return (
-              <a
-                href={logo.fields.description ? logo.fields.description : null}
-                key={logo.sys.id}
-                className={Styles.stacklogoslink}
-              >
-                <img
-                  className={Styles.stackLogos}
-                  src={logo.fields.file.url}
-                  alt={logo.fields.title}
-                  title={logo.fields.title}
-                />
-              </a>
-            );
-          })}
-        </div> */}
       </div>
     </div>
   );
