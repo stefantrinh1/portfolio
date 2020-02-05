@@ -43,9 +43,9 @@ class Blog extends React.Component {
         })
     }
 
-    componentDidUpdate() {
-        console.log(this.state.blogsJSON)
-    }
+    // componentDidUpdate() {
+    //     // console.log(this.state.blogsJSON)
+    // }
 
 
 

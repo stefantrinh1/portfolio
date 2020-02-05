@@ -1,5 +1,6 @@
 import React from "react";
 import Styles from "./Contact.module.scss";
+import ContactForm from "./ContactForm/ContactForm"
 
 class Contact extends React.Component {
 
@@ -8,7 +9,7 @@ class Contact extends React.Component {
         return (
 
         <div>
-            Contact Page
+           <ContactForm />
         </div>
 
         )

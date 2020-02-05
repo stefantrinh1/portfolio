@@ -1,0 +1,87 @@
+@import "../../../base-styles/partials/colors";
+
+.backArrow{
+  position: absolute;
+  top: 0px;
+  left: 10px;
+}
+
+  // ============================================
+  // ==========  Career History   ===============
+  // ============================================
+  .careerHistory {
+  padding: 0 1em;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.careerHistoryTitle {
+  text-align: center;
+  font-weight: 200;
+  margin: 1em 0;
+}
+
+.careerEntry {
+  font-size: 1.5rem;
+  position: relative;
+  border-left: 1px solid $brand-color;
+  padding-left: 10px;
+}
+
+.careerEntryNode {
+  height: 20px;
+  width: 20px;
+  background-color: $brand-color;
+  border-radius: 30px;
+  position: absolute;
+}
+
+.nodeTop {
+  top: -10px;
+  left: -10px;
+}
+
+.careerCompany {
+  color: $lightbrand-color;
+  font-weight: 400;
+  font-size: 1.1em;
+  padding-top: 10px;
+}
+
+.careerEntry h6 {
+  margin: 0.2em 0;
+}
+
+.companyLogo {
+  float: right;
+  max-width: 100px;
+  margin: 1em 0.5em;
+}
+
+.careerDescription {
+  margin: 0.5em 0;
+  overflow: hidden;
+  font-size: 0.8em;
+}
+
+.careerEntryBtn {
+  padding: 0.5em 1.5em;
+  margin: 1.25em 0;
+  font-size: 0.6em;
+  background-color: $brand-color;
+  color: $light-black;
+  opacity: 0.8;
+}
+
+.careerEntry hr {
+  border-width: 0.5px;
+  margin: 0;
+}
+
+@media only screen and (min-width: 767px) {
+  .careerHistoryTitle {
+    margin: 0 auto 0.75em;
+  }
+  
+}

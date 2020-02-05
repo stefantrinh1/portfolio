@@ -87,7 +87,7 @@ class Portfolio extends React.Component {
                 <div className={Styles.portfolio}>
 
                     <div className={Styles.portfolioHeader}>
-                        <img src={PortfolioBanner} />
+                        {/* <img src={PortfolioBanner} /> */}
                         <div className={Styles.headerCopy}>
                         <h1>Portfolio</h1>
                         <h4>A Collection of Client and Personal Digital Web Projects</h4>

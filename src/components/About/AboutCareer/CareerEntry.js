@@ -1,6 +1,6 @@
 import React from "react";
 import DateFormat from "dateformat";
-import Styles from "./About.module.scss";
+import Styles from "./AboutCareer.module.scss";
 
 
 class CareerEntry extends React.Component {

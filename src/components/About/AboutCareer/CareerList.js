@@ -1,8 +1,8 @@
 import React from "react";
 import CareerEntry from "./CareerEntry";
-import Styles from "./About.module.scss";
+import Styles from "./AboutCareer.module.scss";
 import { Link } from "react-router-dom";
-import BackArrow from "../../icons-logos/icons/BackArrow"
+import BackArrow from "../../../icons-logos/icons/BackArrow"
 
 const CareerList = (props) => {
 

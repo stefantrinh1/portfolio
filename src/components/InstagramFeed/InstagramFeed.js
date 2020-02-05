@@ -1,5 +1,5 @@
 import React from 'react';
-import("./InstagramFeed.scss")
+import "./InstagramFeed.scss";
 const ReactMarkdown = require('react-markdown/with-html');
 
 class InstagramFeed extends React.Component {
@@ -31,9 +31,12 @@ class InstagramFeed extends React.Component {
                     instagramJson: InstagramDataList,
                     isLoading: false
                 })
-                // .catch(error => this.setState({ isLoading: false }))
+               
             }
             )
+            .catch(error => { 
+                this.setState({ isLoading: false, error:error })
+        })
 
         fetch(`${instagramUserQuery + this.state.accessToken}`)
             .then(response => response.json())
@@ -42,9 +45,13 @@ class InstagramFeed extends React.Component {
                     instagramUserJson: data,
                     isUserDataLoading: false
                 })
-                // .catch(error => this.setState({ isLoading: false }))
+            
             }
             )
+            .catch(error => { 
+                console.log(error)
+                this.setState({ isLoading: false, error:error })
+        })
     }
     componentDidUpdate() {
     }
@@ -69,11 +76,13 @@ class InstagramFeed extends React.Component {
 
         if (error) {
             return (
-                <div>
-                    <p>
-                        Loading Error. Please Try Again Later.
-
-                    </p>
+                <div style={{textAlign:"center"}}>
+                    <h1>
+                        Opps. There Was A Loading Error.
+                    </h1>
+                    <h4>
+                        Please Try Again Later.
+                    </h4>
                 </div>)
         }
 
@@ -164,7 +173,7 @@ class InstagramFeed extends React.Component {
 }
 
 InstagramFeed.defaultProps = {
-    accessToken: "2116304243.0917c89.a0bcdda6581d476bb24e31fcf5154f18",
+    accessToken: "2116304243.1677ed0.35617ad9245c4b39b919e6c3a036fd7e",
     NumberPhotosToLoad: 20,
 };
 

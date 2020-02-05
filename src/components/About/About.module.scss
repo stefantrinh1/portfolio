@@ -2,216 +2,88 @@
 @import "../../base-styles/partials/buttons";
 
 .about {
+    position: relative;
+    padding: 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 1.5em;
+    position: absolute;
+    text-align: center;
+    top: 15vw;
+    left: 60%;
+    background: black;
     padding: 1em;
 }
 
-.aboutCards {
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    width: 100%;
-    justify-content: space-between;
-    color: #404040;
+.title,
+.details h4,
+.about p,
+.about hr {
+    margin-bottom: 1em;
 }
 
-.aboutContainer {
-    margin: 1em auto;
-    padding: 0.5em 1em;
-    box-sizing: border-box;
-    max-width: 1200px;
+.imagecontainer {
     position: relative;
+    right: 20%;
+    margin-bottom: 1em;
 }
 
-.aboutCard {
-    // width: 100%;
-    text-align: center;
-    padding: 0.5em;
-    box-sizing: border-box;
-    border-radius: 10px;
-    background: #404040;
-    box-shadow: 4px 4px 7px 1px black;
-    display: flex;
-    margin: 1em 0 1em;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content:flex-start;
-    font-size: 1rem;
-
+.imagecontainer img {
+    width: 100%; 
+    // transform: scaleX(-1);
+    border-radius: 10%;
 }
 
-.aboutCard svg {
-    width: 100%;
-    height: 40px;
-    margin: 0 0 1em;
+.details h4 {
+    padding-bottom: 0.5em;
+    border-bottom: white 0.5px solid;
 }
-
-.aboutCard h2 {
-    margin: 0 0 1rem;
-    color: white;
-    font-size: 1.2em;
-
-}
-
-.aboutCard p {
-    margin: 0 0 1rem;
-    color: $off-white;
-    font-size: 0.9em;
-}
-
-.aboutCardBtn {
-    align-self: flex-end;
-    color: $brand-color;
-    font-weight: 700;
-    margin: 0 0 0 auto;
-    font-size: 1em;
+.details a{
+    font-weight: bold;
 }
 
 
-.backArrow{
-  position: absolute;
-  top: 0px;
-  left: 10px;
-}
+@media only screen and (min-width: 767px) {
 
+    .about {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .title {
+        position: unset;
+        background: unset;
+        text-align: left;
+        padding: unset;
+        color: $brand-color;
+    }
 
-// ============================================
-// =============  About Intro  ================
-// ============================================
-.introContainer {
-    width: 100%;
-}
+    .details p a {
+        &:hover {
+            color: $brand-color;
+            text-decoration: underline;
+        }
+    }
 
-.introTitle {
-    font-weight: 600;
-    text-align: center;
-    width: 90%;
-    margin: 0 auto 0.75em;
-    color: $brand-color;
-}
+    .details,
+    .imagecontainer {
+        width: 50%;
+    }
 
-.introCopy {
-    font-size: 1.2em;
-}
+    .imagecontainer {
+        right: 8%;
+    }
 
-// ============================================
-// =============  Tech Stack  =================
-// ============================================
-
-.techStack {
-    overflow: hidden;
-    width: 100%;
-}
-
-.techStackTitle {
-    font-weight: 600;
-    text-align: center;
-    margin: 1em auto;
-    width: 90%;
-    color: $brand-color;
-}
-
-.techStackContainer {
-    margin: 1em 0;
-    flex-wrap: wrap;
-    display: flex;
-    width: 100%;
-}
-
-.techStackContainer .stackLogos {
-    height: 40px;
-    margin: 0.5em;
-}
-
-.techStackContainer .stackLogos svg {
-    margin: 0 0.3em;
-}
-
-
-// ============================================
-// ==========  Career History   ===============
-// ============================================
-
-.careerHistory {
-    padding: 0 1em;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-}
-
-.careerHistoryTitle {
-    text-align: center;
-    font-weight: 200;
-    margin: 1em 0;
+    .imagecontainer img {
+        height: 100%;
+        object-fit: cover;
+    }
 
 }
 
-.careerEntry {
-    font-size: 1.5rem;
-    position: relative;
-    border-left: 1px solid $brand-color;
-    padding-left: 10px;
-}
-
-.careerEntryNode {
-    height: 20px;
-    width: 20px;
-    background-color: $brand-color;
-    border-radius: 30px;
-    position: absolute;
-}
-
-.nodeTop {
-    top: -10px;
-    left: -10px;
-}
-
-.careerCompany {
-    color: $lightbrand-color;
-    font-weight: 400;
-    font-size: 1.1em;
-    padding-top: 10px;
-}
-
-.careerEntry h6 {
-    margin: 0.2em 0;
-}
-
-.companyLogo {
-    float: right;
-    max-width: 100px;
-    margin: 5px;
-}
-
-.careerDescription {
-    margin: 0.5em 0;
-    overflow: hidden;
-    font-size: 0.8em;
-}
-
-.careerEntryBtn {
-    padding: 0.5em 1.5em;
-    margin: 1.25em 0;
-    font-size: 0.6em;
-    background-color: $brand-color;
-    color:$light-black;
-    opacity: 0.8;
-}
-
-.careerEntry hr {
-    border-width: 0.5px;
-    margin: 0;
-}
-
-
-// ============================================
-// ===========   About Social    ==============
-// ============================================
-
-.aboutSocial {
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-}
 
 
 // ============================================
@@ -219,37 +91,8 @@
 // ============================================
 
 
-@media only screen and (min-width: 480px) {
-    .aboutCard {
-        width: 32%;
-        font-size: calc(5px + 1.5vw);
-    }
-    .aboutCardBtn {
-        margin: unset;
-        // recenters the CTA buttons
-    }
-}
 
 @media only screen and (min-width: 767px) {
-
-    .aboutContainer {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-        justify-content: space-between;
-    }
-
-    .introTitle {
-        margin: 0 auto 0.75em;
-    }
-
-    .careerHistoryTitle {
-        margin: 0 auto 0.75em;
-    }
 
     .introContainer {
         overflow: auto;
@@ -257,11 +100,4 @@
         height: 100%;
     }
 
-    .block1,
-    .block2 {
-        width: 49%;
-        overflow: auto;
-        -webkit-overflow-scrolling: touch;
-        height: 85vh;
-    }
 }

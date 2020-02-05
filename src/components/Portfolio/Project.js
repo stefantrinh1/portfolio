@@ -2,26 +2,14 @@ import React from "react";
 import Styles from "./Project.module.scss";
 import LinkIcon from '../../icons-logos/icons/link.png'
 import GithubIcon from '../../icons-logos/logos/githublogo.png'
+import TechStack from "../TechStack/TechStack";
 const ReactMarkdown = require('react-markdown/with-html');
 
 
 class Project extends React.Component {
 
-    
     projectContainer = React.createRef()
   
-
-    // props should pass through a single object project
-
-    stackLogoImgs() {
-        const stackLogos = this.props.portfolioJSON.fields.techStackLogos.map(logo => {
-            return (
-                <img className={Styles.stackLogo} src={logo.fields.file.url} alt="stackLogo" key={logo.sys.id} />
-            )
-        });
-        return stackLogos
-    }
-
     render() {
 
         return (
@@ -60,7 +48,6 @@ class Project extends React.Component {
                     </div>
 
                     <div className={Styles.projectImg}>
-                        {/* ${this.props.portfolioJSON.fields.projectImageLarge.fields.file.url} 2560w, */}
                         <img className=""
                             src={`
                                 ${this.props.portfolioJSON.fields.projectImageSmall.fields.file.url}
@@ -77,12 +64,7 @@ class Project extends React.Component {
                         Tech Stack
                     </h3>
 
-                    {/* runs the method that grabs all the logos from contentful and returns a list of JSX */}
-                    <div className={Styles.stacklogoContainer} >
-                        <div className={Styles.stacklogoScroll} >
-                            {this.stackLogoImgs()}
-                        </div>
-                    </div>
+                    <TechStack LogosJSON={this.props.portfolioJSON.fields.techStackLogos}/>
 
                     <ReactMarkdown className={Styles.projectDescription} escapeHtml={false}>
                         {this.props.portfolioJSON.fields.projectDescription}

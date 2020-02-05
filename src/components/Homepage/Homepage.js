@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import SocialLogos from "../SocialLogos/SocialLogos";
 import Styles from "./Homepage.module.scss";
 import anime from 'animejs/lib/anime.es.js';
+import disableScroll from "disable-scroll";
 
 const Homepage = () => {
 
@@ -17,7 +18,8 @@ const Homepage = () => {
         });
 
         useEffect(() => {
-         
+            
+            disableScroll.on()
             // animation for Header
             anime({
                 targets: `.${Styles.headerTitle}`,

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Route } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import About from "./About";
-import AboutMe from "./AboutMe";
-import AboutCareer from "./AboutCareer";
-import AboutSocial from "./AboutSocial";
+import AboutMe from "./AboutStack/AboutMe";
+import AboutCareer from "./AboutCareer/AboutCareer";
+import AboutSocial from "./AboutSocial/AboutSocial";
 import LoadingPage from "../LoadingPage/LoadingPage"
 import * as contentful from "contentful";
 
@@ -13,6 +13,8 @@ const AboutRouter = (props) => {
     const [aboutJSON, SetAboutContent] = useState([]);
     const [isCareerLoading, finishCareerLoading] = useState(true);
     const [careerJSON, SetCareerContent] = useState([]);
+    const [isAboutMainLoading, finishAboutMainLoading] = useState(true);
+    const [aboutMainJSON, SetAboutMainContent] = useState([]);
 
     useEffect(() => {
 
@@ -30,6 +32,9 @@ const AboutRouter = (props) => {
         const AboutQuery = {
             content_type: "about",
         }
+        const AboutMain = {
+            content_type: "aboutMain",
+        }
         // ===================
 
         // This is a Generic Fetch By ContentType Function for Contentful. It takes a query 
@@ -38,7 +43,7 @@ const AboutRouter = (props) => {
         // Functions to Fetch Data from Contentful
         FetchByContentType(AboutQuery).then(handleContentfulAboutFetch).catch(console.error)
         FetchByContentType(CareerQuery).then(handleContentfulCareerFetch).catch(console.error)
-        
+        FetchByContentType(AboutMain).then(handleContentfulAboutMainFetch).catch(console.error)
     }, [])
 
     // Sets the response once it has come back into state for About Intro
@@ -53,14 +58,25 @@ const AboutRouter = (props) => {
         finishCareerLoading(false)
     }
 
-    if(!isAboutLoading && !isCareerLoading){
+        // Sets the response once it has come back into state for About Intro
+        const handleContentfulAboutMainFetch = response => {
+            SetAboutMainContent(response.items[0].fields)
+            finishAboutMainLoading(false)
+        }
+
+    // const ScrollToTop = () => {
+    //     window.scrollTo(0, 0);
+    //     return null;
+    //   };
+
+    if(!isAboutLoading && !isCareerLoading && !isAboutMainLoading){
     return (
-        <div>
-            <Route exact path={`${props.match.path}`} component={About} />
-            <Route path={`${props.match.path}/aboutme`} render={(props) => (<AboutMe {...props} AboutJSON={aboutJSON} />)} />
-            <Route path={`${props.match.path}/career`} render={(props) => (<AboutCareer {...props} CareerJSON={careerJSON} />)} />
-            <Route path={`${props.match.path}/social`} render={(props) => (<AboutSocial {...props}  />)} />
-        </div>
+        <Router >
+            <Route exact path={`/about`} render={(props) => (<About {...props} aboutMainJSON={aboutMainJSON}/>)} />
+            <Route path={`/about/aboutme`} render={(props) => (<AboutMe {...props} AboutJSON={aboutJSON} />)} />
+            <Route path={`/about/career`} render={(props) => (<AboutCareer {...props} CareerJSON={careerJSON} />)} />
+            <Route path={`/about/social`} render={(props) => (<AboutSocial {...props} />)} />
+        </Router>
     )}
     else{
         return <LoadingPage />

@@ -25,3 +25,6 @@
   // stops the app container overlapping the homepage
 }
 
+.App > div:nth-child(2) {
+  height: 100%; // react router adds extra div around page components. this targets that div
+}

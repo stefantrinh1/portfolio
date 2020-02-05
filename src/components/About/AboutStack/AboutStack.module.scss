@@ -1,0 +1,103 @@
+@import "../../../base-styles/partials/colors";
+
+.backArrow{
+    position: absolute;
+    top: 0px;
+    left: 10px;
+  }
+
+  .aboutContainer {
+    margin: 1em auto;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+    max-width: 1200px;
+    position: relative;
+}
+
+// ============================================
+// =============  About Intro  ================
+// ============================================
+
+.introContainer {
+    width: 100%;
+}
+
+.introTitle {
+    font-weight: 600;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto 0.75em;
+    color: $brand-color;
+}
+
+.introCopy {
+    font-size: 1em;
+
+    h1,h2,h3,h4,h5,h6, p {
+        margin-bottom: 1em;
+    }
+}
+
+// ============================================
+// =============  Tech Stack  =================
+// ============================================
+
+.techStack {
+    overflow: hidden;
+    width: 100%;
+}
+
+.techStackTitle {
+    font-weight: 600;
+    text-align: center;
+    margin: 1em auto;
+    width: 90%;
+    color: $brand-color;
+}
+
+.techStackContainer {
+    margin: 1em 0;
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
+}
+
+.stacklogoslink {
+    &:hover .stackLogos{
+        transition: all ease-in-out 0.4s;
+        transform: scale(1.15);
+    }
+}
+
+.techStackContainer .stackLogos {
+    height: 40px;
+    margin: 0.5em;
+}
+
+.techStackContainer .stackLogos svg {
+    margin: 0 0.3em;
+}
+
+@media only screen and (min-width: 767px) {
+
+    .aboutContainer {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    .introTitle {
+        margin: 0 auto 0.75em;
+    }
+
+    .introContainer {
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        height: 100%;
+    }
+}
