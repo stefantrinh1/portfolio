@@ -177,6 +177,13 @@
     -ms-flex-pack: end;
     justify-content: flex-end;
   }
+
+  .navItemLink {
+    &:hover li{
+      color: darkgrey;
+    }
+  }
+
   .hamburger,
   .hamburgerContainer {
     display: none;
