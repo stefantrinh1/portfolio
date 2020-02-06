@@ -58,7 +58,14 @@ const Navigation = () => {
         <div className={Styles.navmenu}>
           <ul>
             <div className={Styles.navIcon}>
-              <NavLink to="/">
+              <NavLink 
+                to="/"
+                onClick={()=>{
+                  if(window.innerWidth < 767) {
+                    toggleNav(false)
+                  }
+                }}
+              >
                 <BrandLogo />
               </NavLink>
             </div>
