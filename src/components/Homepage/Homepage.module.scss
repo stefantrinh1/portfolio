@@ -13,6 +13,9 @@ min-height: 480px;
 height: calc(var(--vh, 1vh)*100);
 }
 
+.particals canvas {
+  z-index: -10;
+}
 
 .header {
   font-size: 1rem;
@@ -33,6 +36,7 @@ height: calc(var(--vh, 1vh)*100);
   text-align: center;
 }
 
+
 .headerTitle {
   font-size: calc(3em + 3vw);
   font-weight: 200;
@@ -49,7 +53,7 @@ height: calc(var(--vh, 1vh)*100);
 }
 
 .mainBtn {
-  display: block;
+  display: inline-block;
   font-size: 1.2em;
   margin: 0 auto;
   font-weight: 500;
@@ -90,6 +94,9 @@ background-color: $darkbrand-color;
   .header {
     position: absolute;
     background: none;
+  }
+  .particals canvas {
+    z-index: 0;
   }
 }
 

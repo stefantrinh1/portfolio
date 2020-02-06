@@ -14,6 +14,13 @@
     margin-bottom: 1em;
 }
 
+.contactform .emailaddress {
+    color: $brand-color;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
 .contactform form {
     display: flex;
     flex-wrap: wrap;

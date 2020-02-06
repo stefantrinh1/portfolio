@@ -1,4 +1,5 @@
 @import "../../base-styles/partials/colors";
+@import "../../base-styles/partials/fonts";
 
 // =====  Navigation Styles =====
 
@@ -45,6 +46,7 @@
     // removes all bullet points in nav menus
     list-style: none;
     font-size: 1.5rem;
+    font-family: $primaryFont;
   }
 }
 

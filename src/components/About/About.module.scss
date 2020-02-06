@@ -6,7 +6,7 @@
     padding: 1em;
     max-width: 1200px;
     margin: 0 auto;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .title {
@@ -28,8 +28,10 @@
 
 .imagecontainer {
     position: relative;
-    right: 20%;
+    right: 8%;
     margin-bottom: 1em;
+    z-index: -100;
+    overflow:visable
 }
 
 .imagecontainer img {
@@ -74,7 +76,8 @@
     }
 
     .imagecontainer {
-        right: 8%;
+        right: 5%;
+  
     }
 
     .imagecontainer img {

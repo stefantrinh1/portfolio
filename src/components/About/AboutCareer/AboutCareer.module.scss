@@ -1,17 +1,17 @@
 @import "../../../base-styles/partials/colors";
 
-.backArrow{
+.backArrow {
   position: absolute;
-  top: 0px;
-  left: 10px;
+  top: 20px;
+  left: 5px;
 }
 
-  // ============================================
-  // ==========  Career History   ===============
-  // ============================================
-  .careerHistory {
+// ============================================
+// ==========  Career History   ===============
+// ============================================
+.careerHistory {
   padding: 0 1em;
-  max-width: 1200px;
+  max-width: 767px;
   margin: 0 auto;
   position: relative;
 }
@@ -23,7 +23,6 @@
 }
 
 .careerEntry {
-  font-size: 1.5rem;
   position: relative;
   border-left: 1px solid $brand-color;
   padding-left: 10px;
@@ -35,6 +34,7 @@
   background-color: $brand-color;
   border-radius: 30px;
   position: absolute;
+  box-shadow: 1px 1px 2px 4px rgb(26, 26, 26);
 }
 
 .nodeTop {
@@ -44,13 +44,22 @@
 
 .careerCompany {
   color: $lightbrand-color;
-  font-weight: 400;
-  font-size: 1.1em;
+  font-weight: 300;
+  font-size: 1.3em;
   padding-top: 10px;
 }
 
-.careerEntry h6 {
+.careerEntry h4 {
   margin: 0.2em 0;
+}
+
+.jobTitle {
+  letter-spacing: 1px;
+}
+
+.careerLocation,
+.careerDates {
+  font-weight: 100;
 }
 
 .companyLogo {
@@ -62,16 +71,30 @@
 .careerDescription {
   margin: 0.5em 0;
   overflow: hidden;
-  font-size: 0.8em;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  li,
+  p {
+    margin-bottom: 1em;
+  }
 }
 
 .careerEntryBtn {
   padding: 0.5em 1.5em;
   margin: 1.25em 0;
-  font-size: 0.6em;
-  background-color: $brand-color;
-  color: $light-black;
-  opacity: 0.8;
+  font-size: 0.8em;
+  background-color: $darkbrand-color;
+  color: white;
+  opacity: 0.9;
+  box-shadow: 1px 1px 2px 1px rgb(26, 26, 26);
+  &:hover {
+    background-color: $darkbrand-color;
+  }
 }
 
 .careerEntry hr {
@@ -83,5 +106,4 @@
   .careerHistoryTitle {
     margin: 0 auto 0.75em;
   }
-  
 }

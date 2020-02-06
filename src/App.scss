@@ -5,6 +5,7 @@
 
 // Components
 @import "./components/StackLogos/stacklogos";
+@import './base-styles/partials/fonts';
 
 .App {
   // overflow-x: hidden;
@@ -27,4 +28,9 @@
 
 .App > div:nth-child(2) {
   height: 100%; // react router adds extra div around page components. this targets that div
+}
+
+p, li {
+  font-family: $secondFont;
+  font-weight: 300;
 }

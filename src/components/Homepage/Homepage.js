@@ -1,11 +1,15 @@
 import React, { useEffect } from 'react'
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import SocialLogos from "../SocialLogos/SocialLogos";
 import Styles from "./Homepage.module.scss";
 import anime from 'animejs/lib/anime.es.js';
 import disableScroll from "disable-scroll";
+import Particles from 'react-particles-js';
+import ParticlesJson from './particals-json.json'
 
 const Homepage = () => {
+
+    
 
         // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
         // Then we set the value in the --vh custom property to the root of the document
@@ -16,6 +20,8 @@ const Homepage = () => {
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         });
+        // const particlesJS = window.particlesJS;
+        
 
         useEffect(() => {
             
@@ -73,17 +79,21 @@ const Homepage = () => {
                     ],
                 }, 1500
             )
+    
+    
+
         }, [])
 
 
         let Homepage = (
             <div className={Styles.homepage}>
+                <Particles className={Styles.particals} style={{position:"absolute"} }params={ParticlesJson} />
 
                 <header className={Styles.header} >
                     <div className={Styles.headerCopy} >
                         <h1 className={Styles.headerTitle}>STEFAN TRINH</h1>
                         <h2 className={Styles.headerSubtitle}>WEB DEVELOPER</h2>
-                        <NavLink to="/portfolio"><button className={Styles.mainBtn}>Explore Projects</button></NavLink>
+                        <Link to="/portfolio"><button className={Styles.mainBtn}>Explore Projects</button></Link>
                     </div>
                 </header>
 
