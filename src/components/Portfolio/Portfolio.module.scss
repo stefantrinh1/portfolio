@@ -17,7 +17,6 @@
 }
 
 .headerCopy {
-  max-width: 1800px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -32,7 +31,7 @@
   letter-spacing: 5px;
   text-transform: uppercase;
   font-weight: 400;
-  border-bottom: 4px solid white;
+  border-bottom: 4px solid #ffb300;
   width: 100%;
   margin: 0 2em 0.2em;
   box-sizing: content-box;
@@ -57,14 +56,13 @@
 }
 
 .projectBanner {
-  box-shadow: 0px 0px 5px 2px black;
-  transition: all ease-in-out 0.5s;
+  // box-shadow: 0px 0px 5px 2px black;
+  transition: all ease-in-out 0.3s;
   // border-radius: 10px;
   &:hover {
-    // filter: brightness(120%);
     border-radius: 10px;
-    box-shadow: 0px 0px 5px 5px lightgrey;
-    transform: scale(1.3);
+    box-shadow: 1px 1px 3px 2px black;
+    transform: scale(1.1);
     z-index: 300;
   }
 }
@@ -87,5 +85,7 @@
 @media (min-width: 1400px) {
   .headerCopy {
     font-size: 25.6px;
+    max-width: 1800px;
+    margin: 0 auto;
   }
 }

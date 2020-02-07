@@ -25,7 +25,7 @@ class Project extends React.Component {
     } = this.props.portfolioJSON.fields;
 
     var settings = {
-    centerMode: true,
+      centerMode: true,
       infinite: true,
       speed: 500,
       arrows: true,
@@ -36,19 +36,19 @@ class Project extends React.Component {
           breakpoint: 767,
           settings: {
             slidesToShow: 1,
-            arrows: false,
+            arrows: false
           }
-        },
-    ]
+        }
+      ]
     };
 
     return (
       // id is there to allow portfolio component to access this element.
       <div className={Styles.project} id="project">
         <header className={Styles.header}>
-
           <div className={Styles.titlecontainer}>
             <h2 className={Styles.projectTitle}>{projectName}</h2>
+            <div className={Styles.seperator} />
             <p className={Styles.projectSubtitle}>
               {projectSubtitle ? projectSubtitle : null}
             </p>

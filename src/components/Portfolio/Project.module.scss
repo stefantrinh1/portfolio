@@ -5,7 +5,6 @@
 // ==========================
 
 .project {
-  padding: 0 1em;
   box-sizing: border-box;
   width: 100%;
 }
@@ -14,6 +13,7 @@
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  padding: 1em;
 
   > div {
     width: 100%;
@@ -22,14 +22,22 @@
 
 .projectTitle {
   font-size: 2.5em;
-  margin: 0.5em 0;
+  margin: 16px 0;
   font-family: "Raleway", sans-serif;
 }
 
 .projectSubtitle {
-  font-size: 1em;
-  margin: 0.5em 0;
+  font-size: 1.2em;
+  margin: 16px 0;
 }
+
+.seperator {
+  width: 3em;
+  height: 0.3em;
+  display: inline-block;
+  background: $brand-color;
+}
+
 
 .projectBtns {
   display: flex;
@@ -50,8 +58,14 @@
 
 .projectImg img {
   width: 100%;
-  padding: 0.5em;
   box-sizing: border-box;
+  border-radius: 0.5em;
+  overflow: hidden;
+  box-shadow: 1px 1px 7px 1px black;
+}
+
+.projectDetails {
+  padding: 0 1em;
 }
 
 .projectDetails h3 {
@@ -118,11 +132,6 @@
     text-align: left;
   }
 
-  .projectHeading {
-    text-align: left;
-    margin: 1em 0;
-  }
-
   .header {
 
     .projectBtns {
@@ -136,8 +145,8 @@
       }
     }
   }
-  .projectImg {
-    padding: 1em;
+  .projectImg img {
+    border-radius: 1em;
   }
 }
 
