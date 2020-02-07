@@ -3,7 +3,7 @@ import Styles from "./Portfolio.module.scss";
 import * as contentful from "contentful";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import Project from "./Project";
-import PortfolioBanner from "../../media-files/portfolio/portfolfioBanner.jpg";
+
 
 class Portfolio extends React.Component {
   state = {

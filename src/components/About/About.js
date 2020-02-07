@@ -2,9 +2,9 @@ import React from "react";
 // import LoadingPage from "../LoadingPage/LoadingPage";
 import Styles from "./About.module.scss";
 import { Link } from "react-router-dom";
-import AboutImg from "../../media-files/aboutimage.jpg";
 import ContentBoxes from "./Contentboxes/ContentBoxes";
 const ReactMarkdown = require("react-markdown/with-html");
+
 const About = props => {
   const { image, title, content } = props.aboutMainJSON;
 

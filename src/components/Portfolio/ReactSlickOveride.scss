@@ -1,0 +1,23 @@
+@import "../../base-styles/partials/colors";
+
+.slick-next {
+    right: -30px;
+}
+
+.slick-prev {
+    left: -30px;
+}
+
+.slick-prev,
+.slick-next {
+  width: 25px;
+  height: 25px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: $brand-color;
+  opacity: 1;
+  font-size: 25px;
+  border-radius: none;
+}

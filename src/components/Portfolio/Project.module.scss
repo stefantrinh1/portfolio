@@ -1,83 +1,71 @@
 @import "../../base-styles/partials/colors";
 
-
 // ==========================
 // ===== Project Header =====
 // ==========================
 
-.project{
-    padding: 0 1em;
-    box-sizing: border-box;
+.project {
+  padding: 0 1em;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
+  > div {
     width: 100%;
-}
-
-.projectHeading {
-    width: 30%;
-    margin: 0 auto;
-    border-bottom: 1px solid white;
-    text-align: center;
-}
-
-.project header {
-    display: flex;
-    flex-wrap:wrap;
-    text-align: center;
-}
-
-.headerContent {
-    width: 100%;
-
-}
-
-.projectImg img{
-    width: 100%;
-}
-
-.headerCopy {
-    font-size: 16px;
+  }
 }
 
 .projectTitle {
-    font-size: 2.5em;
-    margin: 0.5em 0;
-    font-family: 'Raleway', sans-serif;
+  font-size: 2.5em;
+  margin: 0.5em 0;
+  font-family: "Raleway", sans-serif;
 }
 
 .projectSubtitle {
-    font-size: 1em;
-    margin: 0.5em 0;
+  font-size: 1em;
+  margin: 0.5em 0;
 }
 
+.projectBtns {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
 
 .projectBtn {
-    padding: 0.5em 1em;
-    margin: 1em 0.5em 1em 0;
-    font-size: 1em;
-    border-radius: 5px;
-    font-weight: 600;
-    &:hover{
-       background: $darkbrand-color
-    }
+  padding: 0.5em 0.75em;
+  margin: 0 0.5em;
+  font-size: 0.9em;
+  border-radius: 5px;
+  font-weight: 600;
+  &:hover {
+    background: $darkbrand-color;
+  }
 }
 
-
-.projectDetails {
-
+.projectImg img {
+  width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
 }
 
 .projectDetails h3 {
-    margin: 1em 0;
-    
+  margin: 1em 0;
 }
 
 .stackLogo {
-    margin: 0 0.5em;
-    height: 40px;
+  margin: 0 0.5em;
+  height: 40px;
 }
 
 .projectDescription ul,
-.projectDescription ol  {
-    list-style-position: inside;
+.projectDescription ol {
+  list-style-position: inside;
 }
 
 .projectDescription h1,
@@ -87,88 +75,70 @@
 .projectDescription h5,
 .projectDescription h6,
 .projectDescription img {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 
 .projectDescription h2 {
-    color: $brand-color;
-    text-decoration: underline;
-    // text-transform: uppercase;
+  color: $brand-color;
+  text-decoration: underline;
+  // text-transform: uppercase;
 }
 
 .projectDescription p {
-    line-height: 1.5;
-    margin: 0.75em 0;
+  line-height: 1.5;
+  margin: 0.75em 0;
 }
 
 .projectDescription li,
 .projectDescription ul {
-    line-height: 1.5;
-    list-style: inside;
-    margin: 0.75em 0;
-    padding-left: 0.5em;
+  line-height: 1.5;
+  list-style: inside;
+  margin: 0.75em 0;
+  padding-left: 0.5em;
 }
 
 .projectDescription li > p {
-    display: inline;
+  display: inline;
 }
 
 .projectDescription a {
-    color:$lightbrand-color;
-    font-weight: 700;
+  color: $lightbrand-color;
+  font-weight: 700;
 }
 
 .projectDescription img,
 .projectDescription table {
-    width: 100%;
+  width: 100%;
 }
 
+@media (min-width: 767px) {
+  .project header {
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: left;
+  }
 
-@media (min-width:767px) {
-    .project header {
-        display: flex;
-        flex-wrap: nowrap;
-        text-align: left;
-    }
+  .projectHeading {
+    text-align: left;
+    margin: 1em 0;
+  }
 
-    .projectHeading {
-       text-align: left;
-       margin: 1em 0;
-
-    }
-
-    .projectTitle {
-        
-    }
-
-    .headerContent {
-        width: 40%;
-        order:2;
-        position: relative;
-    }
-
-    .headerCopyInner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        width: 100%;
-        padding: 0 5% 0 15%;
-        box-sizing: border-box;
-    }
+  .header {
 
     .projectBtns {
-        display: flex;
-        margin: 1.5em 1em 2em 0;
+      display: flex;
+      width: 25%;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+
+      .projectBtn {
+        margin: 0.5em;
+      }
     }
-
-    .projectImg {
-        order:1;
-        width: 60%;
-    }
-
-
-
+  }
+  .projectImg {
+    padding: 1em;
+  }
 }
 
 // =============================
