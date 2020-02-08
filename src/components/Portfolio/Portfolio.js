@@ -3,6 +3,7 @@ import Styles from "./Portfolio.module.scss";
 import * as contentful from "contentful";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import Project from "./Project";
+import ScrollUpButton from "react-scroll-up-button";
 
 
 class Portfolio extends React.Component {
@@ -102,6 +103,7 @@ class Portfolio extends React.Component {
 
           {/* Project Component taking in project to display prop */}
           <Project portfolioJSON={this.state.displayedProject} />
+          <ScrollUpButton />
         </div>
       );
     } else {
