@@ -14,9 +14,7 @@ const CareerList = (props) => {
             </div>
         )
     })
-    console.log(props)
-
-
+    
     return (
         <div className={Styles.careerHistory}>
             <Link to="/about">
