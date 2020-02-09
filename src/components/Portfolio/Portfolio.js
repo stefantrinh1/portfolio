@@ -3,8 +3,8 @@ import Styles from "./Portfolio.module.scss";
 import * as contentful from "contentful";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import Project from "./Project";
-import ScrollUpButton from "react-scroll-up-button";
-
+import { connect } from "react-redux";
+import filterProjects from '../../selectors/PortfolioFilter'
 
 class Portfolio extends React.Component {
   state = {
@@ -43,6 +43,10 @@ class Portfolio extends React.Component {
       .catch(console.error);
   }
 
+  componentDidUpdate() {
+    console.log(this.props)
+  }
+
   // all the banners once json has loaded
   getProjectBanners() {
     // loops through the PrtfolioJSON to generate all the banners.
@@ -57,7 +61,6 @@ class Portfolio extends React.Component {
             this.getProject(element.sys.id);
           }}
         >
-          {/* <img src={element.fields.projectBanner.fields.file.url} alt="Banner" /> */}
         </img>
       );
     });
@@ -103,7 +106,6 @@ class Portfolio extends React.Component {
 
           {/* Project Component taking in project to display prop */}
           <Project portfolioJSON={this.state.displayedProject} />
-          <ScrollUpButton />
         </div>
       );
     } else {
@@ -112,4 +114,38 @@ class Portfolio extends React.Component {
   }
 }
 
-export default Portfolio;
+// map state to props functions
+const mapStateToProps = state => {
+
+  let projects = null
+  console.log(state)
+
+  const client = contentful.createClient({
+    space: "6uk9nhmjdkre",
+    accessToken: "vRPrbrCwApcb4AXyT2yS3mXp2JNvSMdzTZ1k2jhmEAA"
+  });
+
+  // ====  Queries  ====
+  const PortfolioQuery = {
+    content_type: "portfolio"
+  };
+
+  // This is a Generic Fetch By ContentType Function for Contentful. It takes a query
+  const FetchByContentType = query => client.getEntries(query);
+
+  const SetPortfolioContent = response => {
+    console.log(response.items)
+    projects = response.items
+  };
+
+  FetchByContentType(PortfolioQuery)
+  .then(SetPortfolioContent)
+  .catch(console.error);
+
+  return {
+    projects: filterProjects(projects, {text:"",projectType:"",stackList:[] })
+  };
+};
+
+// calls to connect
+export default connect(mapStateToProps)(Portfolio);
