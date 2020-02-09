@@ -4,7 +4,6 @@ import * as contentful from "contentful";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import Styles from "./Blog.module.scss";
 import DateFormat from "dateformat";
-import ScrollUpButton from "react-scroll-up-button";
 
 class Blog extends React.Component {
   state = {
@@ -87,7 +86,6 @@ class Blog extends React.Component {
               </div>
             );
           })}
-          <ScrollUpButton />
         </div>
       );
     };
