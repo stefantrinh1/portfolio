@@ -20,7 +20,7 @@ class Project extends React.Component {
       projectUrl,
       githubRepoUrl,
       projectImages,
-      techStackLogos,
+      techStack,
       projectDescription
     } = this.props.portfolioJSON.fields;
 
@@ -80,7 +80,6 @@ class Project extends React.Component {
         </header>
 
         <div className={Styles.projectImg}>
-          {console.log(projectImages)}
           <Slider {...settings}>
             {projectImages.map(image => (
               <div key={image.sys.id}>
@@ -93,7 +92,7 @@ class Project extends React.Component {
         <div className={Styles.projectDetails}>
           <h3>Tech Stack</h3>
 
-          <TechStack LogosJSON={techStackLogos} />
+          <TechStack stackJSON={techStack} />
 
           <ReactMarkdown
             className={Styles.projectDescription}
