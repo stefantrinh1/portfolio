@@ -1,25 +1,32 @@
-import React from 'react'
-import Styles from "./TechStack.module.scss"
-
-export default (props) => (
+import React from "react";
+import Styles from "./TechStack.module.scss";
+import StackLogo from "./StackLogo";
+export default props => {
+  return (
     <div className={Styles.techStackContainer}>
-    {/* // return a list of logos pulling from contentful. */}
-    {console.log(props)}
-    {props.LogosJSON.map(logo => {
-      return (
-        <a
-          href={logo.fields.description ? logo.fields.description : null}
-          key={logo.sys.id}
-          className={Styles.stacklogoslink}
-        >
-          <img
-            className={Styles.stackLogos}
-            src={logo.fields.file.url}
-            alt={logo.fields.title}
-            title={logo.fields.title}
+      
+      {/* // return a list of logos pulling from contentful. */}
+      {props.stackJSON.map(stack => {
+        const {
+          name,
+          website,
+          logo: {
+            fields: {
+              file: { url }
+            }
+          }
+        } = stack.fields;
+
+        return (
+          <StackLogo
+            key={stack.sys.id}
+            id={stack.sys.id}
+            stackName={name}
+            stackLogo={url}
+            stackWebsite={website}
           />
-        </a>
-      );
-    })}
-  </div>
-)
+        );
+      })}
+    </div>
+  );
+};
