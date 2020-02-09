@@ -23,7 +23,7 @@ const AboutMe = props => {
 
       <div className={Styles.techStack}>
         <h2 className={Styles.techStackTitle}>Stack Logos</h2>
-        <TechStack LogosJSON={AboutJSON.techStack} />
+        <TechStack stackJSON={AboutJSON.techStack} />
       </div>
     </div>
   );
