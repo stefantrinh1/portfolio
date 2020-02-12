@@ -43,10 +43,6 @@ class Portfolio extends React.Component {
       .catch(console.error);
   }
 
-  componentDidUpdate() {
-    console.log(this.props)
-  }
-
   // all the banners once json has loaded
   getProjectBanners() {
     // loops through the PrtfolioJSON to generate all the banners.
@@ -116,34 +112,9 @@ class Portfolio extends React.Component {
 
 // map state to props functions
 const mapStateToProps = state => {
-
-  let projects = null
-  console.log(state)
-
-  const client = contentful.createClient({
-    space: "6uk9nhmjdkre",
-    accessToken: "vRPrbrCwApcb4AXyT2yS3mXp2JNvSMdzTZ1k2jhmEAA"
-  });
-
-  // ====  Queries  ====
-  const PortfolioQuery = {
-    content_type: "portfolio"
-  };
-
-  // This is a Generic Fetch By ContentType Function for Contentful. It takes a query
-  const FetchByContentType = query => client.getEntries(query);
-
-  const SetPortfolioContent = response => {
-    console.log(response.items)
-    projects = response.items
-  };
-
-  FetchByContentType(PortfolioQuery)
-  .then(SetPortfolioContent)
-  .catch(console.error);
-
+  
   return {
-    projects: filterProjects(projects, {text:"",projectType:"",stackList:[] })
+    // projects: filterProjects(projects, {text:"",projectType:"",stackList:[] })
   };
 };
 
