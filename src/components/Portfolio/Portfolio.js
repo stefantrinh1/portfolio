@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Styles from "./Portfolio.module.scss";
 import * as contentful from "contentful";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import Project from "./Project";
 import { connect } from "react-redux";
 import filterProjects from '../../selectors/PortfolioFilter'
+import { startSetProjects } from '../../actions/PortfolioProjects'
+
+
+// const Portfolio = (props) => {
+  
+//   useEffect(()=> {
+//      props.dispatch(startSetProjects())
+//   })
+
+// console.log(props)
+
+//   return(
+
+//     <div>
+
+//     </div>
+//   )
+  
+// }
+
+
+// // map state to props functions
+// const mapStateToProps = state => {
+//   console.log(state)
+//   return {
+//     projects: filterProjects(state.portfolioProjects, state.filters),
+//   };
+// };
+
+// // calls to connect
+// export default connect(mapStateToProps)(Portfolio);
+
+
 
 class Portfolio extends React.Component {
   state = {
@@ -37,10 +70,14 @@ class Portfolio extends React.Component {
   };
 
   componentDidMount() {
+
+    // props.dispatch(startSetProjects())
     // Functions to Fetch Data from Contentful
     this.FetchByContentType(this.PortfolioQuery)
       .then(this.SetPortfolioContent)
       .catch(console.error);
+    
+
   }
 
   // all the banners once json has loaded

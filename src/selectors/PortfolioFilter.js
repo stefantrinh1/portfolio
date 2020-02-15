@@ -1,4 +1,4 @@
-export default (projects, { text, projectType, stackList }) => {
+export default (projects, filters) => {
 
     console.log(projects)
 

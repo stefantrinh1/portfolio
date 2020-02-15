@@ -1,5 +1,21 @@
-// Navigation Actions
-export const setprojects = (projects) => ({
-    type: "SET_PROJECTS",
-    projects: projects // takes an array of projects
-  })
+import * as contentful from "contentful";
+
+export const startSetProjects = () => dispatch => {
+  console.log("function hit");
+  const client = contentful.createClient({
+    space: "6uk9nhmjdkre",
+    accessToken: "vRPrbrCwApcb4AXyT2yS3mXp2JNvSMdzTZ1k2jhmEAA"
+  });
+  // ====  Queries  ====
+  const PortfolioQuery = {
+    content_type: "portfolio"
+  };
+  const FetchByContentType = query => client.getEntries(query);
+  FetchByContentType(PortfolioQuery).then(data => {
+    console.log(data);
+    dispatch({
+      type: "SET_PROJECTS",
+      projects: data.items
+    });
+  });
+};
