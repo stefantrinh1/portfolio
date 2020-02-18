@@ -11,8 +11,10 @@ const ReactMarkdown = require("react-markdown/with-html");
 
 class Project extends React.Component {
   projectContainer = React.createRef();
+  
 
   render() {
+    console.log(this.props)
     const {
       //   destructuring contentful props object
       projectName,

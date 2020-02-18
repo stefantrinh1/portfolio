@@ -1,157 +1,103 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Styles from "./Portfolio.module.scss";
-import * as contentful from "contentful";
 import LoadingPage from "../LoadingPage/LoadingPage";
 import Project from "./Project";
 import { connect } from "react-redux";
 import filterProjects from '../../selectors/PortfolioFilter'
 import { startSetProjects } from '../../actions/PortfolioProjects'
 
+const Portfolio = (props) => {
 
-// const Portfolio = (props) => {
-  
-//   useEffect(()=> {
-//      props.dispatch(startSetProjects())
-//   })
+  const { projects } = props.portfolioProjects
 
-// console.log(props)
+  // if the projects exists load if not return null
+  const [displayedProject, displayedProjectUpdater] = useState(projects[0] ? projects[0] : null)
 
-//   return(
+  useEffect(() => {
+    props.dispatch(startSetProjects()) // this starts the redux fetch action to set projects
+  }, []) // the array at the end makes the use effect only runs once. 
 
-//     <div>
+  const getProject = (projects, id) => {
+    // takes an array or projects and the id of the clicked button
 
-//     </div>
-//   )
-  
-// }
-
-
-// // map state to props functions
-// const mapStateToProps = state => {
-//   console.log(state)
-//   return {
-//     projects: filterProjects(state.portfolioProjects, state.filters),
-//   };
-// };
-
-// // calls to connect
-// export default connect(mapStateToProps)(Portfolio);
-
-
-
-class Portfolio extends React.Component {
-  state = {
-    isPortfolioLoading: true,
-    portfolioJSON: null,
-    displayedProject: null
-  };
-
-  // Contentful's Client
-  client = contentful.createClient({
-    space: "6uk9nhmjdkre",
-    accessToken: "vRPrbrCwApcb4AXyT2yS3mXp2JNvSMdzTZ1k2jhmEAA"
-  });
-
-  // ====  Queries  ====
-  PortfolioQuery = {
-    content_type: "portfolio"
-  };
-
-  // This is a Generic Fetch By ContentType Function for Contentful. It takes a query
-  FetchByContentType = query => this.client.getEntries(query);
-
-  SetPortfolioContent = response => {
-    this.setState({
-      isPortfolioLoading: false,
-      portfolioJSON: response.items,
-      // sets the first project in the array as the first displayed project
-      displayedProject: response.items[0]
-    });
-  };
-
-  componentDidMount() {
-
-    // props.dispatch(startSetProjects())
-    // Functions to Fetch Data from Contentful
-    this.FetchByContentType(this.PortfolioQuery)
-      .then(this.SetPortfolioContent)
-      .catch(console.error);
-    
-
-  }
-
-  // all the banners once json has loaded
-  getProjectBanners() {
-    // loops through the PrtfolioJSON to generate all the banners.
-    const projectList = this.state.portfolioJSON.map(element => {
-      return (
-        <img
-          src={element.fields.projectBanner.fields.file.url}
-          className={Styles.projectBanner}
-          key={element.sys.id}
-          onClick={() => {
-            // runs get project function to get project clicked by  passing id in.
-            this.getProject(element.sys.id);
-          }}
-        >
-        </img>
-      );
-    });
-    return projectList;
-  }
-
-  // gets the project by key
-  getProject(key) {
-    const projectContainer = document.getElementById("project");
     // Because projects is in another componenet it accesses the other components elemenet through id and non css module.
+    const projectContainer = document.getElementById("project");
     projectContainer.scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "start"
     });
 
-    // loops through the JSON checking the key and if the key matches and returns the one object
-    const element = this.state.portfolioJSON.filter(
-      element => element.sys.id === key
-    );
-    // then sets the only object in the array which is the project to the displayProject State
-    // ready to render new clicked once component is updated
-    this.setState({
-      displayedProject: element[0]
-    });
+    // filters through the projects and returns the project with a correct id.
+    return projects.filter((project) => {
+      if (project.sys.id === id) {
+        return project
+      }
+    })[0] // filter returns an array of one item. hence the index of 0
   }
 
-  render() {
-    if (!this.state.isPortfolioLoading) {
-      return (
-        <div className={Styles.portfolio}>
-          <div className={Styles.portfolioHeader}>
-            <div className={Styles.headerCopy}>
-              <h1>Portfolio</h1>
-              <h4>A Collection of Client and Personal Digital Web Projects</h4>
-            </div>
-          </div>
+  // ======  rendering ======
 
-          <div className={Styles.projectBanners} id={Styles.projectBanners}>
-            {/* gets list of Clickable Project Banners */}
-            {this.getProjectBanners()}
-          </div>
+  if (props.error) {
+    return <div> Could not Load page at this time, please try again later.</div>
+  }
 
-          {/* Project Component taking in project to display prop */}
-          <Project portfolioJSON={this.state.displayedProject} />
+  if (props.loading) {
+    return <LoadingPage />
+  }
+
+  return (
+    <div>
+      <div className={Styles.portfolio}>
+        <div className={Styles.portfolioHeader}>
+          <div className={Styles.headerCopy}>
+            <h1>Portfolio</h1>
+            <h4>A Collection of Client and Personal Digital Web Projects</h4>
+          </div>
         </div>
-      );
-    } else {
-      return <LoadingPage />;
-    }
-  }
+
+        <div className={Styles.projectBanners} id={Styles.projectBanners}>
+          {/* gets list of Clickable Project Banners */}
+
+          {props.portfolioProjects.projects.map((project) => {
+            const { id } = project.sys
+            const { title, file: { url } } = project.fields.projectBanner.fields
+            return (
+              <img
+                src={url}
+                className={Styles.projectBanner}
+                key={id}
+                alt={title}
+                onClick={() => {
+                  // runs get project function to get project clicked by  passing id in.
+                  const clickedProject = getProject(projects, id)
+                  displayedProjectUpdater(clickedProject)
+                }}
+              />
+            )
+          })}
+
+        </div>
+
+        {projects ?
+          <Project portfolioJSON={displayedProject ? displayedProject : projects[0]} />
+          // if displayProjects has been set then display it. if not display default
+          :
+          null
+        }
+
+      </div>
+    </div>
+  )
 }
 
 // map state to props functions
 const mapStateToProps = state => {
-  
+  console.log(state)
   return {
-    // projects: filterProjects(projects, {text:"",projectType:"",stackList:[] })
+    portfolioProjects: filterProjects(state.portfolioProjects, state.filters),
+    loading: state.portfolioProjects.loading,
+    error: state.portfolioProjects.error,
   };
 };
 

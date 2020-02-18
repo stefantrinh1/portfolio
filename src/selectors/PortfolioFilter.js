@@ -1,6 +1,6 @@
 export default (projects, filters) => {
-
-    console.log(projects)
+console.log(filters)
+    return projects
 
 };
 

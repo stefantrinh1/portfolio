@@ -15,7 +15,16 @@ export const startSetProjects = () => dispatch => {
     console.log(data);
     dispatch({
       type: "SET_PROJECTS",
-      projects: data.items
+      projects: data.items,
+      loading:false,
     });
+  }).catch((error)=> {
+    console.log(error)
+    dispatch({
+      type: "SET_PROJECTS",
+      projects: [],
+      loading:false,
+      error:error
+    })
   });
 };
