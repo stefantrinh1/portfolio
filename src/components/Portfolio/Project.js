@@ -14,7 +14,7 @@ class Project extends React.Component {
   
 
   render() {
-    console.log(this.props)
+    // console.log(props)
     const {
       //   destructuring contentful props object
       projectName,
@@ -85,7 +85,7 @@ class Project extends React.Component {
           <Slider {...settings}>
             {projectImages.map(image => (
               <div key={image.sys.id}>
-                <img src={image.fields.file.url} />
+                <img src={image.fields.file.url} alt={image.fields.title ? image.fields.title : "Project Slide"} />
               </div>
             ))}
           </Slider>

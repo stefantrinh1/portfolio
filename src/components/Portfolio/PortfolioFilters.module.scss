@@ -1,0 +1,49 @@
+@import "../../base-styles/partials/colors";
+
+.filters {
+  margin: 2em auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.filters > * {
+  margin: 0.5em;
+}
+
+.searchfilter,
+.projecttypefilter {
+  border-radius: 5px;
+  border: solid $brand-color 1px;
+  background: none;
+  color: white;
+  padding: 0.5em;
+}
+
+.projecttypefilter {
+  color: $brand-color;
+
+}
+.projecttypefilter option {
+  background: #222222;
+  border: 0px;
+  outline: 0px;
+}
+
+.projecttypefilter option:checked {
+  display: none;
+}
+
+.filters ::placeholder {
+  color: $brand-color;
+  opacity: 1;
+}
+
+.filters > div {
+  top: -1.5px;
+}
+
+// ReactMultiSelectCheckboxes does not contain a prop for the outer container to style
+.filters > div > :nth-child(2) {
+  background-color: #222222 !important;
+}
