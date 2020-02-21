@@ -7,7 +7,7 @@ const readingTime = require("reading-time");
 const BlogTemplate = props => {
   // pulls blogJson out of props
   const {
-    id,
+    // id,
     blogTitle,
     blogDescription,
     authorImage,
