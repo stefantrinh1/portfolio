@@ -51,6 +51,8 @@
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: center;
+  background: #333333;
+  padding: 2em 0.25em;
 }
 
 .projectBanner {
@@ -59,7 +61,7 @@
   // border-radius: 10px;
   align-self: flex-start;
   margin: 0.25em;
-  max-width: 150px;
+  max-width: 148px;
   &:hover {
     border-radius: 10px;
     box-shadow: 1px 1px 3px 2px black;
@@ -74,11 +76,14 @@
   display: block;
 }
 
-
 @media (min-width: 1400px) {
   .headerCopy {
     font-size: 25.6px;
     max-width: 1800px;
     margin: 0 auto;
+  }
+
+  .projectBanners {
+    border-radius: 11px;
   }
 }
