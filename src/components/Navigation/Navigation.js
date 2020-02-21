@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import BrandLogo from "../SocialLogos/BrandLogo";
 import Styles from "./Navigation.module.scss";
-import NavItem from "./NavItem";
+// import NavItem from "./NavItem";
 import disableScroll from "disable-scroll";
 
 const Navigation = () => {
