@@ -1,7 +1,7 @@
 import React from "react";
 // import LoadingPage from "../LoadingPage/LoadingPage";
 import Styles from "./About.module.scss";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import ContentBoxes from "./Contentboxes/ContentBoxes";
 const ReactMarkdown = require("react-markdown/with-html");
 
